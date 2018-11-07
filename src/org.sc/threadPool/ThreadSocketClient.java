@@ -1,4 +1,4 @@
-package ThreadPool;
+package threadPool;
 
 import java.io.OutputStream;
 import java.net.InetAddress;
