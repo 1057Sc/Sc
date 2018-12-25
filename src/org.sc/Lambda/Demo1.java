@@ -15,6 +15,8 @@ public class Demo1 {
         SayHello sayHello = sayHeelo ->
                 System.out.println(sayHeelo);
         sayHello.sayMessage("hello");
+
+
     }
 
     interface GreetingService {
