@@ -3,7 +3,7 @@ package dynamicProxy;
 /**
  * Created by Sc on 2019/2/12.
  *
- * @Description: java类（接口）作用描述
+ * @Description: 实现Person接口
  */
 public class IPerson implements Person {
 
