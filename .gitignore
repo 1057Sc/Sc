@@ -2,8 +2,6 @@
 .project
 .settings/
 target/
-test-output/
 bin/
-*.iml
 .idea
-sp-metadata.xml
+*.iml
