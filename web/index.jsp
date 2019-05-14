@@ -1,11 +1,14 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Sc
-  Date: 2018/6/11
-  Time: 19:27
+  User: duizhuang
+  Date: 2019/1/28
+  Time: 11:05
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/WEB-INF/inc/taglib.jsp" %>
+<%@ page language="java" pageEncoding="UTF-8" %>
 <html>
   <head>
     <title>$Title$</title>

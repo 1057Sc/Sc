@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table id="datatable" width="100%" border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Operation</th>
+        </tr>
+        <thead>
+    </table>
+
+</body>
+
+<script src="jquery.sortable.js"></script>
+<script>
+    var data = [
+        [
+            "Tiger Nixon",
+            "System Architect",
+            "Edinburgh",
+            "5421",
+            "2011/04/25",
+            "$3,120"
+        ],
+        [
+            "Garrett Winters",
+            "Director",
+            "Edinburgh",
+            "8422",
+            "2011/07/25",
+            "$5,300"
+        ]
+    ]
+
+    $('#datatable').DataTable( {
+        data: data,
+        columns: [
+            { data: 'name' },
+            { data: 'position' },
+            { data: 'salary' },
+            { data: 'office' }
+        ],
+        columnDefs:[
+            {
+                "targets": [0],
+
+            }
+        ],
+        render: function (data, type, row) {
+            return data;
+        }
+    } );
+</script>
+</html>
