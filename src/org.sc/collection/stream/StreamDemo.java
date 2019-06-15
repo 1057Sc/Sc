@@ -1,6 +1,8 @@
 package collection.stream;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,5 +25,9 @@ public class StreamDemo {
         System.out.println(list.stream().mapToInt(Integer::byteValue).sum());
 
 
+    }
+
+    public static void Demo2(){
+        List<String> list = Arrays.asList();
     }
 }
