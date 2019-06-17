@@ -1,4 +1,4 @@
-package Lambda;
+package lambda;
 
 /**
  * Created by Sc on 2018/12/24.
