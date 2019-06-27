@@ -47,6 +47,7 @@ public class MapNull {
 
         System.out.println(list);
 
+        /// null值判断
         List<Map> list1 = new ArrayList<>();
         Map m7 = null;
         list1.add(null);
