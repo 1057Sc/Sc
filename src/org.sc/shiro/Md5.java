@@ -1,30 +1,39 @@
+/*
 package shiro;
 
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.crypto.hash.Md5Hash;
 
+*/
 /**
  * Created by duizhuang on 7/2/2019.
- */
+ *//*
+
 public class Md5 {
-    /*
+    */
+/*
      * base64加密
-     * */
+     * *//*
+
     public static String encodeBase64(String str) {
         return Base64.encodeToString(str.getBytes());
     }
 
-    /*
+    */
+/*
      * base64解密
-     * */
+     * *//*
+
 
     public static String decodeBase64(String str) {
         return Base64.decodeToString(str);
     }
 
-    /*
+    */
+/*
      * Md5加密，shiro框架中自带Md5，Md5没有解密
-     * */
+     * *//*
+
     public static String md5(String str , String salt) {
         return new Md5Hash(str,salt).toString();
     }
@@ -41,3 +50,4 @@ public class Md5 {
         System.out.println("Md5加密:" + passwordMd5 + "   " + passwordMd5.length());
     }
 }
+*/
