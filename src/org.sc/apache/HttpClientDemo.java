@@ -1,3 +1,4 @@
+/*
 package apache;
 
 import arithmetic.Entity;
@@ -18,9 +19,7 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.InputStream;
 
-/**
- * Created by duizhuang on 7/9/2019.
- */
+
 public class HttpClientDemo {
 
     public static void main(String[] args) throws Exception{
@@ -54,8 +53,9 @@ public class HttpClientDemo {
 
     public static void httpdemo() throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
-        /*HttpRequest httpRequest = new BasicHttpRequest("GET","localhost:9200/_search");
-        httpRequest.*/
+HttpRequest httpRequest = new BasicHttpRequest("GET","localhost:9200/_search");
+        httpRequest.
+
         HttpGet httpget = new HttpGet("http://10.0.0.14:9200/_search");
         HttpPost httpPost = new HttpPost("http://10.0.0.14:9200/_search");
         StringEntity stringEntity = new StringEntity("{\"query\": { \"match_all\": {} }}", ContentType.create("application/json", "UTF-8"));
@@ -91,7 +91,11 @@ public class HttpClientDemo {
         String s = EntityUtils.toString(stringEntity);
         System.out.println(s);
     }
+*/
+/**//*
 
+*/
+/**//*
 
     public static void demo2() throws Exception{
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -114,3 +118,4 @@ public class HttpClientDemo {
     }
 
 }
+*/
