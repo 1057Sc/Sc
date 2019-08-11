@@ -1,7 +1,6 @@
 package lambda.stream;
 
 import java.util.*;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -13,7 +12,7 @@ public class StreamDemo1 {
 
     public static void main(String[] args) {
 
-        filter();
+        reduce();
     }
 
     static {
@@ -39,7 +38,20 @@ public class StreamDemo1 {
         // 聚合操作
         Long collect3 = objList.stream().collect(Collectors.counting());
 
-        Optional<Integer> collect4 = objList.stream().map(TestObj::getAge).collect(Collectors.maxBy(Integer::compareTo));
+        Long collect5 = objList.stream().count();
+
+ /*       Collection.stream().count() → Collection.size(). In Java 8 Collection.stream().count() actually iterates over collection elements to count them while Collection.size() is much faster for most of collections.
+                Stream.flatMap(Collection::stream).count() → Stream.mapToLong(Collection::size).sum(). Similarly there's no need to iterate all the nested collections. Instead, their sizes could be summed up.
+        collection.stream().filter(o -> ...).count() > 0 → collection.stream().anyMatch(o -> ...)
+        collection.stream().filter(o -> ...).count() == 0 → collection.stream().noneMatch(o -> ...)*/
+
+        Integer integer = objList.stream().map(TestObj::getAge).collect(Collectors.maxBy(Integer::compareTo)).get();
+
+        Optional<Integer> max = objList.stream().map(TestObj::getAge).max(Integer::compareTo);
+
+        objList.stream().collect(Collectors.averagingDouble(TestObj::getAge));
+
+        System.out.println(1);
 
     }
 
@@ -83,7 +95,7 @@ public class StreamDemo1 {
 
     }
 
-    public static void test(){
+    public static void test() {
 
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
 
@@ -97,5 +109,25 @@ public class StreamDemo1 {
         long count = list.stream().count(); //5
         Integer max = list.stream().max(Integer::compareTo).get(); //5
         Integer min = list.stream().min(Integer::compareTo).get(); //1
+    }
+
+    public static void reduce() {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+        numbers.add(6);
+
+        int sum = numbers.stream().reduce(0, (x, y) -> x + y);
+
+
+        int multiplication = numbers.stream().reduce(1, (x, y) -> x * y);
+
+        int max = numbers.parallelStream().reduce(10, Integer::max);
+
+
+        System.out.println(sum + "::::::" + multiplication + "::::::::" + max);
     }
 }
