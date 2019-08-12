@@ -12,7 +12,7 @@ public class StreamDemo1 {
 
     public static void main(String[] args) {
 
-        reduce();
+        sort();
     }
 
     static {
@@ -20,7 +20,16 @@ public class StreamDemo1 {
         for (int i = 0; i < 6; i++) {
             TestObj testObj = new TestObj();
             testObj.setAge(i);
-            testObj.setName("name" + i);
+            if (i < 2) {
+                testObj.setName("小猪");
+                testObj.setClassNo(5);
+            } else if (2 < i && i < 5) {
+                testObj.setName("小狗狗");
+                testObj.setClassNo(15);
+            } else {
+                testObj.setName("小可爱");
+                testObj.setClassNo(3);
+            }
             objList.add(testObj);
         }
 
@@ -56,7 +65,7 @@ public class StreamDemo1 {
     }
 
     public static void sort() {
-        objList.stream().sorted(
+      /*  objList.stream().sorted(
                 (o1, o2) -> {
                     if (o1.getAge() > o2.getAge()) {
                         return o1.getAge();
@@ -77,7 +86,41 @@ public class StreamDemo1 {
         )
                 .map(TestObj::getAge)
                 .collect(Collectors.toList())
-                .forEach(System.out::println);
+                .forEach(System.out::println);*/
+
+
+       /* List<TestObj> collect = objList.stream().sorted(
+                (o1, o2) -> {
+                    if (o1.getName().equals(o2.getName())) {
+                        return o1.getAge() - o2.getAge();
+                    } else {
+                        return o2.getAge() - o1.getAge();
+                    }
+                }
+        ).collect(Collectors.toList());*/
+
+       for (TestObj obj : objList){
+           System.out.println(obj.toString());
+       }
+
+        System.out.println("----------------------------------");
+
+        List<TestObj> collect = objList.stream().sorted(
+                (o1, o2) -> {
+                    if (o1.getClassNo().equals(o2.getClassNo())){
+                        return o2.getAge() - o1.getAge();
+                    }else {
+                        return o2.getClassNo() - o1.getClassNo();
+                    }
+                })
+                .collect(Collectors.toList());
+
+        for (TestObj testObj : collect){
+            System.out.println(testObj.toString());
+        }
+
+
+        System.out.println();
     }
 
     public static void filter() {
