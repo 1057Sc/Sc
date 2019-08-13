@@ -20,6 +20,11 @@ public class WhileDemo {
 
         System.out.println(-1 >>> 2);
 
+        byte b = -128;
+        byte b1 = -1;
+        // byte b2 = 128;
+        System.out.println(b + b1);
+
     }
 
 
