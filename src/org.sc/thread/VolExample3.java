@@ -1,7 +1,5 @@
 package thread;
 
-import sun.awt.windows.ThemeReader;
-
 public class VolExample3 {
 
     volatile int cc;
