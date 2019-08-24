@@ -10,7 +10,7 @@ public class DemoIf {
     public static void main(String[] args) {
 
         //Demo1();
-        demo2();
+        demo3(3);
     }
 
     public static void Demo1(){
@@ -40,6 +40,15 @@ public class DemoIf {
         if (StringUtils.equals(school.getStudent().getName(),"777")) {
             System.out.println(777777);
         }
+    }
+
+    public static void demo3(int i){
+        if (i == 1)
+            System.out.println(1);
+        if (i == 2)
+            System.out.println(2);
+        if (i == 3)
+            System.out.println(17 % 2);
     }
 }
 
