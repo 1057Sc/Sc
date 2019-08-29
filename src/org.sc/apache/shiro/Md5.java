@@ -1,8 +1,8 @@
 /*
-package shiro;
+package apache.shiro;
 
-import org.apache.shiro.codec.Base64;
-import org.apache.shiro.crypto.hash.Md5Hash;
+import org.apache.apache.shiro.codec.Base64;
+import org.apache.apache.shiro.crypto.hash.Md5Hash;
 
 */
 /**
