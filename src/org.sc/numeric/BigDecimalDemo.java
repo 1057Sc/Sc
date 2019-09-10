@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 /**
- * Created by duizhuang on 7/1/2019.
+ * Created by Sc on 7/1/2019.
  */
 public class BigDecimalDemo {
 

@@ -6,7 +6,7 @@ import org.apache.apache.shiro.crypto.hash.Md5Hash;
 
 */
 /**
- * Created by duizhuang on 7/2/2019.
+ * Created by Sc on 7/2/2019.
  *//*
 
 public class Md5 {

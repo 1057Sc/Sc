@@ -3,7 +3,7 @@ package conditionalStatment;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * Created by duizhuang on 5/5/2019.
+ * Created by Sc on 5/5/2019.
  */
 public class DemoIf {
 

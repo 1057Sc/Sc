@@ -3,7 +3,7 @@ package string;
 import com.sun.xml.internal.ws.server.ServerRtException;
 
 /**
- * Created by duizhuang on 5/9/2019.
+ * Created by Sc on 5/9/2019.
  */
 public class StringSplit {
 

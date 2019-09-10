@@ -27,7 +27,7 @@ public class HttpClientDemo {
     }
 
     public String httpRequest(String url) {
-        // String urlNameString = "https://local.duizhuang.com:30002/sale_survey/one_day?data_type=focus&date_start=2019-01-01&date_end=2019-01-02";
+        // String urlNameString = "https://local.Sc.com:30002/sale_survey/one_day?data_type=focus&date_start=2019-01-01&date_end=2019-01-02";
         String result = "";
         try {
             // 根据地址获取请求

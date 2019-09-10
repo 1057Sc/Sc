@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by duizhuang on 6/17/2019.
+ * Created by Sc on 6/17/2019.
  */
 public class StramDemo {
 

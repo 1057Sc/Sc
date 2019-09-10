@@ -10,7 +10,7 @@ import org.apache.hadoop.hbase.client.HBaseAdmin;
 import java.io.IOException;
 
 /**
- * Created by duizhuang on 8/30/2019.
+ * Created by Sc on 8/30/2019.
  */
 public class HbaseClientExample {
 

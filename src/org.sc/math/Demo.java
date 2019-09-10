@@ -3,7 +3,7 @@ package math;
 import java.util.DoubleSummaryStatistics;
 
 /**
- * Created by duizhuang on 6/12/2019.
+ * Created by Sc on 6/12/2019.
  */
 public class Demo {
 

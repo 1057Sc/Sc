@@ -3,7 +3,7 @@ package util;
 import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
- * Created by duizhuang on 8/29/2019.
+ * Created by Sc on 8/29/2019.
  */
 public class SQLInjectionEscaper {
 

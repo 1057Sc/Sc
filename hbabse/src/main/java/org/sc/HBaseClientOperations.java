@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 /**
- * Created by duizhuang on 8/30/2019.
+ * Created by Sc on 8/30/2019.
  */
 public class HBaseClientOperations {
     private final static byte[] cellData = Bytes.toBytes("cell_data");

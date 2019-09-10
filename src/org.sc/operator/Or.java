@@ -1,7 +1,7 @@
 package operator;
 
 /**
- * Created by duizhuang on 6/28/2019.
+ * Created by Sc on 6/28/2019.
  */
 public class Or {
 
