@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by duizhuang on 6/10/2019.
+ * Created by Sc on 6/10/2019.
  */
 public class StreamDemo {
 

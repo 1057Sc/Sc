@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by duizhuang on 7/19/2019.
+ * Created by Sc on 7/19/2019.
  */
 public class variable {
 

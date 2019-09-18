@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 /**
- * Created by duizhuang on 5/14/2019.
+ * Created by Sc on 5/14/2019.
  */
 public class EnumDemo {
 

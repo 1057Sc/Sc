@@ -1,7 +1,7 @@
 package string;
 
 /**
- * Created by duizhuang on 5/15/2019.
+ * Created by Sc on 5/15/2019.
  */
 public class StringNull {
 

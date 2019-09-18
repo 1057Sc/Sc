@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by duizhuang on 6/12/2019.
+ * Created by Sc on 6/12/2019.
  */
 public class Regex {
 
@@ -14,7 +14,7 @@ public class Regex {
 
         // 按指定模式在字符串查找
         String line = "This order was placed for QT3000! OK?";
-        String url = "jdbc:postgresql://10.0.0.14:5432/duizhuang_test";
+        String url = "jdbc:postgresql://10.0.0.14:5432/Sc_test";
         String pattern = "(\\D*)(\\d+)(.*)";
 
         String patternUrl = "(\\d)";
@@ -39,7 +39,7 @@ public class Regex {
     }
 
     public static void Demo2(){
-        String url = "jdbc:postgresql://10.0.0.14:5432/duizhuang_test";
+        String url = "jdbc:postgresql://10.0.0.14:5432/Sc_test";
         String url2 = "rtsp://admin:admin@192.168.30.98:554/media/video1";
 
         String patternUrl = "(\\^d)";

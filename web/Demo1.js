@@ -1,5 +1,5 @@
 /**
- * Created by duizhuang on 5/6/2019.
+ * Created by Sc on 5/6/2019.
  */
 $('#example').dataTable(
     {

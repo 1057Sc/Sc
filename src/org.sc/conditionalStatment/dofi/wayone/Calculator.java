@@ -4,7 +4,7 @@ package conditionalStatment.dofi.wayone;
 import org.junit.Test;
 
 /**
- * Created by duizhuang on 8/29/2019.
+ * Created by Sc on 8/29/2019.
  */
 public class Calculator {
 

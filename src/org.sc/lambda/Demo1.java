@@ -12,8 +12,7 @@ public class Demo1 {
                 System.out.println(message);//这里为实现逻辑
         greetService1.sayMessage("Runoob");//这里为逻辑调用
 
-        SayHello sayHello = sayHeelo ->
-                System.out.println(sayHeelo);
+        SayHello sayHello = sayHeelo -> System.out.println(sayHeelo);
         sayHello.sayMessage("hello");
 
 
