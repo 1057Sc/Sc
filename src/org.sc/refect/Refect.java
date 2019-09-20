@@ -90,6 +90,7 @@ public class Refect {
         Method[] methods = clazz.getMethods();
         for (Method m: methods){
             System.out.println("public的成员方法"+m);
+
         }
         //获取 public private default protected 的 methods
         Method[] methods1 = clazz.getDeclaredMethods();
