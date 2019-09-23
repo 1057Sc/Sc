@@ -1,4 +1,4 @@
-package type;
+package genericity;
 
 public interface Type<T, C extends T> {
 

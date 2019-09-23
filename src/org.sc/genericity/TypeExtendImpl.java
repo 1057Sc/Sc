@@ -1,6 +1,4 @@
-package type;
-
-import lambda.stream.TestObj;
+package genericity;
 
 public abstract class TypeExtendImpl<T, C extends T> implements TypeExtend<T, C >{
 

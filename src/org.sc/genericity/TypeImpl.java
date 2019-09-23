@@ -1,4 +1,4 @@
-package type;
+package genericity;
 
 import lambda.stream.TestObj;
 
