@@ -105,4 +105,21 @@ public class SetDo {
         source.removeAll(target);
         System.out.println(source);
     }
+
+    @Test
+    public void demo6(){
+        Set<Integer> source = new HashSet<>();
+        source.add(1);
+        source.add(2);
+        source.add(4);
+
+        Set<Integer> target = new HashSet<>();
+        target.add(1);
+        target.add(2);
+        target.add(3);
+        source.retainAll(target);
+
+        System.out.println(source.toString());
+
+    }
 }
