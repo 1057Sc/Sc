@@ -122,4 +122,19 @@ public class SetDo {
         System.out.println(source.toString());
 
     }
+
+    @Test
+    public void demo7(){
+        Set<Integer> source = new HashSet<>();
+        source.add(1);
+        source.add(2);
+
+        Set<Integer> target = new HashSet<>();
+        target.add(1);
+        target.add(2);
+        target.add(3);
+
+
+
+    }
 }
