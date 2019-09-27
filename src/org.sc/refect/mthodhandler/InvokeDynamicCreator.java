@@ -8,6 +8,7 @@ import jdk.internal.org.objectweb.asm.Opcodes;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.invoke.*;
+import java.util.List;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.*;
 
@@ -17,9 +18,12 @@ public class InvokeDynamicCreator {
     public static void main(final String[] args) throws Exception {
         final String outputClassName = "kathik/Dynamic";
         try (FileOutputStream fos
-                     = new FileOutputStream(new File("target/classes/" + outputClassName + ".class"))) {
+                     = new FileOutputStream(new File("D:\\Sc\\mygithub\\Sc\\target\\classes\\" + outputClassName + ".class"))) {
             fos.write(dump(outputClassName, "bootstrap", "()V"));
         }
+
+        bootstrap();
+
     }
 
     public static byte[] dump(String outputClassName, String bsmName, String targetMethodDescriptor)
@@ -60,7 +64,8 @@ public class InvokeDynamicCreator {
         System.out.println("Hello World!");
     }
 
-    public static CallSite bootstrap(MethodHandles.Lookup caller, String name, MethodType type) throws NoSuchMethodException, IllegalAccessException {
+    public static CallSite bootstrap() throws NoSuchMethodException, IllegalAccessException {
+        MethodType type = MethodType.methodType(void.class, String.class);
         final MethodHandles.Lookup lookup = MethodHandles.lookup();
         // Need to use lookupClass() as this method is static
         final Class<?> currentClass = lookup.lookupClass();
