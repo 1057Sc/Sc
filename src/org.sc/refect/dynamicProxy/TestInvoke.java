@@ -1,4 +1,4 @@
-package dynamicProxy;
+package refect.dynamicProxy;
 
 public class TestInvoke {
 

@@ -12,6 +12,11 @@ import java.util.List;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.*;
 
+/**
+ * javac CountUppercase.java
+ * java -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler
+ * -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler
+ */
 public class InvokeDynamicCreator {
 
 
@@ -21,8 +26,6 @@ public class InvokeDynamicCreator {
                      = new FileOutputStream(new File("D:\\Sc\\mygithub\\Sc\\target\\classes\\" + outputClassName + ".class"))) {
             fos.write(dump(outputClassName, "bootstrap", "()V"));
         }
-
-        bootstrap();
 
     }
 

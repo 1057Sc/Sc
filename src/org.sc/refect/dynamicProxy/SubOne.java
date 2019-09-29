@@ -1,4 +1,4 @@
-package dynamicProxy;
+package refect.dynamicProxy;
 
 public class SubOne extends Father {
 
@@ -8,5 +8,9 @@ public class SubOne extends Father {
     @Override
     public Father getObj() {
         return subOne;
+    }
+
+    public Father getObj(String name){
+        return new Father();
     }
 }
