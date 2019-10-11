@@ -1,6 +1,4 @@
-package methodinvoke;
-
-import trycatch.Demo1;
+package refect.methodinvoke;
 
 /**
  * Created by Sc on 6/26/2019.
