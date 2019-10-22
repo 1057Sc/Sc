@@ -13,4 +13,5 @@ public class SubOne extends Father {
     public Father getObj(String name){
         return new Father();
     }
+
 }
