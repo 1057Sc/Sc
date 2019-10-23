@@ -24,4 +24,16 @@ public class TreeMapDo {
         hashmap.put(1, "HashMap");
 
     }
+
+    @Test
+    public void demo2(){
+        Map<String, String> treeMap = new TreeMap<>();
+        treeMap.put("Format", "XML");
+        treeMap.put("Action", "BindAxb");
+        treeMap.put("Version", "2017-05-25");
+        treeMap.put("RegionId", "cn-hangzhou");
+        treeMap.put("PoolKey", "FC123456");
+
+        System.out.println(111);
+    }
 }

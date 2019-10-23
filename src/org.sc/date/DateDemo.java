@@ -2,11 +2,15 @@ package date;
 
 
 import org.apache.commons.lang.time.DateUtils;
+import org.apache.http.util.TextUtils;
 import org.joda.time.DateTime;
+import org.junit.Test;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * Created by Sc on 6/7/2019.
@@ -48,5 +52,21 @@ public class DateDemo {
         System.out.println(end);
         System.out.println(startTime);
 
+    }
+
+    @Test
+    public void demo1(){
+        // 获取当天到0点的时间
+        String timeZone = "GMT+8";
+        String tz = TextUtils.isEmpty(timeZone) ? "GMT+8" : timeZone;
+        TimeZone curTimeZone = TimeZone.getTimeZone(tz);
+        Calendar calendar = Calendar.getInstance(curTimeZone);
+        calendar.setTimeInMillis(new Date().getTime());
+        calendar.set(Calendar.HOUR_OF_DAY, 24);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+
+        System.out.println(new Timestamp(calendar.getTime().getTime()));
     }
 }
