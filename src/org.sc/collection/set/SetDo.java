@@ -128,13 +128,14 @@ public class SetDo {
         Set<Integer> source = new HashSet<>();
         source.add(1);
         source.add(2);
+        source.add(3);
 
         Set<Integer> target = new HashSet<>();
-        target.add(1);
-        target.add(2);
         target.add(3);
+        target.add(4);
 
 
-
+        boolean b = source.retainAll(target);
+        System.out.println(b);
     }
 }
