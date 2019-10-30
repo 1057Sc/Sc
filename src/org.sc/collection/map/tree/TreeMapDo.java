@@ -1,4 +1,4 @@
-package map.tree;
+package collection.map.tree;
 
 import org.junit.Test;
 
