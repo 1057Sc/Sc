@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.Base64;
 
 /**
  * Created by Sc on 9/10/2019.
@@ -23,5 +24,13 @@ public class ByteCodes {
 
         byte[] bytes = s.getBytes(StandardCharsets.UTF_8);
         System.out.println(new String(bytes, StandardCharsets.UTF_8));
+    }
+
+    @Test
+    public void demo2(){
+        String s = "汪汪汪";
+        byte[] encode = Base64.getEncoder().encode(s.getBytes(StandardCharsets.UTF_8));
+        byte[] decode = Base64.getDecoder().decode(encode);
+        System.out.println(new String(decode));
     }
 }
