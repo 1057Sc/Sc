@@ -1,4 +1,4 @@
-package genericity;
+package genericity.demo;
 
 public abstract class TypeExtendImpl<T, C extends T> implements TypeExtend<T, C >{
 

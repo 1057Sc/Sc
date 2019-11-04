@@ -1,4 +1,4 @@
-package genericity;
+package genericity.demo;
 
 import lambda.stream.TestObj;
 

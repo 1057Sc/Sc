@@ -1,4 +1,4 @@
-package Encryption;
+package encryption;
 
 import org.junit.Test;
 

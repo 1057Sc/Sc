@@ -1,9 +1,8 @@
-package Encryption;
+package encryption;
 
 import javax.crypto.Cipher;
 import java.io.InputStream;
 import java.security.*;
-import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
 
 import static java.nio.charset.StandardCharsets.UTF_8;

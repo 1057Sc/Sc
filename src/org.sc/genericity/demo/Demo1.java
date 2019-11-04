@@ -1,6 +1,4 @@
-package genericity;
-
-import java.util.Map;
+package genericity.demo;
 
 /**
  * Created by Sc on 2018/12/21.

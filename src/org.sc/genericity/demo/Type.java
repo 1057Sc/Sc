@@ -1,4 +1,4 @@
-package genericity;
+package genericity.demo;
 
 public interface Type<T, C extends T> {
 
