@@ -1,4 +1,4 @@
-package genericity.official;
+package generics.official;
 
 public class MyNode extends Node<Integer> {
     public MyNode(Integer data) { super(data); }

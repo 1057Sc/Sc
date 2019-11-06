@@ -27,6 +27,7 @@ public class SpecialCondition {
         subTestObj2.setList(new LinkedList<>());
         testObjs.add(subTestObj2);
 
+        // 如果数组对象中某个对象为null  那么收集后的对象也是null  可以用stream.filter去空
         List<List<String>> collect = testObjs.stream().map(SubTestObj::getList).collect(Collectors.toList());
         System.out.println(collect.size());
     }

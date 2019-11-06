@@ -1,4 +1,4 @@
-package genericity.demo;
+package generics.demo;
 
 /**
  * Created by Sc on 2018/12/21.

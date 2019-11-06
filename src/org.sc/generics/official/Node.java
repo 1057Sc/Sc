@@ -1,4 +1,4 @@
-package genericity.official;
+package generics.official;
 
 public class Node<T> {
 

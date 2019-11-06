@@ -1,4 +1,4 @@
-package genericity.official;
+package generics.official;
 
 import org.junit.Test;
 
