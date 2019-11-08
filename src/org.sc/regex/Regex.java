@@ -1,6 +1,7 @@
 package regex;
 
 import collection.Demo;
+import org.junit.Test;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -61,5 +62,13 @@ public class Regex {
         }
 
         System.out.println(m1);
+    }
+
+    @Test
+    public void demo3(){
+        String EXCLUDE_MSG = "([A-Z]{2}-\\d{6,})";
+        Pattern p = Pattern.compile(EXCLUDE_MSG);
+        Matcher m = p.matcher("");
+        System.out.println(m.find());
     }
 }
