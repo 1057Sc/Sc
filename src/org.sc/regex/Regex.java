@@ -1,6 +1,5 @@
 package regex;
 
-import collection.Demo;
 import org.junit.Test;
 
 import java.util.regex.Matcher;
