@@ -12,8 +12,8 @@ public class DoOptional {
 
     @Test
     public void whenIdIsNull_thenExceptionIsThrown() {
-        Optional.ofNullable(personRepository.findNameById(null));
-                // .orElseThrow(InvalidArgumentException::new));
+        Optional.ofNullable(personRepository.findNameById(null))
+                .orElseThrow(() -> new IllegalArgumentException("illegal argument , it's not null"));
     }
 
 }
