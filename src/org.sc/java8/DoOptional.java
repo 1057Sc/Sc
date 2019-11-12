@@ -1,6 +1,5 @@
 package java8;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import java8.dooptional.PersonRepository;
 import org.junit.Test;
 
@@ -12,8 +11,18 @@ public class DoOptional {
 
     @Test
     public void whenIdIsNull_thenExceptionIsThrown() {
-        Optional.ofNullable(personRepository.findNameById(null))
-                .orElseThrow(() -> new IllegalArgumentException("illegal argument , it's not null"));
+        try {
+            Optional.ofNullable(personRepository.findNameById(null))
+                    .orElseThrow(() -> new IllegalArgumentException("illegal argument , it's not null"));
+        }catch (IllegalArgumentException e){
+            System.out.println(1);
+            e.printStackTrace();
+        }
     }
 
+
+    @Test
+    public void throwException(){
+        throw new RuntimeException();
+    }
 }
