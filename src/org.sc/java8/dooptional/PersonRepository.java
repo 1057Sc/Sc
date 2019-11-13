@@ -24,11 +24,11 @@ public class PersonRepository {
     }
 
     public Optional<Developer> findNameById(String id){
-        Optional<Developer> first = developers.stream()
+     /*   Optional<Developer> first = developers.stream()
                 .filter(dev -> !StringUtils.equals(dev.getId(), id))
                 .limit(1)
-                .findFirst();
-
+                .findFirst();*/
+        Optional<Developer> first = Optional.of(new Developer());
         return first;
     }
 
