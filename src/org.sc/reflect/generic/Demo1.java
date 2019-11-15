@@ -5,6 +5,10 @@ import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @description: Generic Field Return Types
+ */
 public class Demo1 {
 
     List<String> stringList = new ArrayList<String>();
