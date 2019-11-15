@@ -1,4 +1,4 @@
-package refect.methodinvoke;
+package reflect.methodinvoke;
 
 /**
  * Created by Sc on 6/26/2019.

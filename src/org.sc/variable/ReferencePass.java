@@ -1,7 +1,7 @@
 package variable;
 
 import org.junit.Test;
-import refect.Student;
+import reflect.Student;
 
 /**
  *

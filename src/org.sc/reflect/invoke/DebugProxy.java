@@ -1,4 +1,4 @@
-package refect.invoke;
+package reflect.invoke;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

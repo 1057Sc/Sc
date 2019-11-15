@@ -1,4 +1,4 @@
-package refect;
+package reflect;
 
 import org.junit.Test;
 

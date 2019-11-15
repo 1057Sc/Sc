@@ -1,4 +1,4 @@
-package refect.invoke;
+package reflect.invoke;
 
 public class FooImpl implements Foo {
 

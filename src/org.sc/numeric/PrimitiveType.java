@@ -1,7 +1,6 @@
 package numeric;
 
 import org.junit.Test;
-import refect.Student;
 
 public class PrimitiveType {
 

@@ -1,4 +1,4 @@
-package refect.mthodhandler;
+package reflect.mthodhandler;
 
 import jdk.internal.org.objectweb.asm.ClassWriter;
 import jdk.internal.org.objectweb.asm.Handle;
@@ -8,7 +8,6 @@ import jdk.internal.org.objectweb.asm.Opcodes;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.invoke.*;
-import java.util.List;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.*;
 

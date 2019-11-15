@@ -1,6 +1,5 @@
-package refect;
+package reflect;
 
-import java.io.FileDescriptor;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -15,7 +14,7 @@ public class Refect {
 
     static {
         try {
-             clazz = Class.forName("refect.Student");
+             clazz = Class.forName("reflect.Student");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
