@@ -9,6 +9,12 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
+/**
+ * looking into the received data
+ * telnet localhost 8080
+ *
+ *
+ */
 public class DiscardServer {
     private int port;
 
