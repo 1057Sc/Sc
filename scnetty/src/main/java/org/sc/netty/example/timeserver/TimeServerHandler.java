@@ -1,4 +1,4 @@
-package org.sc.netty.example.two;
+package org.sc.netty.example.timeserver;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelFuture;

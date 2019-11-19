@@ -1,4 +1,4 @@
-package org.sc.netty.example.one;
+package org.sc.netty.example.discard;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
