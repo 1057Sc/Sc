@@ -6,7 +6,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
 public class EchoClientHandler extends ChannelInboundHandlerAdapter {
-    private final ByteBuf firstMessage;
+    private final ByteBuf firstMessage ;
 
     /**
      * Creates a client-side handler.
@@ -14,6 +14,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
     public EchoClientHandler() {
         firstMessage = Unpooled.buffer(EchoClient.SIZE);
         for (int i = 0; i < firstMessage.capacity(); i++) {
+            System.out.println(i);
             firstMessage.writeByte((byte) i);
         }
     }
