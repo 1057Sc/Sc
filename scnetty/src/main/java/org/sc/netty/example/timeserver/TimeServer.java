@@ -10,8 +10,12 @@ import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.SelfSignedCertificate;
-import org.sc.netty.example.echo.EchoServerHandler;
 
+/**
+ * unix rdate command
+ * rdate -o <port> -p <host>
+ *
+ */
 public class TimeServer {
 
     static final boolean SSL = System.getProperty("ssl") != null;
