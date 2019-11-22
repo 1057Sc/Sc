@@ -1,6 +1,7 @@
 package org.sc.netty.example.timeserver;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
@@ -21,6 +22,12 @@ public class TimeServerHandler extends ChannelInboundHandlerAdapter {
                 ctx.close();
             }
         }); // (4)
+    }
+
+    @Override
+    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        ctx.writeAndFlush(Unpooled.EMPTY_BUFFER)
+                .addListener(ChannelFutureListener.CLOSE);
     }
 
     @Override
