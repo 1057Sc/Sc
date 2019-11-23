@@ -28,10 +28,15 @@ public class EchoServer {
         serverSocket.register(selector, SelectionKey.OP_ACCEPT);
         ByteBuffer buffer = ByteBuffer.allocate(256);
 
+        // 1.2 loop
         while (true) {
             selector.select();
+
+            // 1.3 get selectedKeys
             Set<SelectionKey> selectedKeys = selector.selectedKeys();
             Iterator<SelectionKey> iter = selectedKeys.iterator();
+
+            // 1.4 judge selectionKey status
             while (iter.hasNext()) {
 
                 SelectionKey key = iter.next();
