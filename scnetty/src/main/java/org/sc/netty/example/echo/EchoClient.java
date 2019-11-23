@@ -1,11 +1,9 @@
 package org.sc.netty.example.echo;
 
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.ChannelPipeline;
-import io.netty.channel.EventLoopGroup;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -13,6 +11,17 @@ import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 
+import java.nio.charset.Charset;
+
+
+/**
+ * Netty's core components
+ * Channels
+ * CallBacks
+ * Futures
+ * Events and handlers
+ *
+ */
 public class EchoClient {
     static final boolean SSL = System.getProperty("ssl") != null;
     static final String HOST = System.getProperty("host", "127.0.0.1");
@@ -48,8 +57,23 @@ public class EchoClient {
                         }
                     });
 
+
+            // A Future provides another way to notify an application when an operation has completed
+
             // Start the client.
             ChannelFuture f = b.connect(HOST, PORT).sync();
+
+            f.addListener((ChannelFutureListener) future -> {
+                if (future.isSuccess()){
+                    ByteBuf buffer = Unpooled.copiedBuffer(
+                            "Hello", Charset.defaultCharset());
+                    ChannelFuture wf = future.channel()
+                            .writeAndFlush(buffer);
+                } else {
+                    Throwable cause = future.cause();
+                    cause.printStackTrace();
+                }
+            });
 
             // Wait until the connection is closed.
             f.channel().closeFuture().sync();

@@ -19,6 +19,11 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
         }
     }
 
+    /**
+     * {@link #channelActive(ChannelHandlerContext)} is called when a new connection is established
+     *
+     * @param ctx
+     */
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
         ctx.writeAndFlush(firstMessage);
