@@ -1,4 +1,4 @@
-package threadPool;
+package concurrent.threadPool;
 
 import java.io.*;
 import java.net.ServerSocket;

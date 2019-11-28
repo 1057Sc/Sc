@@ -1,4 +1,4 @@
-package thread.volatiletodo;
+package concurrent.thread.volatiletodo;
 
 /**
  * Created by Sc on 8/13/2019.

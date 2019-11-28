@@ -1,4 +1,4 @@
-package thread.volatiletodo;
+package concurrent.thread.volatiletodo;
 
 public class VolExample4 {
 

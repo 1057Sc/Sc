@@ -1,4 +1,4 @@
-package thread;
+package concurrent.thread;
 
 public class Volexample {
     int cc = 0;
