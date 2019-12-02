@@ -7,7 +7,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import java.util.Date;
 
 public class TimeClientHandler extends ChannelInboundHandlerAdapter {
-    @Override
+/*    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         ByteBuf m = (ByteBuf) msg; // (1)
         try {
@@ -17,6 +17,13 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
         } finally {
             m.release();
         }
+    }*/
+
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+        UnixTime m = (UnixTime) msg;
+        System.out.println(m);
+        ctx.close();
     }
 
     @Override

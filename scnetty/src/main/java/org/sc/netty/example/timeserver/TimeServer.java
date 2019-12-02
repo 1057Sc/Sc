@@ -14,7 +14,6 @@ import io.netty.handler.ssl.util.SelfSignedCertificate;
 /**
  * unix rdate command
  * rdate -o <port> -p <host>
- *
  */
 public class TimeServer {
 
@@ -49,7 +48,7 @@ public class TimeServer {
                                 p.addLast(sslCtx.newHandler(ch.alloc()));
                             }
                             //p.addLast(new LoggingHandler(LogLevel.INFO));
-                            p.addLast(serverHandler);
+                            p.addLast(new TimeEncoder(), serverHandler);
                         }
                     });
 
