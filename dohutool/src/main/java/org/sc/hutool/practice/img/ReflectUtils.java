@@ -38,4 +38,18 @@ public class ReflectUtils {
         System.out.println(s);
     }
 
+
+    public <T> void demo3(T t) throws Throwable {
+        MethodHandles.Lookup lookup = MethodHandles.lookup();
+        MethodHandle getterMethodHandle = lookup.findVirtual(t.getClass(), "getName", MethodType.methodType(String.class));
+        System.out.println(getterMethodHandle.invoke(t));
+        // todo resolve it
+        System.out.println((String)getterMethodHandle.invokeExact(t));
+    }
+
+    public static void main(String[] args) throws Throwable {
+        ReflectUtils reflectUtils = new ReflectUtils();
+        TestObj testObj = new TestObj("zqx", "99");
+        reflectUtils.demo3(testObj);
+    }
 }
