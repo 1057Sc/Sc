@@ -12,8 +12,8 @@ import java.lang.reflect.Field;
 public class ReflectUtils {
 
     @Test
-    public void demo1(){
-        TestObj testObj = new TestObj("zqx","99");
+    public void demo1() {
+        TestObj testObj = new TestObj("zqx", "99");
         Field namefield = ReflectUtil.getField(TestObj.class, "name");
         Object fieldValue = ReflectUtil.getFieldValue(testObj, namefield);
         System.out.println(fieldValue);
@@ -21,7 +21,7 @@ public class ReflectUtils {
 
     @Test
     public void demo2() throws Throwable {
-        TestObj testObj = new TestObj("zqx","99");
+        TestObj testObj = new TestObj("zqx", "99");
         MethodHandles.Lookup publicLookup = MethodHandles.publicLookup();
         MethodHandles.Lookup lookup = MethodHandles.lookup();
       /*  MethodHandle name = publicLookup.findGetter(TestObj.class, "getName", MethodType.methodType(String.class));
@@ -32,6 +32,10 @@ public class ReflectUtils {
                 "getName", MethodType.methodType(String.class));
 
         System.out.println(getterMethodHandle.invoke(testObj));
+
+        // if you use this method , you much use correct result type
+        String s = (String) getterMethodHandle.invokeExact(testObj);
+        System.out.println(s);
     }
 
 }
