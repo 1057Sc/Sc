@@ -34,6 +34,7 @@ public class ReflectUtils {
         System.out.println(getterMethodHandle.invoke(testObj));
 
         // if you use this method , you much use correct result type
+        // Method java/lang/invoke/MethodHandle.invokeExact:(Lorg/sc/hutool/practice/img/TestObj;)Ljava/lang/String;
         String s = (String) getterMethodHandle.invokeExact(testObj);
         System.out.println(s);
     }
@@ -44,7 +45,13 @@ public class ReflectUtils {
         MethodHandle getterMethodHandle = lookup.findVirtual(t.getClass(), "getName", MethodType.methodType(String.class));
         System.out.println(getterMethodHandle.invoke(t));
         // todo resolve it
-        System.out.println((String)getterMethodHandle.invokeExact(t));
+        // System.out.println((String) getterMethodHandle.invokeExact(t));
+
+        MethodHandle getterMethodHandle2 = lookup.findVirtual(TestObj.class, "getName", MethodType.methodType(String.class));
+        System.out.println("getterMethodHandle2------------------------" + getterMethodHandle2.invoke(t));
+        // Method java/lang/invoke/MethodHandle.invokeExact:(Ljava/lang/Object;)Ljava/lang/Object;
+        // todo can't user generic parameter
+        System.out.println("getterMethodHandle2" + getterMethodHandle2.invokeExact(t));
     }
 
     public static void main(String[] args) throws Throwable {
