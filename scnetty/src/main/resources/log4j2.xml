@@ -6,7 +6,8 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Root level="error">
+        <Logger name="org.sc" level="info" />
+        <Root level="info">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
