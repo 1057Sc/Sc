@@ -11,6 +11,11 @@ import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.SelfSignedCertificate;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 /**
  * unix rdate command
  * rdate -o <port> -p <host>
@@ -51,12 +56,24 @@ public class TimeServer {
                             p.addLast(new TimeEncoder(), serverHandler);
                         }
                     });
-
+/*
             // Start the server.
             ChannelFuture f = b.bind(PORT).sync();
 
             // Wait until the server socket is closed.
-            f.channel().closeFuture().sync();
+            f.channel().closeFuture().sync();*/
+
+
+            List<Integer> ports = Arrays.asList(8080, 8081);
+            Collection<Channel> channels = new ArrayList<>(ports.size());
+            for (int port : ports) {
+                Channel serverChannel = b.bind(port).sync().channel();
+                channels.add(serverChannel);
+            }
+            for (Channel ch : channels) {
+                ch.closeFuture().sync();
+            }
+
         } finally {
             // Shut down all event loops to terminate all threads.
             bossGroup.shutdownGracefully();
