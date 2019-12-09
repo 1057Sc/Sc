@@ -22,14 +22,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
+import javax.imageio.ImageIO;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertThat;
 
@@ -95,6 +103,7 @@ public class Demo1 {
             HttpResponse response = httpClient.execute(get);
             HttpEntity entity = response.getEntity();
             InputStream in = entity.getContent();
+
             String dir = imgPath;
             File file = new File(dir, name + ".jpg");
             try {
@@ -117,6 +126,19 @@ public class Demo1 {
 
 /*        final HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
         final ResponseEntity<String> response = new RestTemplate(requestFactory).exchange(urlOverHttps, HttpMethod.GET, null, String.class);*/
+
+    }
+
+    @Test
+    public void readImage() {
+        String s = "1,2,3,4,5";
+        List<Long> collect = Arrays.stream(s.split(",")).map(Long::valueOf).collect(Collectors.toList());
+
+        String s1 = "1,2,3,4,5";
+        List<Long> collect1 = Arrays.stream(s.split(",")).map(Long::valueOf).collect(Collectors.toList());
+
+        System.out.println(collect.removeAll(collect1));
+        System.out.println(collect.removeAll(collect1));
 
     }
 }
