@@ -3,7 +3,10 @@ package org.sc.hutool.practice.img;
 import org.junit.Test;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -106,14 +109,15 @@ public class ImageUtils {
 
     /**
      * 给图片添加图片水印
-     * @param pressImg 水印图片
-     * @param srcImageFile 源图像地址
+     *
+     * @param pressImg      水印图片
+     * @param srcImageFile  源图像地址
      * @param destImageFile 目标图像地址
-     * @param x 修正值。 默认在中间
-     * @param y 修正值。 默认在中间
-     * @param alpha 透明度：alpha 必须是范围 [0.0, 1.0] 之内（包含边界值）的一个浮点数字
+     * @param x             修正值。 默认在中间
+     * @param y             修正值。 默认在中间
+     * @param alpha         透明度：alpha 必须是范围 [0.0, 1.0] 之内（包含边界值）的一个浮点数字
      */
-    public final static void pressImage(String pressImg, String srcImageFile,String destImageFile,
+    public final static void pressImage(String pressImg, String srcImageFile, String destImageFile,
                                         int x, int y, float alpha) {
         try {
             File img = new File(srcImageFile);
@@ -134,11 +138,20 @@ public class ImageUtils {
                     (height - height_biao) / 2, wideth_biao, height_biao, null);
             // 水印文件结束
             g.dispose();
-            ImageIO.write((BufferedImage) image,  "JPEG", new File(destImageFile));
+            ImageIO.write((BufferedImage) image, "JPEG", new File(destImageFile));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
+    @Test
+    public void demo(){
+        Graphics2D g = (Graphics2D)Toolkit.getDefaultToolkit().
+                getImage("imgname").getGraphics();
+        Font font = new Font("楷体", Font.ITALIC | Font.BOLD, 72);
+        g.setFont(font);
+        FontRenderContext context = g.getFontRenderContext();
+        // 获取字体的像素范围对象
+        Rectangle2D stringBounds = font.getStringBounds("text", context);
+    }
 }

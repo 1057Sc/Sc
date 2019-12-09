@@ -80,9 +80,10 @@ public class Demo1 {
     public final void givenAcceptingAllCertificates_whenHttpsUrlIsConsumed_thenOk_2() throws GeneralSecurityException, IOException {
 
         String urlOverHttps = "http://img.dz8.cn/gemImg/2019-09/16/9af4a048db8628e403e490c595f557fc.origin.jpg";
-        String imgUrl = "http://img.dz8.cn/gemImg/2019-09/16/9af4a048db8628e403e490c595f557fc.origin.jpg";
+        //String imgUrl = "https://img.dz8.cn/gemImg/2019-09/16/9af4a048db8628e403e490c595f557fc.origin.jpg";
+         String imgUrl = "http://img.dz8.cn/setting/wechat/mini_program/2019-12/826bb3bd3e772a80780b3f5b05d00247.png";
         String imgPath = "C:\\Users\\duizhuang\\Pictures";
-        String name = "https";
+        String name = "https1";
 
         final TrustStrategy acceptingTrustStrategy = (cert, authType) -> true;
         final SSLContext sslContext = SSLContexts.custom().loadTrustMaterial(null, acceptingTrustStrategy).build();
