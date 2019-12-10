@@ -11,6 +11,7 @@
     <modules>
         <module>hbabse</module>
         <module>scnetty</module>
+        <module>rocket-mq-practice</module>
     </modules>
 
     <dependencies>
@@ -115,6 +116,11 @@
             <groupId>org.eclipse.paho</groupId>
             <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
             <version>1.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>4.3.0</version>
         </dependency>
     </dependencies>
 
