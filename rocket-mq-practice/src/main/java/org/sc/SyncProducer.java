@@ -12,6 +12,7 @@ public class SyncProducer {
     public static void main(String[] args) throws Exception {
         //Instantiate with a producer group name.
         DefaultMQProducer producer = new DefaultMQProducer("1057Sc");
+        // producer.setVipChannelEnabled(false);
         // Specify name server addresses.
         producer.setNamesrvAddr(host);
         //Launch the instance.
