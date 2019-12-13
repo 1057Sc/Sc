@@ -1,5 +1,8 @@
 package lambda.stream;
 
+import org.junit.Test;
+
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -99,23 +102,23 @@ public class StreamDemo1 {
                 }
         ).collect(Collectors.toList());*/
 
-       for (TestObj obj : objList){
-           System.out.println(obj.toString());
-       }
+        for (TestObj obj : objList) {
+            System.out.println(obj.toString());
+        }
 
         System.out.println("----------------------------------");
 
         List<TestObj> collect = objList.stream().sorted(
                 (o1, o2) -> {
-                    if (o1.getClassNo().equals(o2.getClassNo())){
+                    if (o1.getClassNo().equals(o2.getClassNo())) {
                         return o2.getAge() - o1.getAge();
-                    }else {
+                    } else {
                         return o2.getClassNo() - o1.getClassNo();
                     }
                 })
                 .collect(Collectors.toList());
 
-        for (TestObj testObj : collect){
+        for (TestObj testObj : collect) {
             System.out.println(testObj.toString());
         }
 
@@ -172,5 +175,26 @@ public class StreamDemo1 {
 
 
         System.out.println(sum + "::::::" + multiplication + "::::::::" + max);
+    }
+
+
+    @Test
+    public void sort1() {
+        List<Integer> collect = Stream.of(0, 1, 9, 7, 4, 2).sorted(Comparator.comparingInt(o -> o)).collect(Collectors.toList());
+        System.out.println(collect.toString());
+
+        Map<String, Integer> sortedMap = new HashMap<>();
+        sortedMap.put("str1", 1);
+        sortedMap.put("str5", 5);
+        sortedMap.put("str3", 3);
+        sortedMap.put("str4", 4);
+        sortedMap.put("str6", 6);
+        sortedMap.put("str2", 2);
+
+        List<String> strings = new ArrayList<>(sortedMap.keySet());
+
+        List<String> collect1 = strings.stream().sorted(Comparator.comparingInt(sortedMap::get)).collect(Collectors.toList());
+        System.out.println(collect1.toString());
+
     }
 }
