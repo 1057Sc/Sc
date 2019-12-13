@@ -43,6 +43,10 @@ public class TestObj {
         this.classNo = classNo;
     }
 
+
+    public TestObj() {
+    }
+
     @Override
     public String toString() {
         return "TestObj{" +
