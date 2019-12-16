@@ -18,4 +18,11 @@ public class StrUtils {
         }
         System.out.println(new String(chars));
     }
+
+    @Test
+    public void dmeo2(){
+        String s = "https:/";
+        boolean h = s.startsWith("https");
+        System.out.println(h);
+    }
 }
