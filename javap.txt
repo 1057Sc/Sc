@@ -59,5 +59,8 @@ public class collection.stream.StreamDemo {
        7: astore_0
        8: return
 
+       1111111
+       2222222
+       3333333
        
 }
