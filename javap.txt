@@ -59,5 +59,7 @@ public class collection.stream.StreamDemo {
        7: astore_0
        8: return
 
-       
+       777777
+       888888
+       999999
 }
