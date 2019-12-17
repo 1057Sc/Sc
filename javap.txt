@@ -58,4 +58,6 @@ public class collection.stream.StreamDemo {
        4: invokestatic  #14                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
        7: astore_0
        8: return
+
+       
 }
