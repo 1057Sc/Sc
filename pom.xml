@@ -12,7 +12,12 @@
         <module>hbabse</module>
         <module>scnetty</module>
         <module>rocket-mq-practice</module>
+        <module>dynamic-datasource</module>
     </modules>
+
+    <properties>
+        <springboot.version>2.0.9.RELEASE</springboot.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -122,6 +127,11 @@
             <artifactId>rocketmq-client</artifactId>
             <version>4.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.48</version>
+        </dependency>
     </dependencies>
 
 
@@ -138,4 +148,16 @@
             </plugin>
         </plugins>
     </build>
+
+<!--    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>-->
 </project>
