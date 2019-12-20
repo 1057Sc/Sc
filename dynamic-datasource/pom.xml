@@ -8,7 +8,6 @@
         <groupId>org.sc</groupId>
         <artifactId>parent-spring-boot</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../parent-spring-boot</relativePath>
     </parent>
     <!--<modelVersion>4.0.0</modelVersion>-->
     <artifactId>dynamic-datasource</artifactId>
@@ -17,12 +16,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -36,32 +29,102 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
-
-        <dependency>
+   <!--     <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
+        </dependency>-->
     </dependencies>
-<!--
+
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.baeldung.webjar.WebjarsdemoApplication</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.18</version>
+                <executions>
+                    <!-- Invokes both the integration-test and the verify goals of the Failsafe
+                        Maven plugin -->
+                    <execution>
+                        <id>integration-tests</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Skips integration tests if the value of skip.integration.tests
+                                property is true -->
+                            <includes>
+                                <include>**/ExternalPropertyFileLoaderIntegrationTest.java</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
--->
+
+    <profiles>
+        <profile>
+            <id>autoconfiguration</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>integration-test</phase>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                                <configuration>
+                                    <excludes>
+                                        <exclude>**/*LiveTest.java</exclude>
+                                        <exclude>**/*IntegrationTest.java</exclude>
+                                        <exclude>**/*IntTest.java</exclude>
+                                    </excludes>
+                                    <includes>
+                                        <include>**/AutoconfigurationTest.java</include>
+                                    </includes>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <test.mime>json</test.mime>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 
     <properties>
-        <rest-assured.version>3.3.0</rest-assured.version>
-        <!-- plugins -->
-        <thin.version>1.0.22.RELEASE</thin.version>
-        <spring-boot.version>2.1.9.RELEASE</spring-boot.version>
+        <start-class>org.sc.Application</start-class>
+        <jquery.version>3.1.1</jquery.version>
+        <bootstrap.version>3.3.7-1</bootstrap.version>
+        <jpa.version>2.2</jpa.version>
+        <guava.version>18.0</guava.version>
+        <subethasmtp.version>3.1.7</subethasmtp.version>
+        <springcloud.version>2.0.2.RELEASE</springcloud.version>
+        <httpclient.version>4.5.8</httpclient.version>
     </properties>
 
 </project>
