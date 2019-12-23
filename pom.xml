@@ -16,6 +16,7 @@
         <module>parent-spring-boot</module>
         <module>elastic-search-practice</module>
         <module>spring-framework</module>
+        <module>spring-boot-myabtis</module>
     </modules>
 
     <properties>

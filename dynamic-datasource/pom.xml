@@ -29,6 +29,7 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
+
    <!--     <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -52,13 +53,13 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.18</version>
                 <executions>
-                    <!-- Invokes both the integration-test and the verify goals of the Failsafe
-                        Maven plugin -->
+                    &lt;!&ndash; Invokes both the integration-test and the verify goals of the Failsafe
+                        Maven plugin &ndash;&gt;
                     <execution>
                         <id>integration-tests</id>
                         <goals>
@@ -66,15 +67,15 @@
                             <goal>verify</goal>
                         </goals>
                         <configuration>
-                            <!-- Skips integration tests if the value of skip.integration.tests
-                                property is true -->
+                            &lt;!&ndash; Skips integration tests if the value of skip.integration.tests
+                                property is true &ndash;&gt;
                             <includes>
                                 <include>**/ExternalPropertyFileLoaderIntegrationTest.java</include>
                             </includes>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
