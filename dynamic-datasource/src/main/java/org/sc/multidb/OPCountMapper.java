@@ -2,6 +2,7 @@ package org.sc.multidb;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import static org.sc.multidb.MultiDbConstants.*;
 
 public class OPCountMapper {
     private Map<String, Integer> countMapper = new ConcurrentHashMap<>();

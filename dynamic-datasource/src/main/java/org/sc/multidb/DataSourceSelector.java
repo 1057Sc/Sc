@@ -6,6 +6,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
+import static org.sc.multidb.MultiDbConstants.*;
+
 public class DataSourceSelector {
 
     private static final Logger logger = LoggerFactory.getLogger(DataSourceSelector.class);
