@@ -17,6 +17,7 @@
         <module>elastic-search-practice</module>
         <module>spring-framework</module>
         <module>spring-boot-myabtis</module>
+        <module>practice</module>
     </modules>
 
     <properties>
