@@ -1,34 +1,31 @@
 package java8.dooptional;
 
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class PersonRepository {
 
-   static List<Developer> developers = new ArrayList<>();
+   static List<java8.dooptional.Developer> developers = new ArrayList<>();
 
     static {
-        developers.add(new Developer());
+        developers.add(new java8.dooptional.Developer());
 
         for (int i = 0; i< 5; i++){
-         Developer developer = new Developer();
+         java8.dooptional.Developer developer = new java8.dooptional.Developer();
          developer.setId(String.valueOf(i));
          developer.setName("my name is" + i);
          developers.add(developer);
         }
     }
 
-    public Optional<Developer> findNameById(String id){
+    public Optional<java8.dooptional.Developer> findNameById(String id){
      /*   Optional<Developer> first = developers.stream()
                 .filter(dev -> !StringUtils.equals(dev.getId(), id))
                 .limit(1)
                 .findFirst();*/
-        Optional<Developer> first = Optional.of(new Developer());
+        Optional<java8.dooptional.Developer> first = Optional.of(new java8.dooptional.Developer());
         return first;
     }
 

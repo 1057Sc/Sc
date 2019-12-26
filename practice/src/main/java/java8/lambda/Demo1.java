@@ -1,4 +1,4 @@
-package lambda;
+package java8.lambda;
 
 /**
  * Created by Sc on 2018/12/19.

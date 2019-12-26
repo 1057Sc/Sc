@@ -1,4 +1,4 @@
-package lambda.stream;
+package java8.lambda.stream;
 
 public class TestObj {
 

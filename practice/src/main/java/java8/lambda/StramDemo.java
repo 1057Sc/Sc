@@ -1,4 +1,4 @@
-package lambda;
+package java8.lambda;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package lambda.doublecolon;
+package java8.lambda.doublecolon;
 
-import lambda.stream.TestObj;
+import java8.lambda.stream.TestObj;
 import org.junit.Test;
 
 import java.util.Arrays;
