@@ -1,9 +1,7 @@
 package httpclient.fluent;
 
-import org.apache.commons.lang3.builder.ToStringExclude;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.fluent.Request;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
@@ -17,29 +15,16 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
 import org.apache.http.ssl.SSLContexts;
 import org.junit.Test;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
-import org.springframework.web.client.RestTemplate;
 
-import javax.imageio.ImageIO;
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSocketFactory;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
-import static org.junit.Assert.assertThat;
 
 public class Demo1 {
 

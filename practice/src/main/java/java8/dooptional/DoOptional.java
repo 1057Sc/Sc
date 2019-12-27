@@ -1,4 +1,4 @@
-package java8;
+package java8.dooptional;
 
 import java8.dooptional.PersonRepository;
 import org.junit.Test;

@@ -31,4 +31,21 @@ public class SpecialCondition {
         List<List<String>> collect = testObjs.stream().map(SubTestObj::getList).collect(Collectors.toList());
         System.out.println(collect.size());
     }
+
+    /**
+     * 如果集合为null 遇到stream会怎么 NullPointerException
+     */
+    @Test
+    public void StreamCondition(){
+        List list = null;
+        list.stream().forEach(s -> {
+            System.out.println(s);
+        });
+        for (Object o : list) {
+            System.out.println(o);
+        }
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+    }
 }

@@ -12,10 +12,12 @@ public class StreamDemo1 {
     private static List<TestObj> objList = new ArrayList<>();
 
 
+/*
     public static void main(String[] args) {
 
         sort();
     }
+*/
 
     static {
 
@@ -197,7 +199,8 @@ public class StreamDemo1 {
 
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void MapStream(String[] args) {
         Map<String, Integer> map = new HashMap<>();
         map.put("1",1);
         map.put("2",2);

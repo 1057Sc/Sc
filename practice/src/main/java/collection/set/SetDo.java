@@ -1,6 +1,5 @@
 package collection.set;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
