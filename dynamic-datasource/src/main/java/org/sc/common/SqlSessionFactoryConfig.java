@@ -8,12 +8,12 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 @Configuration
+@SuppressWarnings("SpringJavaAutowiringInspection")
 public class SqlSessionFactoryConfig {
 
 
     /**
      * https://www.programcreek.com/java-api-examples/?code=helloworldtang%2Fspringboot-multi-datasource%2Fspringboot-multi-datasource-master%2Fmybatis-aop%2Fsrc%2Fmain%2Fjava%2Fcom%2Ftangcheng%2Fdatasources%2Faop%2Fconfig%2FMyBatisConfig.java#
-     *
      *
      * @param routingDataSource
      * @return
