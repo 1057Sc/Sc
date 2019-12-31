@@ -60,5 +60,4 @@ public class collection.stream.StreamDemo {
        8: return
 
        // demo revert one
-       // demo revert two
 }
