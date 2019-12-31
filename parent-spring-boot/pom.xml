@@ -24,7 +24,7 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
-        <dependency>
+    <!--    <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
         </dependency>
@@ -32,7 +32,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
@@ -52,7 +52,7 @@
     </build>
 
     <profiles>
-        <profile>
+<!--        <profile>
             <id>thin-jar</id>
             <build>
                 <plugins>
@@ -60,7 +60,7 @@
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
                         <dependencies>
-                            <!-- The following enables the "thin jar" deployment option. -->
+                            &lt;!&ndash; The following enables the "thin jar" deployment option. &ndash;&gt;
                             <dependency>
                                 <groupId>org.springframework.boot.experimental</groupId>
                                 <artifactId>spring-boot-thin-layout</artifactId>
@@ -70,7 +70,7 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
+        </profile>-->
     </profiles>
 
     <properties>

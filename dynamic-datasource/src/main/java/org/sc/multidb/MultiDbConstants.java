@@ -1,5 +1,11 @@
 package org.sc.multidb;
 
-public enum  MultiDbConstants {
+public class MultiDbConstants {
+
+    public static final String RO = "RO";
+
+    public static final String RW = "RW";
+
+    public static final String WO = "WO";
 
 }

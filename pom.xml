@@ -17,6 +17,7 @@
         <module>elastic-search-practice</module>
         <module>spring-framework</module>
         <module>spring-boot-myabtis</module>
+        <module>practice</module>
     </modules>
 
     <properties>
@@ -100,6 +101,12 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>fluent-hc</artifactId>
             <version>4.5.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
