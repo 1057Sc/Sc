@@ -59,12 +59,5 @@ public class collection.stream.StreamDemo {
        7: astore_0
        8: return
 
-       master
-        master
-         master
-          master
-           master
-            master
-             master
-	      master             
+       // demo revert one
 }
