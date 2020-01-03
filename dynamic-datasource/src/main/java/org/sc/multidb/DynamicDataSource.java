@@ -27,5 +27,4 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
         this.setTargetDataSources(dsMap);
     }
 
-
 }
