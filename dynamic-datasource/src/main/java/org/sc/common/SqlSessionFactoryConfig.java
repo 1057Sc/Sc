@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
-@Configuration
 @SuppressWarnings("SpringJavaAutowiringInspection")
 public class SqlSessionFactoryConfig {
 
