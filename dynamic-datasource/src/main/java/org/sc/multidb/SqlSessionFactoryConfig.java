@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.transaction.managed.ManagedTransactionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.sc.common.DbConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
+@MapperScan("org.sc.mapper")
 public class SqlSessionFactoryConfig {
 
     @Bean
@@ -40,7 +42,6 @@ public class SqlSessionFactoryConfig {
         factoryBean.setTransactionFactory(new ManagedTransactionFactory());
         return factoryBean.getObject();
     }
-
 
     @Bean
     public DataSource dataSource1(){

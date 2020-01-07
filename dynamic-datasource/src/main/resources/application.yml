@@ -4,7 +4,7 @@ server:
     context-path: /
 
 
-spring:
-  autoconfigure:
-    exclude:
-      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+#spring:
+#  autoconfigure:
+#    exclude:
+#      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration

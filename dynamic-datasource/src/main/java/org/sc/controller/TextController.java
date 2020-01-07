@@ -1,4 +1,4 @@
-package org.sc.service;
+package org.sc.controller;
 
 import org.sc.mapper.TextDao;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +15,11 @@ public class TextController {
     @RequestMapping("test")
     public String demo1() {
         return String.valueOf(textDao.test1());
+    }
+
+    @RequestMapping("insert")
+    public int demo2(){
+        return textDao.insertTest1();
     }
 
 }

@@ -13,7 +13,7 @@ public class DbConfig {
     /**
      * url.
      */
-    private String url = "url: jdbc:mysql://10.0.100.235:3306/test1?Unicode=true&characterEncoding=UTF-8";
+    private String url = "jdbc:mysql://10.0.100.235:3306/test1?Unicode=true&characterEncoding=UTF-8";
 
     /**
      * 用户名.
