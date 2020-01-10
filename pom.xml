@@ -18,6 +18,7 @@
         <module>spring-framework</module>
         <module>spring-boot-myabtis</module>
         <module>practice</module>
+        <module>redis</module>
     </modules>
 
     <properties>
