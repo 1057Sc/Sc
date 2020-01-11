@@ -3,10 +3,7 @@ package java8.lambda.stream;
 import cn.hutool.crypto.SecureUtil;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -28,7 +25,7 @@ public class StreamDemo2 {
 
         // sorted.forEach(System.out::println);
 
-       //  String s = SecureUtil.md5(sorted.toString());
+        //  String s = SecureUtil.md5(sorted.toString());
 
         // System.out.println(s);
 
@@ -47,7 +44,7 @@ public class StreamDemo2 {
      * getting a uniqueness value form a collection
      */
     @Test
-    public void unique(){
+    public void unique() {
         List<Long> longs = Arrays.asList(12312312L, 12321321L, 1111000L, 2233L, 123214L);
         HashSet<Long> longs1 = new HashSet<>(longs);
         String s = longs1.toString();
@@ -56,4 +53,28 @@ public class StreamDemo2 {
         HashSet<Long> longs2 = new HashSet<>(longs1);
         System.out.println(SecureUtil.md5(longs2.toString()));
     }
+
+    @Test
+    public void demo1() {
+        List<TestObj> objList = new ArrayList<>();
+/*        for (int i = 0; i < 6; i++) {
+            TestObj testObj = new TestObj();
+            testObj.setAge(i);
+            if (i < 2) {
+                testObj.setName("小猪");
+                testObj.setClassNo(5);
+            } else if (2 < i && i < 5) {
+                testObj.setName("小狗狗");
+                testObj.setClassNo(15);
+            } else {
+                testObj.setName("小可爱");
+                testObj.setClassNo(3);
+            }
+            objList.add(testObj);
+        }*/
+
+        System.out.println(objList.get(0).getAge());
+
+    }
+
 }
