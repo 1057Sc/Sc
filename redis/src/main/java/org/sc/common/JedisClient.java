@@ -38,7 +38,7 @@ public class JedisClient {
         System.out.println("jedis client init ");
     }
 
-    private Jedis getJedis() throws RuntimeException {
+    public Jedis getJedis() throws RuntimeException {
         Jedis jedis = null;
 
         if (pool != null) {
@@ -57,8 +57,9 @@ public class JedisClient {
             try {
                 jedis = this.getJedis();
                 SetParams setParams = new SetParams();
+                // set the key if it does not already exist
                 setParams.nx();
-                expire = expire == 0L ? 5000L : expire;
+                expire = expire == 0L ? 1000L : expire;
                 setParams.px(expire);
                 String result = jedis.set(key, value, setParams);
                 boolean var8 = "OK".equals(result);
