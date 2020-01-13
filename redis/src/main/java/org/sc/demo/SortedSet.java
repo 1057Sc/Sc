@@ -1,12 +1,12 @@
 package org.sc.demo;
 
 import org.junit.Test;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
+import org.sc.common.JedisClient;
+import redis.clients.jedis.*;
+
+import java.util.List;
 
 /**
- *
  * https://www.tutorialspoint.com/redis/redis_sorted_sets.htm
  */
 public class SortedSet {
@@ -19,5 +19,16 @@ public class SortedSet {
         jedis.zadd("sc", 100, "Java");
         jedis.zcount(key, 0, 3);
         jedis.zrange(key, 0, -2);
+    }
+
+    @Test
+    public void demo2() {
+        Jedis jedis = JedisClient.getInstance().getJedis();
+        for (int i = 0; i < 5; i++) {
+            jedis.zadd("foo" + i, i, "bar" + i);
+        }
+        ScanResult<Tuple> foo1 = jedis.zscan("foo1", "10");
+        List<Tuple> result = foo1.getResult();
+        result.forEach(System.out::println);
     }
 }
