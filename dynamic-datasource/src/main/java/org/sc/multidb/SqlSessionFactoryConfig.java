@@ -6,10 +6,18 @@ import org.apache.ibatis.transaction.managed.ManagedTransactionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.sc.common.DbConfig;
+import org.springframework.aop.aspectj.AspectJExpressionPointcut;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.interceptor.*;
 
 import javax.sql.DataSource;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,8 +51,33 @@ public class SqlSessionFactoryConfig {
         return factoryBean.getObject();
     }
 
+/*
+    @Bean(name = "txManager")
+    public DataSourceTransactionManager transactionManager() {
+        return new DataSourceTransactionManager(dataSource());
+    }
+
+    @Bean("txAdvice")
+    public TransactionInterceptor txAdvice(@Qualifier("txManager") DataSourceTransactionManager txManager) {
+        // https://www.programcreek.com/java-api-examples/index.php?api=org.springframework.transaction.interceptor.TransactionInterceptor
+        return new TransactionInterceptor(txManager, source);
+    }
+
     @Bean
-    public DataSource dataSource1(){
+    public DefaultPointcutAdvisor defaultPointcutAdvisor(@Qualifier("txAdvice") TransactionInterceptor txAdvice) {
+        DefaultPointcutAdvisor pointcutAdvisor = new DefaultPointcutAdvisor();
+        pointcutAdvisor.setAdvice(txAdvice);
+        AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
+        pointcut.setExpression("execution(* org.sc.*.service.*.*(..))");
+        pointcutAdvisor.setPointcut(pointcut);
+        return pointcutAdvisor;
+    }
+*/
+
+
+
+    @Bean
+    public DataSource dataSource1() {
         DruidDataSource dataSource = new DruidDataSource();
         final DbConfig dbConfig = new DbConfig();
         dataSource.setUrl(dbConfig.getUrl());
@@ -65,7 +98,7 @@ public class SqlSessionFactoryConfig {
 
 
     @Bean
-    public DataSource dataSource2(){
+    public DataSource dataSource2() {
         DruidDataSource dataSource = new DruidDataSource();
         final DbConfig dbConfig = new DbConfig();
         dataSource.setUrl(dbConfig.getUrl());
@@ -83,4 +116,6 @@ public class SqlSessionFactoryConfig {
         dataSource.setPoolPreparedStatements(dbConfig.getPoolPreparedStatements());
         return dataSource;
     }
+
+
 }
