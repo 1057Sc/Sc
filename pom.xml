@@ -20,6 +20,7 @@
         <module>practice</module>
         <module>redis</module>
         <module>nacos</module>
+        <module>cas</module>
     </modules>
 
     <properties>
