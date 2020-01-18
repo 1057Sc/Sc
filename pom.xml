@@ -21,6 +21,7 @@
         <module>redis</module>
         <module>nacos</module>
         <module>cas</module>
+        <module>spring-boot-practice</module>
     </modules>
 
     <properties>
