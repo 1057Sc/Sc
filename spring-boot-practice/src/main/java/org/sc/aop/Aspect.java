@@ -1,5 +1,6 @@
 package org.sc.aop;
 
+import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -54,6 +55,19 @@ public class Aspect {
     // 后置最终通知,final增强，不管是抛出异常或者正常退出都会执行
     @After("webLog()")
     public void after(JoinPoint jp){
+
+        Object[] args = jp.getArgs();
+        for (Object arg : args) {
+            System.out.println(arg.getClass());
+            if (arg instanceof Integer){
+                System.out.println((Integer)arg);
+            }
+        }
+
+
+
+        String s = JSONUtil.toJsonStr(jp);
+        System.out.println(s);
         System.out.println("方法最后执行.....");
     }
 

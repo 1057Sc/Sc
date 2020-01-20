@@ -19,20 +19,18 @@ public class JDKDynamicProxy implements InvocationHandler {
     }
 
     /**
-     *
      * @param <T>
      * @return Proxy.newProxyInstance为了创建一个新的代理对象
-     *
      */
-    public <T> T getProxy(){
+    public <T> T getProxy() {
 
-        return (T) Proxy.newProxyInstance(target.getClass().getClassLoader(),target.getClass().getInterfaces(),this);
+        return (T) Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("I am invoke before");
-        Object result = method.invoke(target,args);
+        Object result = method.invoke(target, args);
         System.out.println("I am invoke after");
         return result;
     }

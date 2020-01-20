@@ -15,4 +15,10 @@ public class AopDemo1 {
         System.out.println(a + b);
         return a + b;
     }
+
+    @GetMapping(value = "/aop/add/param")
+    public int add(Integer a , Integer b) {
+        System.out.println(a + b);
+        return a + b;
+    }
 }
