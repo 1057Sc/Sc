@@ -71,7 +71,7 @@ public class Aspect {
         System.out.println("方法最后执行.....");
     }
 
-    // 环绕通知,环绕增强，相当于MethodInterceptor
+    // 环绕通知,环绕增强，相当于MethodInterceptor 这个方法可以拿到方法的返回值
     @Around("webLog()")
     public Object arround(ProceedingJoinPoint pjp) {
         System.out.println("方法环绕start.....");
