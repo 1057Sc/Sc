@@ -9,6 +9,7 @@ public class BusinessCode {
     @RequestMapping(value = "/bus/name")
     public String getName(){
         System.out.println("businessCode : getName");
+        System.out.println("I hope everything is ok!");
         return "name";
     }
 
@@ -16,7 +17,6 @@ public class BusinessCode {
     public int reNumber(){
         return 7777;
     }
-
 
 
 }
