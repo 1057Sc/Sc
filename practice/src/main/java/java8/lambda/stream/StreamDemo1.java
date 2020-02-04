@@ -12,12 +12,10 @@ public class StreamDemo1 {
     private static List<TestObj> objList = new ArrayList<>();
 
 
-/*
     public static void main(String[] args) {
 
-        sort();
+        distinct();
     }
-*/
 
     static {
 
@@ -46,7 +44,7 @@ public class StreamDemo1 {
 
         Set<Integer> collect1 = objList.stream().map(TestObj::getAge).collect(Collectors.toSet());
 
-        Map<String, Integer> collect2 = objList.stream().collect(Collectors.toMap(TestObj::getName, TestObj::getAge));
+        Map<String, Integer> collect2 = objList.stream().collect(Collectors.toMap(TestObj::getName, TestObj::getAge, (o1,o2) -> o1));
 
         // 聚合操作
         Long collect3 = objList.stream().collect(Collectors.counting());
@@ -66,6 +64,13 @@ public class StreamDemo1 {
 
         System.out.println(1);
 
+    }
+
+    public static void distinct(){
+        // array of list  , distinct
+        ArrayList<TestObj> collect4 = objList.stream().
+                collect(Collectors.collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(TestObj::getClassNo))), ArrayList::new));
+        collect4.forEach(System.out::println);
     }
 
     public static void sort() {
