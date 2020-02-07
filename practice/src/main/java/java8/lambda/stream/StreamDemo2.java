@@ -3,6 +3,7 @@ package java8.lambda.stream;
 import cn.hutool.crypto.SecureUtil;
 import org.junit.Test;
 
+import javax.xml.ws.RequestWrapper;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -14,6 +15,13 @@ public class StreamDemo2 {
         Stream<Integer> stream1 = Stream.of(6, 4, 6, 7, 3, 9, 8, 10, 12, 14, 14);
         Stream<Integer> integerStream = stream1.filter(s -> s > 5);
         integerStream.forEach(System.out::println);
+    }
+
+    @Test
+    public void test2() {
+        List<Integer> integers = Arrays.asList(6, 4, 6, 7, 3, 9, 8, 10, 12, 14, 14);
+        integers.stream().filter(s -> s > 5);
+        integers.forEach(System.out::println);
     }
 
 
