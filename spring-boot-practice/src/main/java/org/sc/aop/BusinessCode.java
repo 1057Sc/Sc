@@ -18,5 +18,9 @@ public class BusinessCode {
         return 7777;
     }
 
+    @RequestMapping(value = "/bus/num/22")
+    public int reNumber1(){
+        return 7777;
+    }
 
 }
