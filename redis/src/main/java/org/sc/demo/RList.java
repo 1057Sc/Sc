@@ -13,5 +13,6 @@ public class RList {
     public void demo1(){
         Jedis jedis = pool.getResource();
         jedis.lpush("sc","Java");
+        jedis.lpop("sc");
     }
 }
