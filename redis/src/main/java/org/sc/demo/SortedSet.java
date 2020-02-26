@@ -1,10 +1,8 @@
 package org.sc.demo;
 
 import org.junit.Test;
-import org.sc.common.JedisClient;
 import redis.clients.jedis.*;
 
-import java.util.List;
 
 /**
  * https://www.tutorialspoint.com/redis/redis_sorted_sets.htm
@@ -21,7 +19,7 @@ public class SortedSet {
         jedis.zrange(key, 0, -2);
     }
 
-    @Test
+ /*   @Test
     public void demo2() {
         Jedis jedis = JedisClient.getInstance().getJedis();
         for (int i = 0; i < 5; i++) {
@@ -30,5 +28,5 @@ public class SortedSet {
         ScanResult<Tuple> foo1 = jedis.zscan("foo1", "10");
         List<Tuple> result = foo1.getResult();
         result.forEach(System.out::println);
-    }
+    }*/
 }
