@@ -17,6 +17,8 @@ public class SortedSet {
         jedis.zadd("sc", 100, "Java");
         jedis.zcount(key, 0, 3);
         jedis.zrange(key, 0, -2);
+
+        jedis.zadd("sc", 1000, "Java");
     }
 
  /*   @Test
