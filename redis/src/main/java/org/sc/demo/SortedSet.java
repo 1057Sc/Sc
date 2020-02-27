@@ -19,6 +19,9 @@ public class SortedSet {
         jedis.zrange(key, 0, -2);
 
         jedis.zadd("sc", 1000, "Java");
+
+        Long sc = jedis.zcard("sc");
+
     }
 
  /*   @Test
