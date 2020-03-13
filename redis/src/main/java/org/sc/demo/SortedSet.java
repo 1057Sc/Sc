@@ -2,13 +2,17 @@ package org.sc.demo;
 
 import org.junit.Test;
 import redis.clients.jedis.*;
+import redis.clients.jedis.params.ZAddParams;
+
+import java.util.Date;
+import java.util.Set;
 
 
 /**
  * https://www.tutorialspoint.com/redis/redis_sorted_sets.htm
  */
 public class SortedSet {
-    private static final JedisPool pool = new JedisPool(new JedisPoolConfig(), "localhost");
+    private static final JedisPool pool = new JedisPool(new JedisPoolConfig(), "10.0.100.9");
 
     @Test
     public void demo1() {
@@ -34,4 +38,23 @@ public class SortedSet {
         List<Tuple> result = foo1.getResult();
         result.forEach(System.out::println);
     }*/
+
+    @Test
+    public void demo2() {
+        Jedis jedis = pool.getResource();
+        String key = "scscsc";
+        ZAddParams zAddParams = new ZAddParams();
+        zAddParams.nx();
+        jedis.zadd(key, new Date().getTime(), "faker", zAddParams);
+        jedis.zadd(key, 1, "faker", zAddParams);
+        jedis.zadd(key, 2, "faker1", zAddParams);
+        jedis.zadd(key, 3, "faker2", zAddParams);
+        jedis.zadd(key, 4, "faker3", zAddParams);
+        jedis.zadd(key, 5, "faker4", zAddParams);
+
+        Long zcard = jedis.zcard(key);
+        Set<String> zrevrange = jedis.zrevrange(key, zcard - 1, zcard);
+        zrevrange.stream().forEach(System.out::println);
+        jedis.close();
+    }
 }

@@ -15,4 +15,9 @@ public class RList {
         jedis.lpush("sc","Java");
         jedis.lpop("sc");
     }
+
+    @Test
+    public void demo2(){
+        Jedis jedis = pool.getResource();
+    }
 }

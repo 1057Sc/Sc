@@ -1,7 +1,7 @@
 package org.sc.lock;
 
 import cn.hutool.json.JSONUtil;
-import org.sc.common.JedisClient;
+// import org.sc.common.JedisClient;
 import redis.clients.jedis.Jedis;
 
 import java.util.concurrent.ExecutorService;
@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 
 public class RedisLock {
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         RedisLock redisLock = new RedisLock();
         // redisLock.multiThread();
         redisLock.multiThread2();
@@ -48,6 +48,6 @@ public class RedisLock {
             System.out.println(jedis.set("bar", "foo"));
         }
         jedis.close();
-    }
+    }*/
 }
 
