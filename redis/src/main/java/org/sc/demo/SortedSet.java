@@ -53,8 +53,16 @@ public class SortedSet {
         jedis.zadd(key, 5, "faker4", zAddParams);
 
         Long zcard = jedis.zcard(key);
-        Set<String> zrevrange = jedis.zrevrange(key, zcard - 1, zcard);
+        Set<String> zrevrange = jedis.zrevrange(key, zcard - 20, zcard);
         zrevrange.stream().forEach(System.out::println);
         jedis.close();
+
+        Set<String> zrange = jedis.zrange(key, -10, -1);
+        System.out.println(zrange.toString());
+
+        Set<String> zrevrange1 = jedis.zrevrange(key, -10, -1);
+        System.out.println(zrevrange1.toString());
+
+        //jedis.zrem(key, zrevrange.toArray(new String[zrevrange.size()]));
     }
 }
