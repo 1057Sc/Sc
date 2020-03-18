@@ -57,7 +57,7 @@ public class SortedSet {
         zrevrange.stream().forEach(System.out::println);
         jedis.close();
 
-        Set<String> zrange = jedis.zrange(key, -10, -1);
+        Set<String> zrange = jedis.zrange(key, -10, -9);
         System.out.println(zrange.toString());
 
         Set<String> zrevrange1 = jedis.zrevrange(key, -10, -1);
