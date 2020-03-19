@@ -43,6 +43,11 @@ public class SortedSet {
     public void demo2() {
         Jedis jedis = pool.getResource();
         String key = "scscsc";
+
+        jedis.del(key);
+
+        Set<String> zrange1 = jedis.zrange(key, -10, -1);
+
         ZAddParams zAddParams = new ZAddParams();
         zAddParams.nx();
         jedis.zadd(key, new Date().getTime(), "faker", zAddParams);
