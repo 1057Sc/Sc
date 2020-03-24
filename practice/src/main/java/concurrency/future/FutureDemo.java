@@ -1,4 +1,4 @@
-package concurrent.future;
+package concurrency.future;
 
 
 import java.util.concurrent.*;

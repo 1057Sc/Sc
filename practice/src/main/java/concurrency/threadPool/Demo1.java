@@ -1,8 +1,7 @@
-package concurrent.threadPool;
+package concurrency.threadPool;
 
 import org.junit.Test;
 
-import java.beans.Transient;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

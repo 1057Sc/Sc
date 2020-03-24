@@ -1,4 +1,4 @@
-package concurrent.callable;
+package concurrency.callable;
 
 import java.util.concurrent.Callable;
 

@@ -1,4 +1,4 @@
-package concurrent.thread.volatiletodo;
+package concurrency.thread.volatiletodo;
 
 class VolatileExample {
     int x = 0;

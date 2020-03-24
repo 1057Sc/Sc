@@ -1,6 +1,4 @@
-package concurrent.future;
-
-import org.junit.Test;
+package concurrency.future;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;

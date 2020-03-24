@@ -1,6 +1,4 @@
-package concurrent.thread.ThreadDemo;
-
-import java.util.concurrent.locks.Lock;
+package concurrency.thread.ThreadDemo;
 
 public class Demo1 {
 

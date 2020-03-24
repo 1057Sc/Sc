@@ -1,4 +1,4 @@
-package concurrent.thread;
+package concurrency.thread;
 
 /**
  * Created by Sc on 2018/7/19.

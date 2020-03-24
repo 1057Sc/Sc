@@ -1,4 +1,4 @@
-package concurrent.thread;
+package concurrency.thread;
 
 public class VolExample3 {
 
