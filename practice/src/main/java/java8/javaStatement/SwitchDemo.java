@@ -1,4 +1,4 @@
-package javaStatement;
+package java8.javaStatement;
 
 /**
  * Created by Sc on 2019/3/13.

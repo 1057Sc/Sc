@@ -11,7 +11,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
  * looking into the received data
- * telnet localhost 8080
+ * bash : telnet localhost 8080
  *
  *
  */

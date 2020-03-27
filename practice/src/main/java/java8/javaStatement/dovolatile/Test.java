@@ -1,4 +1,4 @@
-package javaStatement.dovolatile;
+package java8.javaStatement.dovolatile;
 
 /**
  * Created by Sc on 8/13/2019.
