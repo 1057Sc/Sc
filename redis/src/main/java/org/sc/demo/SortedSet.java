@@ -45,6 +45,7 @@ public class SortedSet {
         String key = "scscsc";
 
         jedis.del(key);
+        jedis.unlink(key);
 
         Set<String> zrange1 = jedis.zrange(key, -10, -1);
 
@@ -67,6 +68,8 @@ public class SortedSet {
 
         Set<String> zrevrange1 = jedis.zrevrange(key, -10, -1);
         System.out.println(zrevrange1.toString());
+
+
 
         //jedis.zrem(key, zrevrange.toArray(new String[zrevrange.size()]));
     }
