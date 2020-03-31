@@ -71,6 +71,6 @@ public class SortedSet {
 
 
 
-        //jedis.zrem(key, zrevrange.toArray(new String[zrevrange.size()]));
+        jedis.zrem(key, zrevrange.toArray(new String[zrevrange.size()]));
     }
 }
