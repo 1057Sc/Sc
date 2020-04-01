@@ -12,7 +12,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
  * looking into the received data
  * bash : telnet localhost 8080
- *
+ * need to annotation
  *
  */
 public class DiscardServer {
