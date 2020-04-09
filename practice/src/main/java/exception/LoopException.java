@@ -2,6 +2,8 @@ package exception;
 
 import org.junit.Test;
 
+import java.io.FileNotFoundException;
+
 /**
  * 异常后运行终止
  *
@@ -13,6 +15,7 @@ public class LoopException {
         try {
             loop1();
         } catch (Exception e) {
+            System.out.println("sadasdsa"+ e.getMessage());
             e.printStackTrace();
         } finally {
             System.out.println("final :::::::::::::::::");
@@ -23,7 +26,8 @@ public class LoopException {
         for (int i = 0; i < 10; i++) {
             System.out.println("before exception" + i);
             if (i > 5) {
-                throw new Exception();
+                // throw new Exception();
+                throw new FileNotFoundException("dsad");
             }
             System.out.println("after exception" + i);
         }
