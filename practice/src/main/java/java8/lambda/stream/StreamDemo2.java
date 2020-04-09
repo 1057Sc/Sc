@@ -85,4 +85,20 @@ public class StreamDemo2 {
 
     }
 
+    /**
+     * java.lang.UnsupportedOperationException
+     * 	at java.util.AbstractList.remove(AbstractList.java:161)
+     * 	at java.util.AbstractList$Itr.remove(AbstractList.java:374)
+     * 	at java.util.Collection.removeIf(Collection.java:415)
+     * 	at java8.lambda.stream.StreamDemo2.remove(StreamDemo2.java:93)
+     */
+    @Test
+    public void remove(){
+        //
+        List<Long> lons = Arrays.asList(12312312L, 12321321L, 1111000L, 2233L, 123214L);
+        List<Long> longs = new ArrayList<>(lons);
+        longs.removeIf(s -> Objects.equals(s,12312312L));
+        System.out.println(longs);
+    }
+
 }

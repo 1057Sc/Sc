@@ -1,5 +1,6 @@
 package string;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 public class StrUtils {
@@ -25,4 +26,21 @@ public class StrUtils {
         boolean h = s.startsWith("https");
         System.out.println(h);
     }
+
+
+    @Test
+    public void demo3(){
+        String s = "EMS快递";
+
+        boolean ems = StringUtils.contains(s, "EMS");
+        System.out.println(ems);
+    }
+
+
+    @Test
+    public void demo4(){
+        String replaceUrl = StringUtils.replace("https://wwww", "https", "http");
+        System.out.println(replaceUrl);
+    }
+
 }

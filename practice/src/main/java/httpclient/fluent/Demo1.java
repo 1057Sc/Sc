@@ -1,8 +1,11 @@
 package httpclient.fluent;
 
+import cn.hutool.Hutool;
+import cn.hutool.core.io.IoUtil;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
@@ -65,8 +68,9 @@ public class Demo1 {
     public final void givenAcceptingAllCertificates_whenHttpsUrlIsConsumed_thenOk_2() throws GeneralSecurityException, IOException {
 
         String urlOverHttps = "http://img.dz8.cn/gemImg/2019-09/16/9af4a048db8628e403e490c595f557fc.origin.jpg";
-        //String imgUrl = "https://img.dz8.cn/gemImg/2019-09/16/9af4a048db8628e403e490c595f557fc.origin.jpg";
-         String imgUrl = "http://img.dz8.cn/setting/wechat/mini_program/2019-12/826bb3bd3e772a80780b3f5b05d00247.png";
+        // String imgUrl = "https://img.dz8.cn/gemImg/2019-09/16/9af4a048db8628e403e490c595f557fc.origin.jpg";
+        // String imgUrl = "http://img.dz8.cn/setting/wechat/mini_program/2019-12/826bb3bd3e772a80780b3f5b05d00247.png";
+        String imgUrl = "http://img.dz8.cn/gemImg/2020-04/07/4270fd493438a624eafd8d8426edf5b0.origin.jpg";
         String imgPath = "C:\\Users\\duizhuang\\Pictures";
         String name = "https1";
 
@@ -86,6 +90,7 @@ public class Demo1 {
 
         try {
             HttpGet get = new HttpGet(imgUrl);
+            // HttpPost httpPost = new HttpPost(imgUrl);
             HttpResponse response = httpClient.execute(get);
             HttpEntity entity = response.getEntity();
             InputStream in = entity.getContent();
@@ -106,6 +111,7 @@ public class Demo1 {
                 in.close();
             }
         } catch (Exception e1) {
+            e1.printStackTrace();
             System.out.println("下载图片出错" + imgUrl);
         }
         httpClient.close();
@@ -128,7 +134,11 @@ public class Demo1 {
 
     }
 
-
+    @Test
+    public void demo4() {
+        InputStream inputStream = null;
+        byte[] bytes = IoUtil.readBytes(inputStream);
+    }
 
 
 }
