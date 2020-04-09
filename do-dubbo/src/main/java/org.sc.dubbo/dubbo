@@ -1,0 +1,8 @@
+dubbo
+DubboConfigConfigurationRegistrar 进行扫描@EnableDubboConfig注解
+public DubboBootstrap start() {
+
+
+-->ExtensionLoader
+   -->ProtocolListenerWrapper.export(arg(0))
+   	  -->DubboBootstrap. public DubboBootstrap start() 
