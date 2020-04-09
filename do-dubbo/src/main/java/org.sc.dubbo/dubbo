@@ -4,5 +4,9 @@ public DubboBootstrap start() {
 
 
 -->ExtensionLoader
-   -->ProtocolListenerWrapper.export(arg(0))
-   	  -->DubboBootstrap. public DubboBootstrap start() 
+   	-->DubboBootstrap.start()
+   	-->1.exportServices()
+   	    -->ServiceConfig
+   	-->2.exportMetadataService()
+   	-->3.registerServiceInstance();
+   		-->ProtocolListenerWrapper.export()
