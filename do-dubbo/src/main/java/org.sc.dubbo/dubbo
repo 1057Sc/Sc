@@ -6,7 +6,11 @@ public DubboBootstrap start() {
 -->ExtensionLoader
    	-->DubboBootstrap.start()
    	-->1.exportServices()
-   	    -->ServiceConfig
+   	    -->ServiceConfig.export()
+   	        -->doExportUrls()
+   	            -->doExportUrlsFor1Protocol(ProtocolConfig, List<URL>)
+                    export injvm
+                    --> export exportLocal(org.apache.dubbo.common.URL)
    	-->2.exportMetadataService()
    	-->3.registerServiceInstance();
    		-->ProtocolListenerWrapper.export()
