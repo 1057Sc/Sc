@@ -13,4 +13,8 @@ public DubboBootstrap start() {
                     --> export exportLocal(org.apache.dubbo.common.URL)
    	-->2.exportMetadataService()
    	-->3.registerServiceInstance();
-   		-->ProtocolListenerWrapper.export()
+   		-->ProtocolListenerWrapper.export(org.apache.dubbo.rpc.Invoker)
+   		    -->ProtocolFilterWrapper.export(org.apache.dubbo.rpc.Invoker)
+   		        -->RegistryService.subscribe(overrideSubscribeUrl, overrideSubscribeListener)
+   		            -->FailbackRegistry.notify(URL url, NotifyListener listener, List<URL> urls)
+   		                -->Configuratort.oConfigurators(List<URL> urls)
