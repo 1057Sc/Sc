@@ -8,7 +8,7 @@ public DubboBootstrap start() {
    	-->1.exportServices()
    	    -->ServiceConfig.export()
    	        -->doExportUrls()
-   	            -->doExportUrlsFor1Protocol(ProtocolConfig, List<URL>)
+   	            -->ServiceConfig.doExportUrlsFor1Protocol(ProtocolConfig, List<URL>) 解析配置生出Invoker等等
                     export injvm
                     --> export exportLocal(org.apache.dubbo.common.URL)
    	-->2.exportMetadataService()
