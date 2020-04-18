@@ -1,0 +1,29 @@
+DubboBootstrap.start()
+
+    DubboBootstrap.referServices();
+        -->get ReferenceConfig instance by ReferenceConfigCache property in DubboBootstrap.class
+            -->ReferenceConfig.createProxy(Map<String, String> map)
+                -->ProtocolListenerWrapper.class implement Protocol(interface).refer(Class<T> type, URL url)
+                    -->ListenerInvokerWrapper.class implement  Protocol(interface).refer(Class<T> type, URL url)
+                        --> ProtocolFilterWrapper.class implement rotocol(interface).refer(Class<T> type, URL url)
+                            -->RegistryProtocol.class implement rotocol(interface).refer(Class<T> type, URL url)
+                                -->RegistryProtocol.doRefer(Cluster cluster, Registry registry, Class<T> type, URL url) \
+                                    -->the implement of NotifyListener interface is RegistryDirectory.subscribe(URL url, NotifyListener listener)
+                                        -->the implement of Registry interface is RegistryListenerRegistryWrapper.subscribe(URL url, NotifyListener listener)
+                                            -->the implement Registry is FailbackRegistry.subscribe(URL url, NotifyListener listener)
+                                                -->ZookeeperRegistry extend FailbackRegistry ->doSubscribe(final URL url, final NotifyListener listener)
+                                                    --> FailbackRegistry.notify(URL url, NotifyListener listener, List<URL> urls)
+                                                        -->RegistryDirectory.refreshOverrideAndInvoker(List<URL> urls>
+                                                            -->class DubboProtocol extends AbstractProtocol -> protocolBindingRefer(Class<T> serviceType, URL url)
+                                                            -->DubboProtocol.getClients(URL url)
+                                                            -->DubboProtocol.buildReferenceCountExchangeClientList(URL url, int connectNum)
+                                                            -->DubboProtocol.buildReferenceCountExchangeClient(URL url)
+                                                            -->DubboProtocol.initClient(URL url)
+                                                                -->Exchangers.connect(URL url, ExchangeHandler handler)
+                                                                    -->class HeaderExchanger implements Exchanger ->connect(URL url, ExchangeHandler handler)
+                                                                        -->Transporters.connect(URL url, org.apache.dubbo.remoting.ChannelHandler... handlers)
+                                                                            -->class NettyTransporter implements Transporter -> connect(URL url, org.apache.dubbo.remoting.ChannelHandler handler)
+                                                                                --> NettyClient.NettyClient(final URL url, final ChannelHandler handler) -> AbstractClient(URL url, ChannelHandler handler)
+
+
+
