@@ -24,6 +24,11 @@ DubboBootstrap.start()
                                                                         -->Transporters.connect(URL url, org.apache.dubbo.remoting.ChannelHandler... handlers)
                                                                             -->class NettyTransporter implements Transporter -> connect(URL url, org.apache.dubbo.remoting.ChannelHandler handler)
                                                                                 --> NettyClient.NettyClient(final URL url, final ChannelHandler handler) -> AbstractClient(URL url, ChannelHandler handler)
+                                                                                    --> establish alive connect
+
+
+
+
 
 
 
