@@ -23,7 +23,7 @@ intercept:47, ClusterInterceptor (org.apache.dubbo.rpc.cluster.interceptor)
 invoke:92, AbstractCluster$InterceptorInvokerNode (org.apache.dubbo.rpc.cluster.support.wrapper)
 invoke:82, MockClusterInvoker (org.apache.dubbo.rpc.cluster.support.wrapper)
 invoke:74, InvokerInvocationHandler (org.apache.dubbo.rpc.proxy)
-sayHello:-1, proxy0 (org.apache.dubbo.common.bytecode) --> dubbo proxy
+sayHello:-1, proxy0 (org.apache.dubbo.common.bytecode) --> dubbo proxy  create proxy at consumer start time by javassit
 runWithBootstrap:54, Application (org.apache.dubbo.demo.consumer)
 main:34, Application (org.apache.dubbo.demo.consumer)
 
