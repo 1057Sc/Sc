@@ -29,3 +29,11 @@ main:34, Application (org.apache.dubbo.demo.consumer)
 
 ReferenceConfigCache.getCache().get(reference);
 
+
+String message = demoService.sayHello("dubbo");  proxy
+    -->InvokerInvocationHandler(Object proxy, Method method, Object[] args) jdk proxy
+        -->MockClusterInvoker.invoke(Invocation invocation)
+            -->
+
+
+
