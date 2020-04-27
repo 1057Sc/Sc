@@ -25,7 +25,7 @@ public class ReferencePass {
 
     @Test
     public void demo2(){
-        Student student = new Student();
+        // Student student = new Student();
     }
 
     public static Student foo(Student student){
