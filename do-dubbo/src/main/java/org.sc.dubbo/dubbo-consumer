@@ -32,4 +32,20 @@ DubboBootstrap.start()
 
 
 
+say.hello
+    ->
+invoke:45, ConsumerContextFilter (org.apache.dubbo.rpc.filter)
+invoke:81, ProtocolFilterWrapper$1 (org.apache.dubbo.rpc.protocol)
+invoke:78, ListenerInvokerWrapper (org.apache.dubbo.rpc.listener)
+invoke:56, InvokerWrapper (org.apache.dubbo.rpc.protocol)
+doInvoke:82, FailoverClusterInvoker (org.apache.dubbo.rpc.cluster.support)
+invoke:259, AbstractClusterInvoker (org.apache.dubbo.rpc.cluster.support)
+intercept:47, ClusterInterceptor (org.apache.dubbo.rpc.cluster.interceptor)
+invoke:92, AbstractCluster$InterceptorInvokerNode (org.apache.dubbo.rpc.cluster.support.wrapper)
+invoke:82, MockClusterInvoker (org.apache.dubbo.rpc.cluster.support.wrapper)
+invoke:74, InvokerInvocationHandler (org.apache.dubbo.rpc.proxy)
+sayHello:-1, proxy0 (org.apache.dubbo.common.bytecode)
+runWithBootstrap:54, Application (org.apache.dubbo.demo.consumer)
+main:34, Application (org.apache.dubbo.demo.consumer)
+
 
