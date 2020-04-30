@@ -1,0 +1,7 @@
+1. Learn threadPool sourceCode
+
+2. Learn java cas in  unsafe.java principle
+
+3. Lean AbstractQueueSynchronized
+
+4. review Jvm
