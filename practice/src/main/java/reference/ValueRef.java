@@ -5,6 +5,7 @@ import org.junit.Test;
 import javax.crypto.spec.OAEPParameterSpec;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Sc on 6/12/2019.
@@ -45,7 +46,7 @@ public class ValueRef {
 
 
     @Test
-    public void demo1(){
+    public void demo1() {
         ArrayList<String> strings = new ArrayList<>();
         strings.add("1");
         strings.add("1");
@@ -58,5 +59,33 @@ public class ValueRef {
 
         objList.getList().add("7");
         System.out.println(strings.toString());
+    }
+
+    @Test
+    public void demo2() {
+        ArrayList<String> strings = new ArrayList<>();
+
+        if (true) {
+            ArrayList<String> objects = new ArrayList<>();
+            objects.add("sad");
+            objects.add("d");
+            objects.add("szzz");
+            strings = objects;
+            System.out.println(1231321213);
+        }
+
+        System.out.println(strings);
+    }
+
+    @Test
+    public void demo3() {
+        HashMap<Long, Long> zzzz = new HashMap<>();
+        if (true) {
+            HashMap<Long, Long> objectObjectHashMap = new HashMap<>();
+            objectObjectHashMap.put(12321L, 1232131L);
+            zzzz = objectObjectHashMap;
+            System.out.println(12321321);
+        }
+        System.out.println(zzzz);
     }
 }
