@@ -11,13 +11,17 @@ public class Demo1 {
     ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     @Test
-    public void test1(){
-        executorService.execute(new Runnable() {
-            public void run() {
-                System.out.println("Asynchronous task");
-            }
-        });
+    public void test1() {
 
-        executorService.shutdown();
+        for (int i = 0; i < 5; i++) {
+
+            int l = i;
+            executorService.submit(() -> {
+                System.out.println(1213123213);
+                return l;
+            });
+        }
+
+        // executorService.shutdown();
     }
 }
