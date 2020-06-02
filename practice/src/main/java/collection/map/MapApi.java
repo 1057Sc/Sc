@@ -15,13 +15,14 @@ public class MapApi {
 
         System.out.println(i);
         HashMap map = new HashMap();
-        map.put("key","keyone");
+        map.put("key", "keyone");
 
     }
 
     @Test
-    public void hcode1(){
-        System.out.println( 1 >>> 3);
-        System.out.println( -2 << 3);
+    public void hcode1() {
+        System.out.println(1 >>> 3);
+        System.out.println(-2 << 3);
+        System.out.println(1111111111 >> 10);
     }
 }
