@@ -25,4 +25,15 @@ public class MapApi {
         System.out.println(-2 << 3);
         System.out.println(1111111111 >> 10);
     }
+
+
+    @Test
+    public void hcode2() {
+        int i = 10000000;
+        System.out.println(i >> 2);
+        System.out.println((i >> 2) & 0xff);
+
+        System.out.println(Integer.toBinaryString(512 >> 2));
+    }
+
 }

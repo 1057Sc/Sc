@@ -1,6 +1,7 @@
 package collection.ArrayListUtil;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -10,10 +11,17 @@ public class ContainDemo {
 
     public static void main(String[] args) {
 
-         String s = "3";
+    /*     String s = "3";
          List list = new ArrayList<>();
          Long l = 3L;
          list.add(s);
-        System.out.println(list.contains(l.toString()));
+        System.out.println(list.contains(l.toString()));*/
+
+        List<Integer> integers = Arrays.asList(1);
+
+        integers.add(1);
+        System.out.println(1);
     }
+
+
 }
