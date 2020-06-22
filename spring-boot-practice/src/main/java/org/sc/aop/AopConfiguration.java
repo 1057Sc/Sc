@@ -13,11 +13,11 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy*/
 public class AopConfiguration {
 
-    @Pointcut("execution(public String org.sc.aop.BusinessCode.getName(..))")
+   /* @Pointcut("execution(public String org.sc.aop.BusinessCode.getName(..))")
     public void pointCut(){}
 
     @Pointcut("execution(public int org.sc.aop.BusinessCode.reNumber(..))")
-    public void myPointCut(){}
+    public void myPointCut(){}*/
 
     @Bean
     public PerformanceMonitorInterceptor performanceMonitorInterceptor() {

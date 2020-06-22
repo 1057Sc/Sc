@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sc.aop.FooMapper">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="org.sc.aop.FooEntity" id="bassMap">
+
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+    </resultMap>
+
+
+
+    <select id="selectFoo" parameterType="INTEGER" resultMap="bassMap">
+        select * from foo_table where id = #{id}
+    </select>
+
+    <insert id="fooAdd">
+        INSERT INTO test.foo_table (name) VALUES (#{name})
+    </insert>
+
+
+</mapper>
