@@ -22,9 +22,21 @@ public class FooController {
         return fooService.addFoo(name);
     }
 
+    @RequestMapping("/add_three")
+    public boolean add_three(String name) {
+        return fooService.addFooThree(name);
+    }
+
+    // 可以回滚
     @RequestMapping("/add_one")
     public int addFoo(String name, int i) {
         fooService.addFoo(name, i);
+        return 1;
+    }
+
+    @RequestMapping("/add_one_1")
+    public int addFoo1(String name, int i) {
+        fooService.addFoo1(name, i);
         return 1;
     }
 

@@ -3,12 +3,17 @@ package org.sc.aop;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 @Service
 public class FooService {
+
+    @Autowired
+    private PlatformTransactionManager txManager;
 
     @Autowired
     private FooMapper fooMapper;
@@ -21,6 +26,7 @@ public class FooService {
         return fooMapper.selectFoo(id);
     }
 
+    @Transactional
     public boolean addFoo(String name){
         try {
             TransactionStatus transactionStatus = TransactionAspectSupport.currentTransactionStatus();
@@ -35,7 +41,23 @@ public class FooService {
     }
 
     @Transactional
+    public boolean addFooThree(String name){
+        try {
+            TransactionStatus transactionStatus = TransactionAspectSupport.currentTransactionStatus();
+            System.out.println(transactionStatus.isNewTransaction());
+            fooMapper.fooAdd(name);
+            fooMapper.fooAdd(name);
+            this.exception();
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+        }
+        return true;
+    }
+
+    @Transactional
     public boolean addFoo(String name, int i){
+        // TransactionStatus status = txManager.getTransaction(new DefaultTransactionDefinition());
         try {
             TransactionStatus transactionStatus = TransactionAspectSupport.currentTransactionStatus();
             System.out.println("dasdsadsadasdadasd"+transactionStatus.isNewTransaction());
@@ -43,9 +65,33 @@ public class FooService {
             fooService.fooAdd(name);
             fooService.fooAdd(name);
             fooService.exception();
+            // txManager.commit(status);
         }catch (RuntimeException e){
             e.printStackTrace();
             TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+        }finally {
+            // txManager.rollback(status);
+        }
+        return true;
+    }
+
+
+    @Transactional
+    public boolean addFoo1(String name, int i){
+        // TransactionStatus status = txManager.getTransaction(new DefaultTransactionDefinition());
+        try {
+            TransactionStatus transactionStatus = TransactionAspectSupport.currentTransactionStatus();
+            System.out.println("dasdsadsadasdadasd"+transactionStatus.isNewTransaction());
+            FooService fooService = applicationContextProvider.getBean(FooService.class);
+            fooService.fooAdd(name);
+            fooService.fooAdd(name);
+            // fooService.exception();
+            // txManager.commit(status);
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+        }finally {
+            // txManager.rollback(status);
         }
         return true;
     }

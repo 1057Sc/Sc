@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 @Slf4j
 @org.aspectj.lang.annotation.Aspect
-@Component
+// @Component
 public class Aspect {
 
     /**
