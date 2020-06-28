@@ -97,6 +97,30 @@ public class FooService {
     }
 
     @Transactional
+    public boolean addFoo3(String name, int i){
+        // TransactionStatus status = txManager.getTransaction(new DefaultTransactionDefinition());
+        try {
+            TransactionStatus transactionStatus = TransactionAspectSupport.currentTransactionStatus();
+            System.out.println("dasdsadsadasdadasd"+transactionStatus.isNewTransaction());
+            FooService fooService = applicationContextProvider.getBean(FooService.class);
+
+            int l = 3;
+
+            for (int i1 = 0; i1 < l; i1++) {
+                fooService.fooAdd(name);
+            }
+            // fooService.exception();
+            // txManager.commit(status);
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+        }finally {
+            // txManager.rollback(status);
+        }
+        return true;
+    }
+
+    @Transactional
     public boolean addFooTwo(String name, int i){
         try {
             this.fooAdd(name);

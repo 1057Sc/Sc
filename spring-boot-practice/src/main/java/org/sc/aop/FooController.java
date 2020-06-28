@@ -40,6 +40,12 @@ public class FooController {
         return 1;
     }
 
+    @RequestMapping("/add_one_3")
+    public int addFoo3(String name, int i) {
+        fooService.addFoo3(name, i);
+        return 1;
+    }
+
     @RequestMapping("/add_two")
     public int addFooTwo(String name, int i) {
         fooService.addFooTwo(name, i);

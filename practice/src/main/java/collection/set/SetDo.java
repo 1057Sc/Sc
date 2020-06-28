@@ -42,7 +42,6 @@ public class SetDo {
         boolean b = source.retainAll(target);
         System.out.println(b + "::::" + source.toString());
 
-
     }
 
     @Test
@@ -136,5 +135,50 @@ public class SetDo {
 
         boolean b = source.retainAll(target);
         System.out.println(b);
+    }
+
+    @Test
+    public void hashCodes(){
+
+        Set<Integer> source2 = new HashSet<>();
+        source2.add(2);
+        source2.add(3);
+        source2.add(4);
+        source2.add(5);
+        source2.add(1);
+
+        Set<Integer> source1 = new HashSet<>();
+        source1.add(2);
+        source1.add(3);
+        source1.add(5);
+        source1.add(1);
+        source1.add(4);
+
+
+        // equal
+        System.out.println(source1.hashCode());
+        System.out.println(source2.hashCode());
+    }
+
+    @Test
+    public void hashCodes1(){
+
+        List<Integer> source2 = new ArrayList<>();
+        source2.add(2);
+        source2.add(3);
+        source2.add(4);
+        source2.add(5);
+        source2.add(1);
+
+        List<Integer> source1 = new ArrayList<>();
+        source1.add(2);
+        source1.add(3);
+        source1.add(5);
+        source1.add(1);
+        source1.add(4);
+
+
+        System.out.println(source1.hashCode());
+        System.out.println(source2.hashCode());
     }
 }
