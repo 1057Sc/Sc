@@ -32,7 +32,6 @@ public class NodeSub extends Node<String> {
             ParameterizedType pt = (ParameterizedType) genericSuperclass;
             Type[] actualTypeArguments = pt.getActualTypeArguments();
             System.out.println(Arrays.toString(actualTypeArguments));
-
         }
 
         System.out.println(1);
