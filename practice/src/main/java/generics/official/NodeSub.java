@@ -7,6 +7,11 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Arrays;
 
+/**
+ *
+ *
+ *
+ */
 public class NodeSub extends Node<String> {
 
 
@@ -27,9 +32,12 @@ public class NodeSub extends Node<String> {
             ParameterizedType pt = (ParameterizedType) genericSuperclass;
             Type[] actualTypeArguments = pt.getActualTypeArguments();
             System.out.println(Arrays.toString(actualTypeArguments));
+
         }
 
         System.out.println(1);
+
+
 /*        Class realType = stringNode.getRealType();
         Annotation[] annotations = realType.getAnnotations();
         System.out.println(Arrays.toString(annotations));
