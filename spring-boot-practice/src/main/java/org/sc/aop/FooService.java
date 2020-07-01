@@ -10,6 +10,7 @@ import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 @Service
+@Transactional
 public class FooService {
 
     @Autowired
@@ -137,6 +138,14 @@ public class FooService {
         fooMapper.fooAdd(name);
         return true;
     }
+
+    public boolean barAdd(String name){
+        fooMapper.fooAdd(name);
+        exception();
+        return true;
+    }
+
+
 
     public void exception(){
         throw new NullPointerException();

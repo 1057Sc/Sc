@@ -51,4 +51,12 @@ public class FooController {
         fooService.addFooTwo(name, i);
         return 1;
     }
+
+    @RequestMapping("/bar_add")
+    public int barAdd(String name) {
+        fooService.barAdd(name);
+        return 1;
+    }
+
+
 }

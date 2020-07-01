@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
 @Slf4j
-@org.aspectj.lang.annotation.Aspect
+// @org.aspectj.lang.annotation.Aspect
 // @Component
 public class Aspect {
 
