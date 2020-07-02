@@ -40,6 +40,7 @@ public class ReflectUtils {
     }
 
 
+    // 根据methodHand调用 getter setter
     public <T> void demo3(T t) throws Throwable {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodHandle getterMethodHandle = lookup.findVirtual(t.getClass(), "getName", MethodType.methodType(String.class));
