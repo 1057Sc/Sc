@@ -2,9 +2,9 @@
 ## What is @Adaptive annotation and it's purpose?
 ### concepts:
 > this annotation Provide helpful information for {@link ExtensionLoader} to inject dependency extension instance.
-### purpose
+#### purpose
 >It's can help interface inject adapt implement
-### keyCode
+#### keyCode
 ```
 class : org.apache.dubbo.common.extension.ExtensionLoader
 
@@ -34,7 +34,7 @@ public T getAdaptiveExtension() {
 }
 
 ```
-### example in dubbo 
+#### example in dubbo 
 ```
 (1)
 in class ReferenceConfig<T>
@@ -46,5 +46,7 @@ in interface Protocol
 @Adaptive
 <T> Exporter<T> export(Invoker<T> invoker) throws RpcException;
 ```
+
+### RegistryDirectory.refreshInvoker
 
 
