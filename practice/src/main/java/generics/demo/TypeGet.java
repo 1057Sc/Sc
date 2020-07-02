@@ -63,6 +63,44 @@ public class TypeGet {
         }
     }
 
+
+/*
+    public int addList(List<BEAN> beans) {
+        AssertUtil.assertNotEmpty(beans, "参数列表不能为空！");
+        String sql = "";
+        try {
+            BEAN bean = beans.get(0);
+            Class<?> aClass = bean.getClass();
+            String simpleName = aClass.getSimpleName();
+            System.out.println(simpleName);
+            String tableName = StrUtil.toUnderlineCase(simpleName);
+            System.out.println(tableName);
+            Field[] fields = aClass.getDeclaredFields();
+            StringBuffer columnSql = new StringBuffer("insert into ").append(tableName).append(" (");
+            StringBuffer valueSql = new StringBuffer("values (");
+
+            for (int i = 0; i < fields.length; i++) {
+                Field field = fields[i];
+                String name = field.getName();
+                if (i != fields.length - 1) {
+                    columnSql.append(name).append(",");
+                    valueSql.append(":").append(name).append(",");
+                } else {
+                    columnSql.append(name).append(") ");
+                    valueSql.append(":").append(name).append(") ");
+                }
+
+            }
+            sql = columnSql.append(valueSql).toString();
+            // logSqlAndParams(sql, paramsList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        SqlParameterSource[] batch = SqlParameterSourceUtils.createBatch(beans.toArray());
+        return template.batchUpdate(sql, batch).length;
+    }*/
+
     @Test
     public void boot() {
         List<FooStudent> students = new ArrayList<>();
