@@ -23,6 +23,7 @@
         <module>cas</module>
         <module>spring-boot-practice</module>
         <module>do-dubbo</module>
+        <module>common</module>
     </modules>
 
     <properties>
