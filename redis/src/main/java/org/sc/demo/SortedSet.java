@@ -4,15 +4,18 @@ import org.junit.Test;
 import redis.clients.jedis.*;
 import redis.clients.jedis.params.ZAddParams;
 
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 /**
  * https://www.tutorialspoint.com/redis/redis_sorted_sets.htm
  */
 public class SortedSet {
-    private static final JedisPool pool = new JedisPool(new JedisPoolConfig(), "10.0.100.9");
+    private static final JedisPool pool = new JedisPool(new JedisPoolConfig(), "127.0.0.1");
 
     @Test
     public void demo1() {
@@ -69,6 +72,15 @@ public class SortedSet {
         Set<String> zrevrange1 = jedis.zrevrange(key, -10, -1);
         System.out.println(zrevrange1.toString());
 
+        Set<Tuple> tuples = jedis.zrevrangeWithScores(key, 0, zcard);
+        System.out.println("***********************");
+        tuples.forEach(tuple -> {
+            System.out.println(new String(tuple.getBinaryElement()));
+            System.out.println(tuple.getScore());
+        });
+        System.out.println("***********************");
+
+        List<String> collect = tuples.stream().map(Tuple::getElement).collect(Collectors.toList());
 
 
         jedis.zrem(key, zrevrange.toArray(new String[zrevrange.size()]));
