@@ -4,7 +4,9 @@ import org.junit.Test;
 import redis.clients.jedis.*;
 import redis.clients.jedis.params.ZAddParams;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -84,5 +86,27 @@ public class SortedSet {
 
 
         jedis.zrem(key, zrevrange.toArray(new String[zrevrange.size()]));
+    }
+
+    /**
+     * 这里测试一下 redis返回的sorted Set 转为List后是否还具有原来的顺序
+     */
+    @Test
+    public void test3() {
+
+        Jedis jedis = pool.getResource();
+        String key = "scscscsc";
+        ZAddParams zAddParams = new ZAddParams();
+        zAddParams.nx();
+        jedis.zadd(key, 1, "faker", zAddParams);
+        jedis.zadd(key, 2, "faker1", zAddParams);
+        jedis.zadd(key, 3, "faker2", zAddParams);
+        jedis.zadd(key, 4, "faker3", zAddParams);
+        jedis.zadd(key, 5, "faker4", zAddParams);
+
+        // linkedHashSet
+        Set<Tuple> tuples = jedis.zrevrangeWithScores(key, 0, 30);
+        ArrayList<Tuple> tuples1 = new ArrayList<>(tuples);
+        System.out.println(111);
     }
 }
