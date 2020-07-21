@@ -8,4 +8,6 @@ public interface FooMapper {
     FooEntity selectFoo(int id);
 
     void fooAdd(String name);
+
+    void fooUpdate();
 }

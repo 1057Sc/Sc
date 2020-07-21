@@ -147,6 +147,8 @@ public class FooService {
 
 
 
+
+
     public void exception(){
         throw new NullPointerException();
     }

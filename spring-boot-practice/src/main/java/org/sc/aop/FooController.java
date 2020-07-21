@@ -10,6 +10,8 @@ public class FooController {
 
     @Autowired
     private FooService fooService;
+    @Autowired
+    private FooMapper fooMapper;
 
     @RequestMapping("/get")
     public FooEntity getFoo(Integer id) {
@@ -55,6 +57,12 @@ public class FooController {
     @RequestMapping("/bar_add")
     public int barAdd(String name) {
         fooService.barAdd(name);
+        return 1;
+    }
+
+    @RequestMapping("/foo_update")
+    public int fooUpdate() {
+        fooMapper.fooUpdate();
         return 1;
     }
 
