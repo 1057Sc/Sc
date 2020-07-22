@@ -20,7 +20,7 @@ public class Node<T> {
 /*
     private Class<T> clazz;
 
-    // 使用反射技术得到T的真实类型
+    // 使用反射得到T的真实类型
     public Class getRealType() {
         // 获取当前new的对象的泛型的父类类型
         ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
