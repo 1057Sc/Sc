@@ -42,7 +42,7 @@ public abstract class PackageScan {
     }
 
     public static void main(String[] args) {
-        List<String> className = getClassName("generate.entity");
+        List<String> className = getClassName("generate.log");
         className.forEach(System.out::println);
     }
 }

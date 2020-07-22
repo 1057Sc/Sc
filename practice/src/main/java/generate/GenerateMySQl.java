@@ -22,6 +22,7 @@ public class GenerateMySQl {
 
     static {
         property2SqlColumnMap.put("integer", "INT");
+        property2SqlColumnMap.put("int", "INT");
         property2SqlColumnMap.put("short", "tinyint");
         property2SqlColumnMap.put("long", "bigint");
         property2SqlColumnMap.put("bigdecimal", "decimal(19,2)");
@@ -30,7 +31,7 @@ public class GenerateMySQl {
         property2SqlColumnMap.put("boolean", "bit");
         property2SqlColumnMap.put("timestamp", "datetime");
         property2SqlColumnMap.put("date", "datetime");
-        property2SqlColumnMap.put("string", "VARCHAR(30)");
+        property2SqlColumnMap.put("string", "VARCHAR(20)");
     }
 
 
@@ -49,15 +50,16 @@ public class GenerateMySQl {
                 column.append(getColumnSql(f));
             }
 
-            column = column.replace(column.length() - 1, column.length(), "");
+            // 去除多余的 逗号
+            // column = column.replace(column.length() - 1, column.length(), "");
             // String sqlPrimaryKey = StringUtils.camelToUnderline(primaryKey).toUpperCase();
             String sqlPrimaryKey = (primaryKey);
             StringBuffer sql = new StringBuffer();
             sql.append("\n DROP TABLE IF EXISTS `" + tableName + "`; ")
                     .append(" \n CREATE TABLE `" + tableName + "`  (")
-                    // .append(" \n `" + sqlPrimaryKey + "` bigint(20) NOT NULL AUTO_INCREMENT,")
+                    .append(" \n `" + sqlPrimaryKey + "` bigint(20) NOT NULL AUTO_INCREMENT,")
                     .append(" \n " + column)
-                    // .append(" \n PRIMARY KEY (`" + sqlPrimaryKey + "`)")
+                    .append(" \n PRIMARY KEY (`" + sqlPrimaryKey + "`)")
                     .append(" \n ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci;");
             String sqlText = sql.toString();
             StringToSql(sqlText, path + tableName);
@@ -72,6 +74,11 @@ public class GenerateMySQl {
         String tpl = "\n `%s` %s DEFAULT NULL,";
         String typeName = field.getType().getSimpleName().toLowerCase();
         String sqlType = property2SqlColumnMap.get(typeName);
+
+        if ("serialVersionUID".toLowerCase().equals(typeName)) {
+            return null;
+        }
+
         if (sqlType == null || sqlType.isEmpty()) {
             // log.info(field.getName() + ":"+field.getType().getName()+" 需要单独创建表");
             return "";
@@ -128,7 +135,7 @@ public class GenerateMySQl {
     }
 
     public static void main(String[] args) {
-        List<String> classNames = PackageScan.getClassName("generate.entity");
+        List<String> classNames = PackageScan.getClassName("generate.log");
         for (String clazzName : classNames) {
             generateSql(clazzName, "id");
         }
