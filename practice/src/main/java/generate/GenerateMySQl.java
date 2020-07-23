@@ -60,7 +60,8 @@ public class GenerateMySQl {
                     .append(" \n `" + sqlPrimaryKey + "` bigint(20) NOT NULL AUTO_INCREMENT,")
                     .append(" \n " + column)
                     .append(" \n PRIMARY KEY (`" + sqlPrimaryKey + "`)")
-                    .append(" \n ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci;");
+                    .append(" \n ) ENGINE = InnoDB AUTO_INCREMENT = 1;");
+            // CHARACTER SET = utf8 COLLATE = utf8_general_ci
             String sqlText = sql.toString();
             StringToSql(sqlText, path + tableName);
             return sqlText;
@@ -135,7 +136,7 @@ public class GenerateMySQl {
     }
 
     public static void main(String[] args) {
-        List<String> classNames = PackageScan.getClassName("generate.log");
+        List<String> classNames = PackageScan.getClassName("generate.entity");
         for (String clazzName : classNames) {
             generateSql(clazzName, "id");
         }
