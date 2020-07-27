@@ -6,6 +6,7 @@ import reflect.invoke.FooImpl;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.Arrays;
 
 public class FooScImpl implements FooSc<Student> {
 
@@ -22,6 +23,7 @@ public class FooScImpl implements FooSc<Student> {
         }
         System.out.println(1);*/
        demo2();
+        foo1(new FooScImpl());
     }
 
 
@@ -63,4 +65,11 @@ public class FooScImpl implements FooSc<Student> {
 
         //通过实际参数类型获取实际参数类型的实例
     }
+
+
+    public static void foo1(FooSc fooSc){
+        Class<? extends FooSc> aClass = fooSc.getClass();
+        System.out.println(Arrays.toString(aClass.getClasses()));
+    }
+
 }
