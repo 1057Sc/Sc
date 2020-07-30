@@ -1,6 +1,8 @@
 package date;
 
 
+import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateUtil;
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.http.util.TextUtils;
 import org.joda.time.DateTime;
@@ -68,5 +70,17 @@ public class DateDemo {
         calendar.set(Calendar.MILLISECOND, 0);
 
         System.out.println(new Timestamp(calendar.getTime().getTime()));
+    }
+
+    @Test
+    public void demo2(){
+        Date date = new Date();
+        cn.hutool.core.date.DateTime dateTime = DateUtil.endOfDay(date);
+        System.out.println(dateTime.getField(DateField.SECOND));
+        System.out.println(date.getTime());
+
+
+        cn.hutool.core.date.DateTime dateTime1 = DateUtil.endOfDay(new Date());
+        System.out.println(dateTime1.getTime());
     }
 }
