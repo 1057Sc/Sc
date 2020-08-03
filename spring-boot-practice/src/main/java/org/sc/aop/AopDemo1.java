@@ -1,12 +1,17 @@
 package org.sc.aop;
 
 import org.aspectj.lang.annotation.Pointcut;
+import org.sc.config.ConfigRegister;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AopDemo1 {
+
+    @Autowired
+    private ConfigRegister configRegister;
 
     @GetMapping(value = "/aop/add")
     public int add() {
@@ -20,5 +25,9 @@ public class AopDemo1 {
     public int add(Integer a , Integer b) {
         System.out.println(a + b);
         return a + b;
+    }
+
+    public int asd(){
+        return 0;
     }
 }

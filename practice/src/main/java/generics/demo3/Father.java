@@ -1,6 +1,6 @@
 package generics.demo3;
 
-public class Father {
+public abstract class Father {
 
 
     public Father(String s) {
