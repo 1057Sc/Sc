@@ -1,11 +1,13 @@
 package org.sc.demo;
 
+import cn.hutool.core.lang.UUID;
 import org.junit.Test;
 import redis.clients.jedis.*;
 import redis.clients.jedis.params.ZAddParams;
 
 import java.lang.reflect.Array;
 import java.math.BigDecimal;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -108,5 +110,19 @@ public class SortedSet {
         Set<Tuple> tuples = jedis.zrevrangeWithScores(key, 0, 30);
         ArrayList<Tuple> tuples1 = new ArrayList<>(tuples);
         System.out.println(111);
+    }
+
+    @Test
+    public void test4(){
+        // 根据分数移除元素
+        UUID uuid = UUID.fastUUID();
+
+        System.out.println(uuid);
+        System.out.println(UUID.fastUUID().toString().length());
+        System.out.println(UUID.randomUUID());
+
+
+        int second = LocalTime.now().getSecond();
+        System.out.println(second);
     }
 }
