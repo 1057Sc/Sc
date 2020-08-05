@@ -10,4 +10,9 @@ public class StrSubString {
         String s = "sss" + UUID.fastUUID().toString();
         System.out.println(s.substring(0, s.length() - 36));
     }
+
+    @Test
+    public void demo2() {
+        System.out.println((null + "") == null);
+    }
 }
