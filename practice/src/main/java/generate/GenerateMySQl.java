@@ -57,11 +57,11 @@ public class GenerateMySQl {
             StringBuffer sql = new StringBuffer();
             sql.append("\n DROP TABLE IF EXISTS `" + tableName + "`; ")
                     .append(" \n CREATE TABLE `" + tableName + "`  (")
-                    // .append(" \n `" + sqlPrimaryKey + "` bigint(20) NOT NULL AUTO_INCREMENT,")
-                    .append(" \n `" + sqlPrimaryKey + "` varchar(20) NOT NULL AUTO_INCREMENT,")
+                    .append(" \n `" + sqlPrimaryKey + "` bigint(20) NOT NULL AUTO_INCREMENT,")
+                    // .append(" \n `" + sqlPrimaryKey + "` varchar(20) NOT NULL AUTO_INCREMENT,")
                     .append(" \n " + column)
                     .append(" \n PRIMARY KEY (`" + sqlPrimaryKey + "`)")
-                    .append(" \n ) ENGINE = InnoDB ;");
+                    .append(" \n ) ENGINE = InnoDB AUTO_INCREMENT = 1;");
             // AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci
             String sqlText = sql.toString();
             StringToSql(sqlText, path + tableName);

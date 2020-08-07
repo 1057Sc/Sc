@@ -19,4 +19,6 @@ public class Sets {
         Set<String> smembers = jedis.smembers(key);
         System.out.println(smembers.size());
     }
+
+
 }
