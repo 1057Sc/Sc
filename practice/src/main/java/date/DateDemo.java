@@ -83,4 +83,10 @@ public class DateDemo {
         cn.hutool.core.date.DateTime dateTime1 = DateUtil.endOfDay(new Date());
         System.out.println(dateTime1.getTime());
     }
+
+    @Test
+    public void demo3(){
+        cn.hutool.core.date.DateTime dateTime = DateUtil.endOfWeek(DateUtil.nextWeek());
+        System.out.println(dateTime.getTime());
+    }
 }
