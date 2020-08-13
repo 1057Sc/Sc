@@ -6,6 +6,7 @@ import cn.hutool.core.date.DateUtil;
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.http.util.TextUtils;
 import org.joda.time.DateTime;
+import org.junit.Rule;
 import org.junit.Test;
 
 import java.sql.Timestamp;
@@ -57,7 +58,7 @@ public class DateDemo {
     }
 
     @Test
-    public void demo1(){
+    public void demo1() {
         // 获取当天到0点的时间
         String timeZone = "GMT+8";
         String tz = TextUtils.isEmpty(timeZone) ? "GMT+8" : timeZone;
@@ -73,7 +74,7 @@ public class DateDemo {
     }
 
     @Test
-    public void demo2(){
+    public void demo2() {
         Date date = new Date();
         cn.hutool.core.date.DateTime dateTime = DateUtil.endOfDay(date);
         System.out.println(dateTime.getField(DateField.SECOND));
@@ -85,8 +86,35 @@ public class DateDemo {
     }
 
     @Test
-    public void demo3(){
+    public void demo3() {
         cn.hutool.core.date.DateTime dateTime = DateUtil.endOfWeek(DateUtil.nextWeek());
         System.out.println(dateTime.getTime());
+    }
+
+    @Test
+    public void demo4() {
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        System.out.println(c.get(Calendar.HOUR));
+        System.out.println(c.get(Calendar.MINUTE));
+        System.out.println(c.get(Calendar.MILLISECOND));
+    }
+
+    @Test
+    public void demo5() {
+        System.out.println(DateUtil.format(new Date(), "HHmmssSSS"));
+
+
+        String format = DateUtil.format(new Date(), "9HHmmssSSS");
+        System.out.println(format);
+
+        double s = Long.parseLong(format) / 1E+10d;
+        System.out.println(s);
+
+        System.out.println(1 - s);
+
+        //System.out.println((double) 1 - ((Long.parseLong(format) / 1E+10d)));
+
+        // System.out.println(hHmmssSSS / 1E+10d);
     }
 }

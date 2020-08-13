@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class BigDecimalDemo {
 
@@ -103,14 +104,41 @@ public class BigDecimalDemo {
     }
 
     @Test
-    public void demo5(){
+    public void demo5() {
         double timeSign = (1 - (System.currentTimeMillis() / 1E+13d)) / 1E+8d;
         System.out.println(1 + timeSign);
     }
 
     @Test
-    public void demo6(){
+    public void demo6() {
         int i = 1 % 2;
         System.out.println(i);
+    }
+
+
+    @Test
+    public void demo7() {
+        System.out.println(DateUtil.format(new Date(), "HHmmssSSS"));
+        String format = DateUtil.format(new Date(), "9HHmmssSSS");
+        System.out.println(format);
+
+        double s = Long.parseLong(format) / 1E+10d;
+        System.out.println(s);
+
+        double s1 = 1 - s;
+        System.out.println(s1);
+        System.out.println((1 - (System.currentTimeMillis() / 1E+13d)));
+
+
+        double s22 = (1 - (System.currentTimeMillis() / 1E+13d)) / 1E+10d;
+        System.out.println(s22);
+
+
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setGroupingUsed(false);
+        nf.setMaximumFractionDigits(40);
+        System.out.println(nf.format(s22));
+        double sss = 13123132432424234234.1231231231241241312432423413124234234213123324234131243242342342342342342342342423423423423423423442342342344234234234234234242424d;
+        System.out.println(sss);
     }
 }
