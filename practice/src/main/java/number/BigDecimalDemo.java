@@ -107,4 +107,10 @@ public class BigDecimalDemo {
         double timeSign = (1 - (System.currentTimeMillis() / 1E+13d)) / 1E+8d;
         System.out.println(1 + timeSign);
     }
+
+    @Test
+    public void demo6(){
+        int i = 1 % 2;
+        System.out.println(i);
+    }
 }
