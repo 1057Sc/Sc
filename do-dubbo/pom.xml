@@ -11,5 +11,16 @@
 
     <artifactId>do-dubbo</artifactId>
 
+    <properties>
+        <seata.version>1.2.0</seata.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-all</artifactId>
+            <version>${seata.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

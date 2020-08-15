@@ -1,5 +1,7 @@
 package generate;
 
+import org.junit.Test;
+
 public class FooC {
 
     private long id;
@@ -20,5 +22,11 @@ public class FooC {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+
+    @Test
+    public void demo(){
+        System.out.println("" + null);
     }
 }
