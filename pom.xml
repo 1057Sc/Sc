@@ -25,6 +25,7 @@
         <module>do-dubbo</module>
         <module>common</module>
         <module>mybatis-gen</module>
+        <module>cache</module>
     </modules>
 
     <properties>
