@@ -6,6 +6,8 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+import java.util.List;
+
 public class RList {
 
     private static final JedisPool pool = new JedisPool(new JedisPoolConfig(), "localhost");
@@ -27,5 +29,13 @@ public class RList {
         execute.doJedis(jedis);
         jedis.close();
 
+    }
+
+
+    @Test
+    public void demo3() {
+        Jedis jedis = pool.getResource();
+        List<String> dasdsa = jedis.lrange("dasdsa", 0, -1);
+        System.out.println(dasdsa);
     }
 }
