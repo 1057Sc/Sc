@@ -23,6 +23,17 @@ public class StrUtils {
     }
 
     @Test
+    public void demo2() {
+        String s = "Demo";
+        char[] chars = s.toCharArray();
+        if (chars[0] >= 'A' && chars[0] <= 'Z') {
+            chars[0] = (char) (chars[0] + 32);
+            System.out.println(chars[0]);
+        }
+        System.out.println(new String(chars));
+    }
+
+    @Test
     public void dmeo2() {
         String s = "https:/";
         boolean h = s.startsWith("https");

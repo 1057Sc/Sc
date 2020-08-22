@@ -7,6 +7,7 @@ import org.apache.commons.lang3.time.FastDateFormat;
 import org.junit.Test;
 
 import java.time.Instant;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Demo {
@@ -50,5 +51,15 @@ public class Demo {
         System.out.println(dateTime.getField(DateField.YEAR));
         DateTime dateTime1 = DateUtil.endOfWeek(new Date(1451491200000L));
         System.out.println(dateTime1.getField(DateField.YEAR));
+    }
+
+    @Test
+    public void demo() {
+        long timeInMillis = Calendar.getInstance().getTimeInMillis();
+        System.out.println(timeInMillis);
+        System.out.println(timeInMillis / 1000);
+
+        int curTime = (int) (Calendar.getInstance().getTimeInMillis() / 1000);
+        System.out.println(curTime);
     }
 }
