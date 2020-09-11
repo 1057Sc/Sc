@@ -15,8 +15,7 @@ public class BigDecimalDemo {
     @Test
     public void demo() {
         Double currentScore = 0.984028445932d;
-        Double timeSign = 1 - System.currentTimeMillis() / 100000000000000d;
-
+        Double timeSign = (1 - System.currentTimeMillis() / 100000000000000d) / 1000d;
 
         Double dif = timeSign - (currentScore - currentScore.intValue());
         System.out.println(timeSign);
