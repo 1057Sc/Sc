@@ -20,6 +20,8 @@ public class EnumDemo {
     }
     public static void main(String[] args)
     {
+
+        Sex sex = Sex.valueOf("112");
         compare(Sex.valueOf("male"));    //比较
         System.out.println();
 
