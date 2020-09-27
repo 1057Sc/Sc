@@ -2,10 +2,7 @@ package org.sc.demo;
 
 import cn.hutool.core.date.DateUtil;
 import org.junit.Test;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
-import redis.clients.jedis.Pipeline;
+import redis.clients.jedis.*;
 
 import java.util.Date;
 import java.util.Set;
@@ -174,15 +171,15 @@ public class RedisDemo {
     }
 
     @Test
-    public void demo9(){
+    public void demo9() {
         int a = 1234;
 
-        int a1 = a /10;
+        int a1 = a / 10;
         System.out.println(a1);
     }
 
     @Test
-    public void demo(){
+    public void demo() {
         double s = 2.0000000245554E7;
         double s1 = 0.24553800000000003;
 
@@ -201,6 +198,66 @@ public class RedisDemo {
         } finally {
             jedis.close();
         }
+    }
 
+
+    @Test
+    public void demo10() {
+        Jedis jedis = null;
+        try {
+            jedis = pool.getResource();
+            int i = 10000;
+            long time1 = System.currentTimeMillis();
+            for (int i1 = 0; i1 < i; i1++) {
+                jedis.zincrby("foo123", i, String.valueOf(i1));
+            }
+            long time2 = System.currentTimeMillis();
+            System.out.println(time2 - time1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            jedis.close();
+        }
+    }
+
+
+    @Test
+    public void demo11() {
+        Jedis jedis = null;
+        try {
+            jedis = pool.getResource();
+            int i = 10000;
+            long time1 = System.currentTimeMillis();
+            Set<Tuple> foo123 = jedis.zrevrangeWithScores("foo123", 0, -1);
+            System.out.println(foo123.size());
+            long time2 = System.currentTimeMillis();
+            System.out.println(time2 - time1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            jedis.close();
+        }
+    }
+
+
+    //
+    //0.123124324324
+    // 1231414324.1231244
+    //1231414324
+    @Test
+    public void demo12() {
+        Jedis jedis = null;
+        try {
+            jedis = pool.getResource();
+            int i = 10000;
+            long time1 = System.currentTimeMillis();
+            jedis.zincrby("foo123123", 1231414324, String.valueOf(1123));
+            long time2 = System.currentTimeMillis();
+            System.out.println(time2 - time1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            jedis.close();
+        }
     }
 }

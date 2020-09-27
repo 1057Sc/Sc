@@ -44,4 +44,11 @@ public class StringSplit {
         System.out.println(Arrays.toString(split));
 
     }
+
+    @Test
+    public void demo3() {
+
+        String s = "1234";
+
+    }
 }
