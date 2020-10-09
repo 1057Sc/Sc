@@ -201,6 +201,7 @@ public class RedisDemo {
     }
 
 
+    // 1234230000
     @Test
     public void demo10() {
         Jedis jedis = null;
@@ -209,7 +210,7 @@ public class RedisDemo {
             int i = 10000;
             long time1 = System.currentTimeMillis();
             for (int i1 = 0; i1 < i; i1++) {
-                jedis.zincrby("foo123", i, String.valueOf(i1));
+                jedis.zincrby("foo123", 100000000L, "123214");
             }
             long time2 = System.currentTimeMillis();
             System.out.println(time2 - time1);
@@ -260,4 +261,5 @@ public class RedisDemo {
             jedis.close();
         }
     }
+
 }
