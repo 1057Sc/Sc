@@ -17,6 +17,13 @@
             <artifactId>swagger-annotations</artifactId>
             <version>1.5.21</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>5.2.9.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
 </project>
