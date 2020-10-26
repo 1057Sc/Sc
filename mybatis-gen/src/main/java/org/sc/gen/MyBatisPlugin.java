@@ -70,7 +70,7 @@ public class MyBatisPlugin extends PluginAdapter {
         interfaze.addImportedType(new FullyQualifiedJavaType("org.apache.ibatis.annotations.Mapper"));
         //添加Mapper的注解
         interfaze.addAnnotation("@Mapper");
-        return true;
+        return false;
     }
 
     @Override
