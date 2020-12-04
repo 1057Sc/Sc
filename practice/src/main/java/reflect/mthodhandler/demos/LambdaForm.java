@@ -5,7 +5,9 @@ import java.util.function.Supplier;
 public class LambdaForm {
 
 
+
     Supplier<Integer> incrementer( int start) {
+        // 此处不能++
         return () -> start;
     }
 
