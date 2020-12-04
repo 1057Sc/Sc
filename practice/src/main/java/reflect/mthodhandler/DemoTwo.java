@@ -44,9 +44,7 @@ public class DemoTwo {
         // handle
         MethodType mt3 = MethodType.methodType(String.class, char.class, char.class);
         MethodHandle replaceMH = publicLookup.findVirtual(String.class, "replace", mt3);
-
         String output = (String) replaceMH.invoke("jovo", 'o', 'a');
-
         assertEquals("java", output);
         System.out.println(output);
     }
@@ -85,9 +83,7 @@ public class DemoTwo {
         MethodHandles.Lookup publicLookup = MethodHandles.publicLookup();
         MethodType mt = MethodType.methodType(boolean.class, Object.class);
         MethodHandle equals = publicLookup.findVirtual(String.class, "equals", mt);
-
         MethodHandle methodHandle = equals.asSpreader(Object[].class, 2);
-
         System.out.println((boolean) methodHandle.invoke(new Object[] { "java", "java" }));
     }
 

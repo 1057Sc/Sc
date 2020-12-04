@@ -39,7 +39,7 @@ public class SortedSet {
     public void demo2() {
         Jedis jedis = JedisClient.getInstance().getJedis();
         for (int i = 0; i < 5; i++) {
-            jedis.zadd("foo" + i, i, "bar" + i);
+            jedis.zadd("fooVO" + i, i, "bar" + i);
         }
         ScanResult<Tuple> foo1 = jedis.zscan("foo1", "10");
         List<Tuple> result = foo1.getResult();

@@ -2,7 +2,7 @@ package generate;
 
 import org.junit.Test;
 
-public class FooC {
+public class FooVOC {
 
     private long id;
 
