@@ -1,14 +1,22 @@
 package reflect.invokedynamic;
 
-import com.sun.tools.javac.util.List;
+import com.google.common.collect.Lists;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FooCode {
 
     public static void main(String[] args) {
-        long size = Stream.of(1, 2, 3).filter(num -> num > 1).count();
-        System.out.println(size);
+        List<Integer> collect = Stream.of(1, 2, 3).collect(Collectors.toList());
+
+        List<String> strings = Lists.newArrayList("1", "2", "345");
+        strings.stream()
+                .forEach(string -> Arrays.stream(string.split("")).forEach(System.out::println));
+
+        long lengthyColors = Lists.newArrayList("Red", "Green", "Blue").stream().filter(c -> c.length() > 3).count();
     }
 
 

@@ -1,5 +1,7 @@
 package reflect.mthodhandler.demos;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodType;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,9 +15,12 @@ public class LambdaVariables {
 
     private ExecutorService executor = Executors.newFixedThreadPool(3);
 
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         new LambdaVariables().localVariableMultithreading();
     }
+*/
+
+
 
     Supplier<Integer> incrementer(int start) {
         return () -> start; // can't modify start parameter inside the lambda
