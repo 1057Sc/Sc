@@ -27,7 +27,6 @@
         <module>mybatis-gen</module>
         <module>cache</module>
         <module>spring-cloud</module>
-        <module>spring-cloud-alibaba</module>
     </modules>
 
     <properties>
