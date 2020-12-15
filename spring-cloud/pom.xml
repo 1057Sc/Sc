@@ -20,7 +20,6 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>{project-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

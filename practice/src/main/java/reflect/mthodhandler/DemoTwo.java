@@ -44,7 +44,7 @@ public class DemoTwo {
         // handle
         MethodType mt3 = MethodType.methodType(String.class, char.class, char.class);
         MethodHandle replaceMH = publicLookup.findVirtual(String.class, "replace", mt3);
-        String output = (String) replaceMH.invoke("jovo", 'o', 'a');
+        String output = (String) replaceMH.invoke("codemao", 'o', 'a');
         assertEquals("java", output);
         System.out.println(output);
     }

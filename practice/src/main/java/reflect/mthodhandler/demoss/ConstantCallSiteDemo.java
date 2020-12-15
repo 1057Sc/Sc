@@ -1,4 +1,4 @@
-package reflect.mthodhandler.demos;
+package reflect.mthodhandler.demoss;
 
 import java.lang.invoke.*;
 
