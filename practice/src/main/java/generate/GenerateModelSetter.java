@@ -10,7 +10,7 @@ import java.util.List;
 public class GenerateModelSetter {
 
     public static void main(String[] args) {
-        List<String> classNames = PackageScan.getClassName("generate.entity");
+        List<String> classNames = PackageScan.getClassName("generate.miao");
         for (String clazzName : classNames) {
             generate(clazzName);
         }
