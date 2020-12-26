@@ -1,9 +1,11 @@
 package java8.lambda.stream;
 
+import cn.hutool.json.JSONUtil;
 import org.junit.Test;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamDemo1 {
@@ -223,5 +225,40 @@ public class StreamDemo1 {
     @Test
     public void remove(){
 
+    }
+
+
+    @Test
+    public void collect(){
+        List<Integer> collect = IntStream.range(1, 10).boxed().collect(Collectors.toList());
+        List<Integer> collect1 = IntStream.range(10, 20).boxed().collect(Collectors.toList());
+
+        List<List<Integer>> lists = new ArrayList<>();
+        lists.add(collect);
+        lists.add(collect1);
+        ArrayList<Integer> collect2 = lists.stream().collect(ArrayList::new, ArrayList::addAll, ArrayList::addAll);
+        System.out.println(JSONUtil.toJsonStr(collect2));
+
+        ArrayList<Object> collect3 = lists.stream().collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+        System.out.println(JSONUtil.toJsonStr(collect3));
+
+
+        ArrayList<Object> collect4 = lists.stream().collect(ArrayList::new, ArrayList::add, ArrayList::add);
+        System.out.println(JSONUtil.toJsonStr(collect4));
+
+
+        ArrayList<Object> collect5 = lists.stream().collect(ArrayList::new, ArrayList::addAll, ArrayList::add);
+        System.out.println(JSONUtil.toJsonStr(collect5));
+    }
+
+    @Test
+    public void collect1(){
+        Stream<String> stream = Stream.of("hello", "world", "helloworld");
+        // 使用方法引用来传递行为, 更加清晰易懂, new(新建) -> add(累加) -> addAll(合并)
+     /*   List<String> list2 = stream.collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
+        System.out.println(JSONUtil.toJsonStr(list2));*/
+
+        String concat = stream.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append).toString();
+        System.out.println(concat);
     }
 }

@@ -1,0 +1,27 @@
+Because each invokedynamic instruction links (in general) to a different call site, the constant pool cache must contain a separate entry for each invokedynamic instruction. (Other invoke instructions can share CP cache entries, if they use the same symbolic reference in the constant pool.)
+
+A CP cache entry ("CPCE"), when resolved, has one or two words of metadata and/or offset information.
+
+For invokedynamic, a resolved CPCE contains a Method* pointer to a concrete adapter method providing the exact behavior of the call. There is also a reference parameter associated with the call site called the appendix, which is stored in the resolved_references array for the CPCE.
+
+The method is called an adapter because (generally speaking) it shuffles arguments, extracts a target method handle from the call site, and invokes the method handle.
+
+The extra reference parameter is called the appendix because it is appended to the argument list when the invokedynamic instruction is executed.
+
+Typically the appendix is the CallSite reference produced by the bootstrap method, but the JVM does not care about this. As long as the adapter method in the CPCE knows what to do with the appendix stored with the CPCE, all is well.
+
+As a corner case, if the appendix value is null, it is not pushed at all, and the adapter method must not expect the extra argument. The adapter method in this case could be a permanently linked reference to a static method with a signature consistent with the invokedynamic instruction. This would in effect turn the invokedynamic into a simple invokestatic. Many other such strength reduction optimizations are possible.
+
+因为每个invokedynamic指令链接(通常)到一个不同CallSite，Constant Pool必须为每个invokedynamic指令包含一个单独的entry。(其他调用指令可以共享CP缓存条目，如果它们在常量池中使用相同的符号引用。)
+
+一个CP Cache Entry(“CPCE”)解析后，有一个或两个元数据关键词（｜ or &）偏移量信息。
+
+对于invokedynamic，一个解析的CPCE包含一个method*指针，指向一个具体的适配器方法，提供调用的确切行为。还有一个与CallSite相关联的引用参数名为appendix，该参数存储在用于CPCE的resolved_references数组中。
+
+该方法被称为适配器，因为(通常来说)它变换参数，从CallSite提取目标MethodHandle，并调用MethodHandle。
+
+额外的引用参数称为附录，因为在执行invokedynamic指令时，它被附加到参数列表中。
+
+通常，附录是引导方法生成的CallSite引用，但JVM并不关心这个。只要CPCE中的适配器方法知道如何处理存储在CPCE中的附录。
+
+作为一种极端情况，如果附录值为null，则根本不会推送它，而且适配器方法不应该期望有额外的参数。在这种情况下，适配器方法可以是一个对静态方法的永久链接引用，该静态方法的签名与invokedynamic指令一致。这实际上会把invokedynamic变成一个简单的invokestatic。许多其他这样的强度降低优化是可能的。

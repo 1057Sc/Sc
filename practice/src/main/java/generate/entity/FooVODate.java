@@ -3,7 +3,7 @@ package generate.entity;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 
-public class FooDate {
+public class FooVODate {
 
     private long date;
 
@@ -19,7 +19,7 @@ public class FooDate {
     @Test
     public void demos() {
         FooLong fooLong = new FooLong();
-        FooDate fooDate = new FooDate();
+        FooVODate fooDate = new FooVODate();
         BeanUtils.copyProperties(fooLong, fooDate);
         System.out.println(123);
     }

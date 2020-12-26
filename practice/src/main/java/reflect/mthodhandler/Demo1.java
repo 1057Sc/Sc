@@ -24,13 +24,12 @@ public class Demo1 {
 
         // Method Handle for Constructors
         MethodType mt2 = MethodType.methodType(void.class, String.class);
-
         MethodHandle newIntegerMH = publicLookup.findConstructor(Integer.class, mt2);
 
         // Invoking a Method Handle
         MethodType mt3 = MethodType.methodType(String.class, char.class, char.class);
         MethodHandle replaceMH = publicLookup.findVirtual(String.class, "replace", mt);
-        String output = (String) replaceMH.invoke("jovo", Character.valueOf('o'), 'a');
-        assertEquals("java", output);
+        String output = (String) replaceMH.invoke("codemao", Character.valueOf('o'), 'a');
+        assertEquals("codemao", output);
     }
 }
