@@ -36,4 +36,11 @@ public class TreeMapDo {
 
         System.out.println(111);
     }
+
+
+    @Test
+    public void demo3(){
+        int min = Math.min(200, Math.max(0, 10));
+        System.out.println(min);
+    }
 }
