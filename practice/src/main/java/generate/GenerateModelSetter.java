@@ -7,12 +7,17 @@ import org.apache.commons.lang3.StringUtils;
 import java.lang.reflect.Field;
 import java.util.List;
 
+/**
+ * 生成model的 set 和 get
+ *
+ */
 public class GenerateModelSetter {
 
     public static void main(String[] args) {
         List<String> classNames = PackageScan.getClassName("generate.miao");
         for (String clazzName : classNames) {
             generate(clazzName);
+            System.out.println("----------------------------");
         }
     }
 
