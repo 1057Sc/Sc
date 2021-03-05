@@ -8,6 +8,8 @@ import redis.clients.jedis.Jedis;
  */
 public class RedisCommandExtension extends Jedis {
 
+
+
     boolean lock(RedisKeyEnum key, String value) {
         // todo 锁实现
         return true;

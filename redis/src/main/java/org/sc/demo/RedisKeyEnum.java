@@ -3,6 +3,8 @@ package org.sc.demo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * 统一Redis key定义
  *
@@ -18,6 +20,7 @@ public enum RedisKeyEnum implements CacheKey {
     LIST_DEMO("list_demo", 1000L, "redis使用案例", KeyType.LIST),
     ;
 
+
     private String key;
 
     private Long expire;
@@ -25,6 +28,15 @@ public enum RedisKeyEnum implements CacheKey {
     private String desc;
 
     private KeyType type;
+
+    private TimeUnit timeUnit = TimeUnit.SECONDS;
+
+    RedisKeyEnum(String key, Long expire, String desc, KeyType type) {
+        this.key = key;
+        this.expire = expire;
+        this.desc = desc;
+        this.type = type;
+    }
 
     private enum KeyType {
         HASH,

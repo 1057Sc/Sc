@@ -40,7 +40,7 @@ public class RedisCaseDemo {
         String foo = redisTemplate.execute(jedis -> jedis.lpop(RedisKeyEnum.LIST_DEMO.buildKey("foo")));
         System.out.println(foo);
 
-        String foo = redisTemplate.execute(jedis -> jedis.lock(RedisKeyEnum.LIST_DEMO.buildKey("foo")));
+        // Boolean execute1 = redisTemplate.execute(jedis -> jedis.lock(RedisKeyEnum.LIST_DEMO, "123"));
     }
 
 

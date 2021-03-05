@@ -14,11 +14,14 @@ public class RedisTemplate {
     private static final JedisPool pool = new JedisPool(new JedisPoolConfig(), "localhost");
 
     public <T> T execute(RedisExecute<T> redisExecute) {
-        try (Jedis jedis = pool.getResource()) {
+        RedisCommandExtension redisCommandExtension = new RedisCommandExtension();
+        return redisExecute.execute(redisCommandExtension);
+      /*  try (Jedis jedis = pool.getResource()) {
+            redisExecute
             return redisExecute.execute(jedis);
         } catch (Exception e) {
             System.out.println(e);
             return null;
-        }
+        }*/
     }
 }

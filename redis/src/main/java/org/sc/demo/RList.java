@@ -22,13 +22,8 @@ public class RList {
     public void set() {
         String key = RedisKeyEnum.SET_DEMO.buildKey("foo");
         String execute1 = execute(jedis -> jedis.set(key, "bar"));
+        System.out.println(execute1);
     }
-
-    @Test
-    public void hash(){
-        String execute1 = execute(jedis -> jedis.hset("dsad", "sad"));
-    }
-
 
     @Test
     public void demo3() {
@@ -40,8 +35,6 @@ public class RList {
     private <T> T execute(RedisExecute<T> redisExecute) {
         Jedis jedis = pool.getResource();
         // jedis.select(1);
-        redisExecute.execute(jedis);
-        jedis.close();
         return redisExecute.execute(jedis);
     }
 }
