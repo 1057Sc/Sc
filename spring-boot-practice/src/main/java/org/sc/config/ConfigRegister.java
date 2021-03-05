@@ -11,7 +11,7 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProce
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+// @Configuration
 public class ConfigRegister implements BeanDefinitionRegistryPostProcessor {
 
     @Override
