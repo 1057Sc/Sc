@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  获取包下的java类名
+ * 获取包下的java类名
  */
-public abstract class PackageScan {
+public class PackageScan {
 
     public static List<String> getClassName(String packageName) {
         List<String> classNames = new ArrayList<String>();
