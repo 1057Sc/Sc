@@ -5,6 +5,7 @@ import generate.scan.PackageScan;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.List;
 
 /**
@@ -28,6 +29,10 @@ public class GenerateModelSetter {
             Class<?> clz = Class.forName(className);
             Field[] fields = clz.getDeclaredFields();
             for (Field field : fields) {
+
+                if (Modifier.isStatic(field.getModifiers()) || Modifier.isFinal(field.getModifiers())) {
+                    continue;
+                }
 
                 Class<?> type = field.getType();
                 String typeSimpleName = type.getSimpleName();
