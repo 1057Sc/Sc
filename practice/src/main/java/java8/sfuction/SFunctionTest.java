@@ -41,7 +41,8 @@ public class SFunctionTest {
         writeReplace.setAccessible(true);
         SerializedLambda serializedLambda = (SerializedLambda) writeReplace.invoke(s1);
         String getter = serializedLambda.getImplMethodName();
-
+        String implClass = serializedLambda.getImplClass();
+        // String implMethodName = serializedLambda.he();
         System.out.println(aClass);
     }
 }
