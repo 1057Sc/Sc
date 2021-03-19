@@ -20,7 +20,7 @@ public class RList {
 
     @Test
     public void set() {
-        String key = RedisKeyEnum.SET_DEMO.buildKey("foo");
+        String key = RedisKeyEnum.SET_DEMO.buildKey();
         String execute1 = execute(jedis -> jedis.set(key, "bar"));
         System.out.println(execute1);
     }
