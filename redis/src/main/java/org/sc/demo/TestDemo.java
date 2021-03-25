@@ -1,10 +1,13 @@
 package org.sc.demo;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.Date;
 
 public class TestDemo {
@@ -36,6 +39,26 @@ public class TestDemo {
         }
     }
 
+
+    @Test
+    public void demo3() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+      /*  String sex = objectMapper.writeValueAsString(new Student("12", "sex"));
+        System.out.println(sex);*/
+        objectMapper.readValue("{\"name\":\"12\",\"sex\":\"sex\"}", Student.class);
+    }
+
+
+    @Test
+    public void demo4() {
+        SubStudent subStudent = new SubStudent();
+        subStudent.setName("123213");
+        subStudent.setSex("21321");
+
+        Field[] fields = SubStudent.class.getFields();
+        Field[] declaredFields = SubStudent.class.getDeclaredFields();
+        System.out.println(1);
+    }
 
     // 1.9840268878862402
     // 1.98402688767237
