@@ -2,6 +2,8 @@ package org.sc.config;
 
 import org.sc.aop.FooEntity;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.RuntimeBeanReference;
@@ -11,6 +13,9 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProce
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 手动注入bean
+ */
 // @Configuration
 public class ConfigRegister implements BeanDefinitionRegistryPostProcessor {
 
@@ -23,9 +28,17 @@ public class ConfigRegister implements BeanDefinitionRegistryPostProcessor {
         beanDefinition.setBeanClass(fooEntity.getClass());
         beanDefinition.setLazyInit(true);
         beanDefinition.setScope(BeanDefinition.SCOPE_SINGLETON);
+        MutablePropertyValues propertyValues = new MutablePropertyValues();
+
+        propertyValues.addPropertyValue();
+        propertyValues.addPropertyValue();
+        propertyValues.addPropertyValue();
+        propertyValues.addPropertyValue();
+
+        beanDefinition.setPropertyValues(propertyValues);
+
         registry.registerBeanDefinition(fooEntity.getName(), beanDefinition);
 
-        BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition();
         // beanDefinitionBuilder.addConstructorArgValue()
     }
 

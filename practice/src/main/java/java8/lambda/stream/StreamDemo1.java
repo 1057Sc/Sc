@@ -2,6 +2,7 @@ package java8.lambda.stream;
 
 import cn.hutool.json.JSONUtil;
 import org.junit.Test;
+import reflect.Student;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -46,7 +47,7 @@ public class StreamDemo1 {
 
         Set<Integer> collect1 = objList.stream().map(TestObj::getAge).collect(Collectors.toSet());
 
-        Map<String, Integer> collect2 = objList.stream().collect(Collectors.toMap(TestObj::getName, TestObj::getAge, (o1,o2) -> o1));
+        Map<String, Integer> collect2 = objList.stream().collect(Collectors.toMap(TestObj::getName, TestObj::getAge, (o1, o2) -> o1));
 
         // 聚合操作
         Long collect3 = objList.stream().collect(Collectors.counting());
@@ -68,7 +69,7 @@ public class StreamDemo1 {
 
     }
 
-    public static void distinct(){
+    public static void distinct() {
         // array of list  , distinct
         ArrayList<TestObj> collect4 = objList.stream().
                 collect(Collectors.collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(TestObj::getClassNo))), ArrayList::new));
@@ -223,13 +224,13 @@ public class StreamDemo1 {
     }
 
     @Test
-    public void remove(){
+    public void remove() {
 
     }
 
 
     @Test
-    public void collect(){
+    public void collect() {
         List<Integer> collect = IntStream.range(1, 10).boxed().collect(Collectors.toList());
         List<Integer> collect1 = IntStream.range(10, 20).boxed().collect(Collectors.toList());
 
@@ -252,7 +253,7 @@ public class StreamDemo1 {
     }
 
     @Test
-    public void collect1(){
+    public void collect1() {
         Stream<String> stream = Stream.of("hello", "world", "helloworld");
         // 使用方法引用来传递行为, 更加清晰易懂, new(新建) -> add(累加) -> addAll(合并)
      /*   List<String> list2 = stream.collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
@@ -260,5 +261,49 @@ public class StreamDemo1 {
 
         String concat = stream.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append).toString();
         System.out.println(concat);
+    }
+
+    @Test
+    public void merge() {
+        Student student1 = new Student("sc", "man", 11, "zzzzzzzz");
+        Student student2 = new Student("sc", "man", 11, "zzzzzzzz");
+        Stream<Student> liststream = Stream.of(student1, student2);
+
+        // Map<Integer, Integer> collect1 = liststream.collect(Collectors.groupingBy(Student::getAge, Collectors.summingInt(Student::getAge)));
+
+        List<Student> collect2 = liststream
+                .collect(Collectors.groupingBy(item -> item.getSex() + item.getName()))
+                .entrySet().stream()
+                .map(e -> {
+                            Student student = e.getValue().get(0);
+                            int sum = e.getValue().stream().mapToInt(Student::getAge).sum();
+                            student.setAge(sum);
+                            e.setValue(Collections.singletonList(student));
+                            return student;
+                        }
+                ).collect(Collectors.toList());
+
+        System.out.println(collect2);
+
+/*
+        liststream
+                .collect(Collectors.groupingBy(Student::getAge, Collectors.summingInt(Student::getAge)))
+                .entrySet().stream()
+                .map(e -> e.getValue().)
+                .map(e -> new Student(e.getKey(), e.getValue()))
+                .collect(Collectors.toList());*/
+
+
+        // liststream.collect(Collectors.collectingAndThen(Collectors.toMap(Student::getAge)));
+        Map<Integer, Integer> collect = liststream.collect(Collectors.toMap(Student::getAge, Student::getAge));
+
+
+/*        stream.collect(Collectors
+                        .collectingAndThen(
+                                Collectors.toMap(ele -> ele.g(), Function.identity(), (a, b) -> {
+                                    a.setFieldB(a.getFieldB() + b.getFieldB());
+                                    return a;
+                                }), m -> new ArrayList<>(m.values())));*/
+
     }
 }
