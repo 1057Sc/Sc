@@ -29,11 +29,13 @@ public class ConfigRegister implements BeanDefinitionRegistryPostProcessor {
         beanDefinition.setLazyInit(true);
         beanDefinition.setScope(BeanDefinition.SCOPE_SINGLETON);
         MutablePropertyValues propertyValues = new MutablePropertyValues();
+/*
 
         propertyValues.addPropertyValue();
         propertyValues.addPropertyValue();
         propertyValues.addPropertyValue();
         propertyValues.addPropertyValue();
+*/
 
         beanDefinition.setPropertyValues(propertyValues);
 
