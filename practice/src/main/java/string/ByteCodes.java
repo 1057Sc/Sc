@@ -50,4 +50,22 @@ public class ByteCodes {
         }
     }
 
+    @Test
+    public void demo4() {
+        String s = "的";
+        byte[] bytes = s.getBytes();
+        for (byte aByte : bytes) {
+            System.out.println(aByte);
+        }
+
+        byte[] bytes1 = s.getBytes(StandardCharsets.UTF_8);
+        for (byte aByte : bytes1) {
+            System.out.println(aByte);
+        }
+        String s1 = new String(bytes1);
+        System.out.println(s1);
+        String s2 = new String(bytes);
+        System.out.println(s2);
+
+    }
 }
