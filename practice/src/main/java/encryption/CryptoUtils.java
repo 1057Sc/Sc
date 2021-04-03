@@ -91,4 +91,16 @@ File outpu
             throw new CryptoException("Error encrypting/decrypting file", ex);
         }
     }
+
+
+    private byte[] doCrypto(int cipherMode, String key, byte[] data) throws CryptoException {
+        try {
+            Key secretKey = new SecretKeySpec(key.getBytes(), ALGORITHM);
+            Cipher cipher = Cipher.getInstance(TRANSFORMATION);
+            cipher.init(cipherMode, secretKey);
+            return cipher.doFinal(data);
+        } catch (Exception e) {
+            throw new CryptoException("Error encrypting/decrypting file", e);
+        }
+    }
 }

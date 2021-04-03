@@ -19,4 +19,5 @@ public class DemoDAO {
         writer.write("test;");
         writer.writeLines(list, LineSeparator.MAC, true);
     }
+
 }
