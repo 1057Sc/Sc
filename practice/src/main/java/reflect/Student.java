@@ -3,7 +3,7 @@ package reflect;
 /**
  * Created by Sc on 2018/6/12.
  */
-public class Student {
+public class Student implements java.io.Serializable{
 
     private String name;
 
@@ -22,7 +22,7 @@ public class Student {
         this.sex = sex;
         this.age = age;
         this.phone = phone;
-        System.out.println("调用了有参的构造方法");
+        // todo System.out.println("调用了有参的构造方法");
     }
 
     public int method(){
