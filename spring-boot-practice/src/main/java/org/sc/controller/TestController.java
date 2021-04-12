@@ -27,5 +27,7 @@ public class TestController {
         System.out.println(lock);
         boolean unlock = redisTemplateExtension.unlock(RedisKeyEnum.SET_DEMO, "123");
         System.out.println(unlock);
+
+
     }
 }

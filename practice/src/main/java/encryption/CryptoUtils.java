@@ -93,7 +93,7 @@ File outpu
     }
 
 
-    private byte[] doCrypto(int cipherMode, String key, byte[] data) throws CryptoException {
+    public static byte[] doCrypto(int cipherMode, String key, byte[] data) throws CryptoException {
         try {
             Key secretKey = new SecretKeySpec(key.getBytes(), ALGORITHM);
             Cipher cipher = Cipher.getInstance(TRANSFORMATION);

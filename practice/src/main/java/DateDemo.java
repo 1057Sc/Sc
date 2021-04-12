@@ -43,4 +43,6 @@ public class DateDemo
         String whereSql = " start_time > TIMESTAMP '"+"2019-05-12 16:25:18"+"' ";
         System.out.println(whereSql);
     }
+
+
 }
