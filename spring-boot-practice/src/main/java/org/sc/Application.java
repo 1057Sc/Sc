@@ -2,11 +2,12 @@ package org.sc;
 
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
+import org.sc.el.ElDemos;
 import org.sc.redis.RedisTemplateExtension;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.expression.EvaluationContext;
@@ -23,14 +24,15 @@ import java.net.UnknownHostException;
 @MapperScan("org.sc")
 @EnableTransactionManagement
 public class Application {
+    @Autowired
+    private ElDemos demos;
 
     public static void main(String[] args) {
         log.info("spring boot start");
         SpringApplication.run(Application.class, args);
-        demo1();
-        demo2();
+/*        demo1();
+        demo2();*/
     }
-
 
     @Bean("redisTemplateExtension")
     @ConditionalOnMissingBean
@@ -53,4 +55,24 @@ public class Application {
         boolean result = exp.getValue(context, Boolean.class);  // evaluates to true
         System.out.println(result);
     }
+
+/*    private static void demo3(){
+        StandardBeanExpressionResolver standardBeanExpressionResolver = new StandardBeanExpressionResolver();
+        standardBeanExpressionResolver.evaluate()
+    }
+
+    private static void demo3(){
+        // can be autowired or fetched from ConfigurableApplicationContext.getBeanFactory()
+        ConfigurableBeanFactory configurableBeanFactory;
+
+        EmbeddedValueResolver embeddedValueResolver = new EmbeddedValueResolver(configurableBeanFactory);
+        System.out.println(embeddedValueResolver.resolveStringValue("${someProperty}");
+        System.out.println(embeddedValueResolver.resolveStringValue("#{@foo.calcValue(123)}");
+    }
+
+    private Object resolveExpression(String expression) {
+        String placeholdersResolved = applicationContextProvider.getApplicationContext().getBeanFactory().resolveEmbeddedValue(expression);
+        BeanExpressionResolver expressionResolver = applicationContext.getBeanFactory().getBeanExpressionResolver();
+        return expressionResolver.evaluate(placeholdersResolved, new BeanExpressionContext(applicationContext.getBeanFactory(), null));
+    }*/
 }
