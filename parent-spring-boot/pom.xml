@@ -12,6 +12,8 @@
     <artifactId>parent-spring-boot</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>spring-boot-practice</module>
+        <module>spring-boot-mybatis</module>
     </modules>
 
 
