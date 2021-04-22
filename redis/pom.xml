@@ -11,7 +11,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>redis</artifactId>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -21,7 +20,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>2.9.0</version>
@@ -32,7 +31,7 @@
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
             <version>3.12.3</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
 </project>

@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>Sc</artifactId>
+        <artifactId>parent-spring-boot</artifactId>
         <groupId>org.sc</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-myabtis</artifactId>
+    <artifactId>spring-boot-mybatis</artifactId>
 
     <properties>
         <springboot.version>2.0.9.RELEASE</springboot.version>
@@ -20,12 +20,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>${springboot.version}</version>
+            <!--<version>${springboot.version}</version>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${springboot.version}</version>
+<!--            <version>${springboot.version}</version>-->
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
