@@ -10,7 +10,7 @@ import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 @Service
-@Transactional
+// @Transactional
 public class FooService {
 
     @Autowired
@@ -56,7 +56,7 @@ public class FooService {
         return true;
     }
 
-    @Transactional
+    // @Transactional
     public boolean addFoo(String name, int i){
         // TransactionStatus status = txManager.getTransaction(new DefaultTransactionDefinition());
         try {
@@ -64,7 +64,7 @@ public class FooService {
             System.out.println("dasdsadsadasdadasd"+transactionStatus.isNewTransaction());
             FooService fooService = applicationContextProvider.getBean(FooService.class);
             fooService.fooAdd(name);
-            fooService.fooAdd(name);
+            fooService.barAdd(name);
             fooService.exception();
             // txManager.commit(status);
         }catch (RuntimeException e){
