@@ -1,12 +1,15 @@
 package encryption;
 
 import cn.hutool.crypto.CryptoException;
+import org.apache.commons.codec.binary.StringUtils;
 import org.apache.poi.util.IOUtils;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
+import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,6 +19,8 @@ import java.io.InputStream;
 import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.Security;
 
 /**
  * @author zhuqingxin
@@ -24,6 +29,7 @@ import java.security.NoSuchAlgorithmException;
 public class CryptoUtils {
     private static final String ALGORITHM = "AES";
     private static final String TRANSFORMATION = "AES";
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     public static void main(String[] args) {
         String key = "Mary has one cat1";
@@ -37,6 +43,14 @@ public class CryptoUtils {
         } catch (CryptoException ex) {
             System.out.println(ex.getMessage());
             ex.printStackTrace();
+        }
+    }
+
+
+    static {
+        RANDOM.setSeed(1L);
+        if (Security.getProvider("BC") == null) {
+            Security.addProvider(new BouncyCastleProvider());
         }
     }
 
@@ -103,4 +117,16 @@ File outpu
             throw new CryptoException("Error encrypting/decrypting file", e);
         }
     }
+
+/*    public static byte[] doCrypto1(int cipherMode, String key, byte[] data) throws CryptoException {
+        try {
+            SecretKeySpec skeySpec = new SecretKeySpec(StringUtils.getBytesUtf8(key), "AES");
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding", "BC");
+            cipher.init(cipherMode, skeySpec, new IvParameterSpec(IV), RANDOM);
+            return cipher.doFinal(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new CryptoException("Error encrypting/decrypting file", e);
+        }
+    }*/
 }

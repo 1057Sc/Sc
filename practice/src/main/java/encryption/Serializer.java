@@ -41,6 +41,30 @@ public class Serializer {
         System.out.println(JSON.toJSONString(arrayList));
     }
 
+    @Test
+    public void demo2() {
+        byte[] demos = "213456".getBytes();
+        String key = "IpxjnyBDkvrj8HxASlgZHwbH";
+
+
+        byte[] bytes1 = CryptoUtils.doCrypto(Cipher.ENCRYPT_MODE, key, demos);
+        byte[] bytes2 = CryptoUtils.doCrypto(Cipher.DECRYPT_MODE, key, bytes1);
+
+
+
+        // 新的方式加密
+        // byte[] bytes11 = CryptoUtils.doCrypto1(Cipher.ENCRYPT_MODE, key, demos);
+        // byte[] bytes2 = CryptoUtils.doCrypto(Cipher.DECRYPT_MODE, key, bytes);
+
+        // 新的方式解密
+        // byte[] bytes11 = CryptoUtils.doCrypto1(Cipher.ENCRYPT_MODE, key, demos);
+        // byte[] bytes22 = CryptoUtils.doCrypto1(Cipher.DECRYPT_MODE, key, bytes11);
+
+        // String s = new String(bytes22);
+        // System.out.println(s);
+
+    }
+
 
     public <T> byte[] demos(List<T> list) {
         try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
