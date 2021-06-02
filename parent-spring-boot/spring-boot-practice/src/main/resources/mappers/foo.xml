@@ -3,7 +3,7 @@
 <mapper namespace="org.sc.aop.FooMapper">
 
     <!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="org.sc.aop.FooEntity" id="bassMap">
+    <resultMap type="org.sc.config.FooEntity" id="bassMap">
 
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>

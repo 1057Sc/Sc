@@ -1,10 +1,5 @@
 package org.sc.controller;
 
-import org.junit.Test;
-import org.sc.redis.RedisKeyEnum;
-import org.sc.redis.RedisTemplateExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/test")
 public class TestController {
-
+/*
     @Autowired
     private RedisTemplateExtension redisTemplateExtension;
 
@@ -28,6 +23,5 @@ public class TestController {
         boolean unlock = redisTemplateExtension.unlock(RedisKeyEnum.SET_DEMO, "123");
         System.out.println(unlock);
 
-
-    }
+    }*/
 }

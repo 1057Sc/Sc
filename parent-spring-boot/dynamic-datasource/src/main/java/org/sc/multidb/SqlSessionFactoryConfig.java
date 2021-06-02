@@ -37,16 +37,22 @@ public class SqlSessionFactoryConfig {
         return dynamicDataSource;
     }
 
-    @Bean
+/*    @Bean
     public DbSelectorInterceptor dbSelectorInterceptor() {
         return new DbSelectorInterceptor();
+    }*/
+
+    @Bean
+    public SqlPlugin setPlugins(){
+        return new SqlPlugin();
     }
+
 
     @Bean
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource());
-        factoryBean.setPlugins(dbSelectorInterceptor());
+        factoryBean.setPlugins(setPlugins());
         factoryBean.setTransactionFactory(new ManagedTransactionFactory());
         return factoryBean.getObject();
     }

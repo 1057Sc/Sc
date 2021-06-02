@@ -1,4 +1,4 @@
-package org.sc.aop;
+package org.sc.config;
 
 public class FooEntity {
 

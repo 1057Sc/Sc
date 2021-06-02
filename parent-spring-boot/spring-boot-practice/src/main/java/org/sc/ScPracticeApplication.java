@@ -2,14 +2,8 @@ package org.sc;
 
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
-import org.sc.el.ElDemos;
-import org.sc.redis.RedisTemplateExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
@@ -17,29 +11,27 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import java.net.UnknownHostException;
-
 @Slf4j
 @SpringBootApplication()
 @MapperScan("org.sc")
 @EnableTransactionManagement
-public class Application {
-    @Autowired
+public class ScPracticeApplication {
+ /*   @Autowired
     private ElDemos demos;
-
+*/
     public static void main(String[] args) {
         log.info("spring boot start");
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(ScPracticeApplication.class, args);
 /*        demo1();
         demo2();*/
     }
 
-    @Bean("redisTemplateExtension")
+/*    @Bean("redisTemplateExtension")
     @ConditionalOnMissingBean
     public RedisTemplateExtension stringRedisTemplate(RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
         RedisTemplateExtension template = new RedisTemplateExtension(redisConnectionFactory);
         return template;
-    }
+    }*/
 
     private static void demo1(){
         ExpressionParser parser = new SpelExpressionParser();

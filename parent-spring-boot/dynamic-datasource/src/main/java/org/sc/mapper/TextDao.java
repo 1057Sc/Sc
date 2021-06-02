@@ -12,4 +12,8 @@ public interface TextDao {
 
     @Insert("insert into test (id,name,age) values ('3','zz','777')")
     int insertTest1();
+
+    @Insert("insert into test_table (age) values ('777')")
+    int insertTest2();
+
 }

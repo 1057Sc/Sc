@@ -1,5 +1,6 @@
 package org.sc.aop;
 
+import org.sc.config.FooEntity;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

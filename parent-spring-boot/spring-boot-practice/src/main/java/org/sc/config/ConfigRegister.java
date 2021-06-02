@@ -1,6 +1,5 @@
 package org.sc.config;
 
-import org.sc.aop.FooEntity;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.PropertyValues;

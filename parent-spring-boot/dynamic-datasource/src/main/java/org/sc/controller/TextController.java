@@ -1,6 +1,8 @@
 package org.sc.controller;
 
+import org.sc.common.config.ThreadLocalMapConfig;
 import org.sc.mapper.TextDao;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,5 +31,16 @@ public class TextController {
     public int arrayP(Long[] ids){
         System.out.println(Arrays.toString(ids));
         return 1;
+    }
+
+    @GetMapping("switch")
+    public void switch123(){
+        ThreadLocalMapConfig.set();
+        textDao.insertTest2();
+    }
+
+    @GetMapping("switch_no")
+    public void switchNo(){
+        textDao.insertTest2();
     }
 }

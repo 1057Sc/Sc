@@ -13,7 +13,7 @@ public class DbConfig {
     /**
      * url.
      */
-    private String url = "jdbc:mysql://10.0.100.235:3306/test1?Unicode=true&characterEncoding=UTF-8";
+    private String url = "jdbc:mysql://localhost:3306/supply_chain?serverTimezone=Asia/Shanghai";
 
     /**
      * 用户名.
@@ -23,7 +23,7 @@ public class DbConfig {
     /**
      * 密码.
      */
-    private String password = "root";
+    private String password = "";
 
     /**
      * 初始化时建立物理连接的个数。初始化发生在显示调用init方法，或者第一次getConnection时.
