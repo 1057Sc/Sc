@@ -24,6 +24,8 @@
         <module>cache</module>
         <module>spring-cloud</module>
         <module>mybatis-plus-generator-sc</module>
+        <module>sc-agent</module>
+        <module>sc-agent-main</module>
     </modules>
 
     <properties>
