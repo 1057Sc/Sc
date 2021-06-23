@@ -34,7 +34,7 @@ public class Demo1 {
     @Test
     public void demo1() throws IOException {
         String imgUrl = "http://img.dz8.cn/gemImg/2019-09/16/9af4a048db8628e403e490c595f557fc.origin.jpg";
-        String imgPath = "C:\\Users\\duizhuang\\Pictures";
+        String imgPath = "C:\\Users\\scc\\Pictures";
         String name = "test";
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -71,7 +71,7 @@ public class Demo1 {
         // String imgUrl = "https://img.dz8.cn/gemImg/2019-09/16/9af4a048db8628e403e490c595f557fc.origin.jpg";
         // String imgUrl = "http://img.dz8.cn/setting/wechat/mini_program/2019-12/826bb3bd3e772a80780b3f5b05d00247.png";
         String imgUrl = "http://img.dz8.cn/gemImg/2020-04/07/4270fd493438a624eafd8d8426edf5b0.origin.jpg";
-        String imgPath = "C:\\Users\\duizhuang\\Pictures";
+        String imgPath = "C:\\Users\\scc\\Pictures";
         String name = "https1";
 
         final TrustStrategy acceptingTrustStrategy = (cert, authType) -> true;

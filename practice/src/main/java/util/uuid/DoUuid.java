@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.UUID;
 
 /**
- * Created by duizhuang on 10/11/2019.
+ * Created by scc on 10/11/2019.
  */
 public class DoUuid {
 
