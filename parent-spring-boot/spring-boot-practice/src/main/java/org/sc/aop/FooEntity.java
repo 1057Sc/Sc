@@ -1,5 +1,9 @@
-package org.sc.config;
+package org.sc.aop;
 
+/**
+ * @author zhuqingxin
+ * @date 2021/6/28
+ */
 public class FooEntity {
 
     private int id;

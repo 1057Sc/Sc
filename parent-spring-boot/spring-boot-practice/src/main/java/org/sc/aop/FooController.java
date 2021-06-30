@@ -1,6 +1,5 @@
 package org.sc.aop;
 
-import org.sc.config.FooEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +12,10 @@ public class FooController {
     private FooService fooService;
     @Autowired
     private FooMapper fooMapper;
+    @Autowired
+    private BarService barServices;
+    @Autowired
+    private SpringContext springContext;
 
     @RequestMapping("/get")
     public FooEntity getFoo(Integer id) {
@@ -65,6 +68,22 @@ public class FooController {
     public int fooUpdate() {
         fooMapper.fooUpdate();
         return 1;
+    }
+
+    @RequestMapping("/manymany")
+    public void man(){
+        Object barService = SpringContext.getBean("barService");
+        System.out.println(barService);
+        System.out.println(barServices);
+        Object barService1 = SpringContext.getBean(BarService.class);
+        System.out.println(barService1);
+    }
+
+
+    @RequestMapping("/manymanytwo")
+    public void mant(){
+        Object barService = SpringContext.getBean("fooService");
+        System.out.println(barService);
     }
 
 

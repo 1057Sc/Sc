@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+
 /**
  * Created by Sc on 8/6/2019.
  */
 public class jvm {
 
     public static void main(String[] args) {
-
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.addAll(null);
     }
 
 
