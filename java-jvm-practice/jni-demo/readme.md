@@ -42,10 +42,8 @@ JNIEXPORT jstring JNICALL Java_org_sc_DemoJni_sayHello
 }
 ```
 
-4. 编译`sayHello.c`，
-
+4. 编译`sayHello.c`
 注意：
-
 -  需要根据不同的操作系统指定编译后文件的后缀MacOs为`jnilib`，其它环境没实践
 -  编译后的文件需要带`lib`前缀
 ```bash
