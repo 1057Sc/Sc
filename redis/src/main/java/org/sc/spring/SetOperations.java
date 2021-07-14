@@ -3,7 +3,7 @@ package org.sc.spring;
 import java.io.Serializable;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/14
  */
 public interface SetOperations {

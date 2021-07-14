@@ -26,6 +26,7 @@
         <module>mybatis-plus-generator-sc</module>
         <module>sc-agent</module>
         <module>sc-agent-main</module>
+        <module>java-jvm-practice</module>
     </modules>
 
     <properties>

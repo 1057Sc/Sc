@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/4/20
  */
 public class Demo1 {

@@ -20,7 +20,7 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/4/5
  */
 public class SerializerDemo {

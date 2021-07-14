@@ -3,7 +3,7 @@ package org.sc.demo;
 import redis.clients.jedis.Jedis;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/3
  */
 public class RedisCommandExtension extends Jedis {

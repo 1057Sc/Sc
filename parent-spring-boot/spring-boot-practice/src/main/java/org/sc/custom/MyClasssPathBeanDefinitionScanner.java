@@ -8,7 +8,7 @@ import org.springframework.core.type.filter.AnnotationTypeFilter;
 import java.util.Set;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/5/28
  */
 public class MyClasssPathBeanDefinitionScanner extends ClassPathBeanDefinitionScanner {

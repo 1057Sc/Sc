@@ -6,7 +6,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/1
  */
 public class InputSteamDemo {

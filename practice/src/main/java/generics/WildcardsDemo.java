@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/5/8
  */
 public class WildcardsDemo {

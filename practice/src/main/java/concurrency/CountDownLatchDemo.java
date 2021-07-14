@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/4/28
  */
 public class CountDownLatchDemo {

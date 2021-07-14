@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringValueResolver;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/4/12
  */
 @Component

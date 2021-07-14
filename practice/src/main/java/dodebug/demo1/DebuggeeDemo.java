@@ -19,31 +19,23 @@ import com.sun.jdi.event.EventSet;
 import com.sun.jdi.request.BreakpointRequest;
 import com.sun.jdi.request.ClassPrepareRequest;
 
-/**
- * Hello world example for Java Debugging API i.e. JDI. Very basic & simple
- * example.
- *
- * @author ravik
- *
- */
-public class HelloWorldJDIExample {
+
+public class DebuggeeDemo {
 
     public static void main(String[] args) throws Exception {
 
-        Class classToDebug = HelloWorld.class;
+        Class classToDebug = DebuggerDemo.class;
+        // 断点行数
         int lineNumberToPutBreakpoint = 18;
 
-        /*
-         * Prepare connector, set class to debug & launch VM.
-         */
+
+        // Prepare connector, set class to debug & launch VM.
         LaunchingConnector launchingConnector = Bootstrap.virtualMachineManager().defaultConnector();
         Map<String, Connector.Argument> env = launchingConnector.defaultArguments();
         env.get("main").setValue(classToDebug.getName());
         VirtualMachine vm = launchingConnector.launch(env);
 
-        /*
-         * Request VM to trigger event when HelloWorld class is prepared.
-         */
+        // Request VM to trigger event when HelloWorld class is prepared.
         ClassPrepareRequest classPrepareRequest = vm.eventRequestManager().createClassPrepareRequest();
         classPrepareRequest.addClassFilter(classToDebug.getName());
         classPrepareRequest.enable();
@@ -52,12 +44,8 @@ public class HelloWorldJDIExample {
 
         try {
             while ((eventSet = vm.eventQueue().remove(100)) != null) {
-
                 for (Event event : eventSet) {
-
-                    /*
-                     * If this is ClassPrepareEvent, then set breakpoint
-                     */
+                    // If this is ClassPrepareEvent, then set breakpoint
                     if (event instanceof ClassPrepareEvent) {
                         ClassPrepareEvent evt = (ClassPrepareEvent) event;
                         ClassType classType = (ClassType) evt.referenceType();
@@ -65,37 +53,29 @@ public class HelloWorldJDIExample {
                         Location location = classType.locationsOfLine(lineNumberToPutBreakpoint).get(0);
                         BreakpointRequest bpReq = vm.eventRequestManager().createBreakpointRequest(location);
                         bpReq.enable();
-
                     }
 
-                    /*
-                     * If this is BreakpointEvent, then read & print variables.
-                     */
+                    // If this is BreakpointEvent, then read & print variables.
                     if (event instanceof BreakpointEvent) {
                         // disable the breakpoint event
                         event.request().disable();
 
                         // Get values of all variables that are visible and print
                         StackFrame stackFrame = ((BreakpointEvent) event).thread().frame(0);
-                        Map<LocalVariable, Value> visibleVariables = (Map<LocalVariable, Value>) stackFrame
+                        Map<LocalVariable, Value> visibleVariables = stackFrame
                                 .getValues(stackFrame.visibleVariables());
                         System.out.println("Local Variables =");
                         for (Map.Entry<LocalVariable, Value> entry : visibleVariables.entrySet()) {
                             System.out.println("	" + entry.getKey().name() + " = " + entry.getValue());
                         }
-
                     }
                     vm.resume();
-
                 }
-
             }
         } catch (VMDisconnectedException e) {
             System.out.println("VM is now disconnected.");
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
 }

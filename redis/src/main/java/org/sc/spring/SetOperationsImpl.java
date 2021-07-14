@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  */
 @Component
 public class SetOperationsImpl extends AbstractOperations implements SetOperations {

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.function.Function;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/16
  */
 @FunctionalInterface

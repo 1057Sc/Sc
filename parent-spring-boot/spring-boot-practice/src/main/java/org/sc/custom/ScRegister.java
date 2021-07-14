@@ -11,7 +11,7 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.type.AnnotationMetadata;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/5/28
  */
 @Configuration

@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/25
  */
 public class Demo1 {

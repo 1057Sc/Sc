@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.function.Function;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/16
  */
 public class SFunctionTest {

@@ -6,7 +6,7 @@ import lombok.Setter;
 import javax.validation.constraints.NotBlank;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/22
  */
 @Getter

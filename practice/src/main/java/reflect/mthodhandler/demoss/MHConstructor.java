@@ -7,7 +7,7 @@ import java.lang.invoke.MethodType;
 /**
  * MethodHandle 执行构造函数
  *
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/10
  */
 public class MHConstructor {

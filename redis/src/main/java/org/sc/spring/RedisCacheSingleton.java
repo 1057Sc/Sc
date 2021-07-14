@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.Serializable;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/10
  */
 public class RedisCacheSingleton {

@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/5/28
  */
 @Documented

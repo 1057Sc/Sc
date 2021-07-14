@@ -6,7 +6,7 @@ import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.apache.curator.framework.recipes.locks.InterProcessSemaphoreMutex;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/29
  */
 public class ZkDemo {

@@ -15,11 +15,17 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/6/17
  */
 public class ByteBuddyDemo {
 
+    /**
+     * 重新定义toString
+     *
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     */
     @Test
     public void givenObject_whenToString_thenReturnHelloWorldString() throws InstantiationException, IllegalAccessException {
         DynamicType.Unloaded unloadedType = new ByteBuddy()
@@ -40,6 +46,11 @@ public class ByteBuddyDemo {
         Assert.assertEquals(dynamicType.newInstance().toString(), "Hello World ByteBuddy!");
     }
 
+    /**
+     * 定义已加载过类使用ByteBuddyAgent
+     *
+     * @throws Exception
+     */
     @Test
     public void givenFoo_whenRedefined_thenReturnFooRedefined() throws Exception {
         // 重新定义已经加载过的类 需要使用ByteBuddyAgent
@@ -60,6 +71,12 @@ public class ByteBuddyDemo {
         Assert.assertEquals(f.sayHelloFoo(), "Hello Foo Redefined");
     }
 
+    /**
+     *
+     *
+     * @throws IllegalAccessException
+     * @throws InstantiationException
+     */
     @Test
     public void givenSayHelloFoo_whenMethodDelegation_thenSayHelloBar() throws IllegalAccessException, InstantiationException {
 
@@ -82,6 +99,12 @@ public class ByteBuddyDemo {
         Assert.assertEquals(r, Bar.sayHelloBar());
     }
 
+    /**
+     * 定义一个MyClassName.class
+     * <code>@BindingPriority</code>注解提供了一种按注解匹配的方法的规则
+     *
+     * @throws Exception
+     */
     @Test
     public void givenMethodName_whenDefineMethod_thenCreateMethod() throws Exception {
         Class<?> type = new ByteBuddy()

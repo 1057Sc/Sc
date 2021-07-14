@@ -3,7 +3,7 @@ package buddy;
 import net.bytebuddy.implementation.bind.annotation.BindingPriority;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/6/17
  */
 public class Bar {

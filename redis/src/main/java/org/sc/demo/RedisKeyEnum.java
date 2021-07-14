@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 统一Redis key定义
  *
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/2/24
  */
 @AllArgsConstructor

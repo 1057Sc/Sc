@@ -1,7 +1,7 @@
 package buddy;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/6/17
  */
 public class Foo {

@@ -3,7 +3,7 @@ package org.sc.agentmain;
 import java.lang.instrument.Instrumentation;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/6/21
  */
 public class AgentmainDemo {

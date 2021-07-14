@@ -1,7 +1,7 @@
 package org.sc.aop;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/6/28
  */
 public class FooEntity {

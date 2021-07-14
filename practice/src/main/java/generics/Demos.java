@@ -3,7 +3,7 @@ package generics;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2020/12/25
  */
 public class Demos {

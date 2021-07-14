@@ -1,7 +1,7 @@
 package org.sc.demo;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/3
  */
 public interface CacheKey {

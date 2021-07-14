@@ -10,7 +10,7 @@ import org.springframework.data.redis.core.script.DefaultRedisScript;
 import java.util.Collections;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/4
  */
 public class RedisTemplateExtension extends RedisTemplate<String, Object> {

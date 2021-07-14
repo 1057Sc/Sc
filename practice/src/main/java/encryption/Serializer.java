@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/4/3
  */
 public class Serializer {

@@ -3,7 +3,7 @@ package finalusage;
 import org.junit.Test;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/31
  */
 public class DemoFinally {

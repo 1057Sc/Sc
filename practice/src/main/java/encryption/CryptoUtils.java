@@ -23,7 +23,7 @@ import java.security.SecureRandom;
 import java.security.Security;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/3/31
  */
 public class CryptoUtils {

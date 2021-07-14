@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2020/12/30
  */
 public class SplitStream {

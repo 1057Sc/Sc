@@ -10,7 +10,7 @@ import java.nio.channels.FileChannel;
 /**
  * nio
  *
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/4/1
  */
 public class Demo {

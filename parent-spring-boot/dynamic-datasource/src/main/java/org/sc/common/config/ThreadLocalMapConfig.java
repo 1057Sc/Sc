@@ -3,7 +3,7 @@ package org.sc.common.config;
 import java.util.Objects;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/5/29
  */
 public class ThreadLocalMapConfig {

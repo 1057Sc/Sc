@@ -30,7 +30,7 @@ import com.sun.jdi.request.ClassPrepareRequest;
 import com.sun.jdi.request.StepRequest;
 
 /**
- * @author zhuqingxin
+ * @author Sc
  * @date 2021/7/6
  */
 public class JDIExampleDebugger {
