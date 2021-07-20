@@ -10,7 +10,8 @@ public class AgentDemoStart {
 
     public static void main(String[] args) {
         Foo foo = new Foo();
-        foo.getName();
+        String name = foo.getName();
+        System.out.println(name);
         System.out.println("start");
     }
 }

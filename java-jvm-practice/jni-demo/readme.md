@@ -54,6 +54,7 @@ gcc -I"$JAVA_HOME/include" -I"$JAVA_HOME/include/darwin/" -o libsayHello.jnilib 
 ```bash
 javac org/sc/DemoJni.java 
 java -Djava.library.path="libsayHello.jnilib文件所在目录" org.sc.DemoJni
+java -Djava.library.path="/Users/zhuqingxin/sc/Sc/java-jvm-practice/jni-demo/src/main/c" org.sc.DemoJni
 ```
 
 6. 验证结果

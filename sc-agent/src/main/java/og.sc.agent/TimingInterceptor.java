@@ -18,7 +18,9 @@ public class TimingInterceptor {
                                    @SuperCall Callable<?> callable) {
         long start = System.currentTimeMillis();
         try {
-            return callable.call();
+            Object call = callable.call();
+            System.out.println(call.toString());
+            return call;
         } catch (Exception e) {
             e.printStackTrace();
             return null;

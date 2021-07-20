@@ -6,7 +6,12 @@ package og.sc.agent;
  */
 public class Foo {
 
-    public static String sayHelloFoo(){
+    public static String sayHelloFoo() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "Hello Foo!";
     }
 }
