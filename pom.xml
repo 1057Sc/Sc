@@ -27,6 +27,7 @@
         <module>sc-agent</module>
         <module>sc-agent-main</module>
         <module>java-jvm-practice</module>
+        <module>graphql</module>
     </modules>
 
     <properties>
