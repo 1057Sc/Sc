@@ -306,4 +306,23 @@ public class StreamDemo1 {
                                 }), m -> new ArrayList<>(m.values())));*/
 
     }
+
+
+    @Test
+    public void flatMap() {
+        // 合并流
+        String s1 = "1,2,3";
+        String s2 = "1,2,3";
+        List<String> strs = new ArrayList<>();
+        strs.add(s1);
+        strs.add(s2);
+
+        List<String> collect = strs.stream()
+                .map(s -> s.split(","))
+                .flatMap(Stream::of)
+                .collect(Collectors.toList());
+
+        collect.stream()
+                .forEach(System.out::println);
+    }
 }
