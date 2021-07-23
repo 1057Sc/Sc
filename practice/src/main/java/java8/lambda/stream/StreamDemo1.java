@@ -322,6 +322,20 @@ public class StreamDemo1 {
                 .flatMap(Stream::of)
                 .collect(Collectors.toList());
 
+        List<Stream<String>> collect1 = strs.stream()
+                .map(s -> Stream.of(s.split(",")))
+                .flatMap(Stream::of)
+                .collect(Collectors.toList());
+        List<String> collect2 = strs.stream()
+                .map(s ->
+                        Stream.of(s.split(",")).collect(Collectors.toList())
+                )
+                .flatMap(items -> items.stream())
+                .collect(Collectors.toList());
+
+        Stream<String> stringStream = strs.stream()
+                .map(s -> s.split(","))
+                .flatMap(Stream::of);
         collect.stream()
                 .forEach(System.out::println);
     }
