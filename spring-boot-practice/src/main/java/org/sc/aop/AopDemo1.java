@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AopDemo1 {
 
-    @Autowired
+    @Autowired(required = false)
     private ConfigRegister configRegister;
 
     @GetMapping(value = "/aop/add")
