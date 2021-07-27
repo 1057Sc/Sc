@@ -17,6 +17,7 @@ public class Demo {
         per(new char[2], chs, 2-1);*/
         System.out.println(1 << 2);
         System.out.println(3 & 1);
+        System.out.println(1 - 3);
     }
 
 
