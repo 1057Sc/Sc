@@ -6,23 +6,23 @@
         <groupId>org.sc</groupId>
         <artifactId>parent-spring-boot</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent-spring-boot/pom.xml</relativePath>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>redis</artifactId>
+    <artifactId>mockito</artifactId>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>2.9.0</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>3.12.3</version>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>3.8.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

@@ -13,7 +13,6 @@
         <module>scnetty</module>
         <module>rocket-mq-practice</module>
         <module>dynamic-datasource</module>
-        <module>parent-spring-boot</module>
         <module>elastic-search-practice</module>
         <module>spring-framework</module>
         <module>spring-boot-myabtis</module>
@@ -26,8 +25,7 @@
         <module>common</module>
         <module>mybatis-gen</module>
         <module>cache</module>
-        <module>spring-cloud</module>
-        <module>mybatis-plus-generator-sc</module>
+        <module>mockito</module>
     </modules>
 
     <properties>
@@ -89,7 +87,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.13.2</version>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>

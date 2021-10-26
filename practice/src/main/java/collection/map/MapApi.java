@@ -36,4 +36,32 @@ public class MapApi {
         System.out.println(Integer.toBinaryString(512 >> 2));
     }
 
+    @Test
+    public void deemo1(){
+        int n = 10000;
+        n |= n >>> 1;
+        System.out.println(n);
+
+        System.out.println(1 >> 1);
+        System.out.println(1 >>> 1);
+
+        System.out.println(1 >> 2);
+        System.out.println(1 >>> 2);
+
+        int i = tableSizeFor(10000);
+        System.out.println(i);
+    }
+
+
+
+    static int tableSizeFor(int cap) {
+        int MAXIMUM_CAPACITY = 1 << 30;
+        int n = cap - 1;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+    }
 }
