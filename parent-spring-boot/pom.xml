@@ -9,6 +9,14 @@
     <artifactId>parent-spring-boot</artifactId>
     <packaging>pom</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+        </dependency>
+    </dependencies>
+
     <!-- doc: https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/-->
     <dependencyManagement>
         <dependencies>

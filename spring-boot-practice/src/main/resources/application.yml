@@ -2,7 +2,9 @@ server:
   port: 8882
   servlet:
     context-path: /
-
+logging:
+  level:
+    org.sc: debug
 
 #spring:
 #  autoconfigure:
