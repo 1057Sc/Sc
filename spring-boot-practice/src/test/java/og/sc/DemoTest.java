@@ -1,38 +1,44 @@
 package og.sc;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.sc.Application;
 import org.sc.aop.FooEntity;
 import org.sc.aop.FooMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.lang.reflect.Field;
+import static org.mockito.ArgumentMatchers.*;
 
-import static org.mockito.ArgumentMatchers.any;
-
+@SpringBootTest(classes = Application.class)
 @RunWith(SpringRunner.class)
-public class Demo {
+public class DemoTest {
 
-    @MockBean
-    FooMapper fooMapper;
+    @BeforeClass
+    public static void initMockAnnotation() {
+        MockitoAnnotations.initMocks(DemoTest.class);
+    }
+
     @Mock
-    FooMapper fooMapper1;
-    @Autowired
-    FooMapper fooMapper3;
+    private FooMapper fooMapper;
+
 
     @Test
-    public void demo(){
-        FooEntity fooEntity = fooMapper1.selectFoo(1);
+    public void demo() {
+        Mockito.when(fooMapper.selectFoo(1)).thenReturn(new FooEntity(1, "13123"));
+        FooEntity fooEntity = fooMapper.selectFoo(1);
+        System.out.println(fooEntity);
+    }
 
-        FooEntity fooEntity1 = fooMapper.selectFoo(1);
-
-        FooEntity fooEntity2 = fooMapper3.selectFoo(1);
-
-        System.out.println(1);
+    @Test
+    public void demo2() {
+        Mockito.when(fooMapper.selectFoo(anyInt())).thenReturn(new FooEntity(1, "13123"));
     }
 
    /* @Test

@@ -1,5 +1,10 @@
 package org.sc.aop;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class FooEntity {
 
     private int id;
@@ -20,4 +25,6 @@ public class FooEntity {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

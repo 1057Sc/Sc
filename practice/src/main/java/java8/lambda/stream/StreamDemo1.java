@@ -46,7 +46,7 @@ public class StreamDemo1 {
 
         Set<Integer> collect1 = objList.stream().map(TestObj::getAge).collect(Collectors.toSet());
 
-        Map<String, Integer> collect2 = objList.stream().collect(Collectors.toMap(TestObj::getName, TestObj::getAge, (o1,o2) -> o1));
+        Map<String, Integer> collect2 = objList.stream().collect(Collectors.toMap(TestObj::getName, TestObj::getAge, (o1, o2) -> o1));
 
         // 聚合操作
         Long collect3 = objList.stream().collect(Collectors.counting());
@@ -68,7 +68,7 @@ public class StreamDemo1 {
 
     }
 
-    public static void distinct(){
+    public static void distinct() {
         // array of list  , distinct
         ArrayList<TestObj> collect4 = objList.stream().
                 collect(Collectors.collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(TestObj::getClassNo))), ArrayList::new));
@@ -117,13 +117,13 @@ public class StreamDemo1 {
         System.out.println("----------------------------------");
 
         List<TestObj> collect = objList.stream().sorted(
-                (o1, o2) -> {
-                    if (o1.getClassNo().equals(o2.getClassNo())) {
-                        return o2.getAge() - o1.getAge();
-                    } else {
-                        return o2.getClassNo() - o1.getClassNo();
-                    }
-                })
+                        (o1, o2) -> {
+                            if (o1.getClassNo().equals(o2.getClassNo())) {
+                                return o2.getAge() - o1.getAge();
+                            } else {
+                                return o2.getClassNo() - o1.getClassNo();
+                            }
+                        })
                 .collect(Collectors.toList());
 
         for (TestObj testObj : collect) {
@@ -223,13 +223,13 @@ public class StreamDemo1 {
     }
 
     @Test
-    public void remove(){
+    public void remove() {
 
     }
 
 
     @Test
-    public void collect(){
+    public void collect() {
         List<Integer> collect = IntStream.range(1, 10).boxed().collect(Collectors.toList());
         List<Integer> collect1 = IntStream.range(10, 20).boxed().collect(Collectors.toList());
 
@@ -252,7 +252,7 @@ public class StreamDemo1 {
     }
 
     @Test
-    public void collect1(){
+    public void collect1() {
         Stream<String> stream = Stream.of("hello", "world", "helloworld");
         // 使用方法引用来传递行为, 更加清晰易懂, new(新建) -> add(累加) -> addAll(合并)
      /*   List<String> list2 = stream.collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
@@ -260,5 +260,12 @@ public class StreamDemo1 {
 
         String concat = stream.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append).toString();
         System.out.println(concat);
+    }
+
+    @Test
+    public void parallelStream() {
+        List<Integer> collect = Stream.of(1, 2, 3, 4, 5).parallel()
+                .map(i -> i + 1).collect(Collectors.toList());
+        System.out.println(collect);
     }
 }

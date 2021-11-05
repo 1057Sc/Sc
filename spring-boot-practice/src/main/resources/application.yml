@@ -2,9 +2,14 @@ server:
   port: 8882
   servlet:
     context-path: /
+
 logging:
   level:
     org.sc: debug
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 #spring:
 #  autoconfigure:
