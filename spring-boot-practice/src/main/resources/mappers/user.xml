@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.sc.biz.user.UserMapper">
+<mapper namespace="org.sc.aop.FooMapper">
 
     <!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="org.sc.aop.FooEntity" id="bassMap">
+    <resultMap type="org.sc.biz.user.User" id="bassMap">
 
-        <id column="id" property="id" jdbcType="BIGINT"/>
+        <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
     </resultMap>
 
 
-    <select id="selectFoo" resultMap="bassMap">
-        select * from foo_table where name = #{name}
+    <select id="selectFoo" parameterType="INTEGER" resultMap="bassMap">
+        select * from foo_table where id = #{id}
     </select>
 
     <insert id="fooAdd">
         INSERT INTO test.foo_table (name) VALUES (#{name})
     </insert>
 
-    <delete id="fooDelete" >
-        delete from test.foo_table where id = #{id}
-    </delete>
-
     <update id="fooUpdate">
-       /* update test.foo_table set name = '313' where id = 1;
+        /* update test.foo_table set name = '313' where id = 1;
         update test.foo_table set name =  '123' where id = 2;*/
 
         UPDATE test.foo_table SET
@@ -31,8 +27,8 @@
         WHEN 1 THEN '777'
         WHEN 2 THEN '5765'
         WHEN 3 THEN '454'
-    END
-WHERE id IN (1,2,3)
+        END
+        WHERE id IN (1,2,3)
     </update>
 
 

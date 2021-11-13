@@ -9,12 +9,10 @@ import org.mockito.MockitoAnnotations;
 import org.sc.Application;
 import org.sc.aop.FooEntity;
 import org.sc.aop.FooMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.anyInt;
 
 @SpringBootTest(classes = Application.class)
 @RunWith(SpringRunner.class)
@@ -31,14 +29,14 @@ public class DemoTest {
 
     @Test
     public void demo() {
-        Mockito.when(fooMapper.selectFoo(1)).thenReturn(new FooEntity(1, "13123"));
+        Mockito.when(fooMapper.selectFoo(1)).thenReturn(new FooEntity(1L, "13123"));
         FooEntity fooEntity = fooMapper.selectFoo(1);
         System.out.println(fooEntity);
     }
 
     @Test
     public void demo2() {
-        Mockito.when(fooMapper.selectFoo(anyInt())).thenReturn(new FooEntity(1, "13123"));
+        Mockito.when(fooMapper.selectFoo(anyInt())).thenReturn(new FooEntity(1L, "13123"));
     }
 
    /* @Test

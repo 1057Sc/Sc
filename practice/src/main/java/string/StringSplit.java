@@ -51,4 +51,13 @@ public class StringSplit {
         String s = "1234";
 
     }
+
+    @Test
+    public void demo1() {
+        String s1 = "sc(1231)";
+        String minName = s1.trim();
+
+        String min = minName.contains("(")? minName.substring(0, s1.indexOf("(")) : minName;
+        System.out.println(min);
+    }
 }

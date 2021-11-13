@@ -181,4 +181,21 @@ public class SetDo {
         System.out.println(source1.hashCode());
         System.out.println(source2.hashCode());
     }
+
+    @Test
+    public void demo11() {
+        Set<Integer> source2 = new HashSet<>();
+        source2.add(1);
+        source2.add(2);
+        source2.add(3);
+
+
+        Set<Integer> source1 = new HashSet<>();
+        source1.add(4);
+
+        boolean b = source1.containsAll(source2);
+
+        System.out.println(b);
+        System.out.println(b);
+    }
 }
