@@ -69,5 +69,23 @@ public class Demo1 {
 
     }
 
+    @Test
+    public void demo4(){
+        String materialCodePrefix = "SUT";
+        String pre = "SU";
+        String materialCode = "SUT00001";
+        String materialCode1 = "SU00001";
+        String prefix = StringUtils.substring(materialCode, 0, materialCodePrefix.length());
+        if (StringUtils.equals(prefix, materialCodePrefix)) {
+            System.out.println(StringUtils.replace(materialCode, materialCodePrefix, pre));
+        }
+
+        String prefix1 = StringUtils.substring(materialCode1, 0, materialCodePrefix.length());
+        if (StringUtils.equals(prefix1, materialCodePrefix)) {
+            System.out.println("21321321");
+        }
+        System.out.println(prefix1);
+    }
+
 
 }

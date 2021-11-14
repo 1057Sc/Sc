@@ -49,6 +49,7 @@ public class TypeGet {
                     } else {
                         columnSql.append(name).append(") ");
                         valueSql.append(":").append(name).append(") ");
+                        // valueSql.append(field.get).append(") ");
                     }
 
                 }

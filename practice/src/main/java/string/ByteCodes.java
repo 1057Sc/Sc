@@ -6,6 +6,9 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by Sc on 9/10/2019.
@@ -18,7 +21,7 @@ public class ByteCodes {
     }
 
     @Test
-    public void demo1(){
+    public void demo1() {
         String s = "汪";
         System.out.println(s);
 
@@ -27,10 +30,42 @@ public class ByteCodes {
     }
 
     @Test
-    public void demo2(){
+    public void demo2() {
         String s = "汪汪汪";
         byte[] encode = Base64.getEncoder().encode(s.getBytes(StandardCharsets.UTF_8));
         byte[] decode = Base64.getDecoder().decode(encode);
         System.out.println(new String(decode));
+    }
+
+    @Test
+    public void demo3() {
+        String s = "123abc";
+        byte[] bytes = s.getBytes();
+
+        byte one = 1;
+        byte one1 = '1';
+        for (byte aByte : bytes) {
+            // Ascii code
+            System.out.println(aByte);
+        }
+    }
+
+    @Test
+    public void demo4() {
+        String s = "的";
+        byte[] bytes = s.getBytes();
+        for (byte aByte : bytes) {
+            System.out.println(aByte);
+        }
+
+        byte[] bytes1 = s.getBytes(StandardCharsets.UTF_8);
+        for (byte aByte : bytes1) {
+            System.out.println(aByte);
+        }
+        String s1 = new String(bytes1);
+        System.out.println(s1);
+        String s2 = new String(bytes);
+        System.out.println(s2);
+
     }
 }

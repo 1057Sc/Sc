@@ -49,7 +49,8 @@ public class StringSplit {
     public void demo3() {
 
         String s = "1234";
-
+        String[] split = StringUtils.split("2134", "/");
+        System.out.println(s);
     }
 
     @Test

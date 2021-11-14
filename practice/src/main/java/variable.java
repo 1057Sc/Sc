@@ -17,7 +17,7 @@ public class variable {
     public static void main(String[] args) throws Exception {
         variable v = new variable();
         String rfc1123Time = getRfc1123Time();
-        String s = v.sign("duizhuang", v.md5("duizhuang"), "POST", "/duizhuang/avmeta/get_meta", rfc1123Time, "", "");
+        String s = v.sign("scc", v.md5("scc"), "POST", "/scc/avmeta/get_meta", rfc1123Time, "", "");
         System.out.println(rfc1123Time);
         System.out.println(s);
     }
@@ -78,6 +78,6 @@ public class variable {
     }
 
 
-    static String s = "http://p1.api.upyun.com/duizhuang/snapshot";
+    static String s = "123";
 }
 

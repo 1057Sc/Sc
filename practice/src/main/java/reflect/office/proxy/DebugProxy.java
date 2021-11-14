@@ -21,7 +21,7 @@ public class DebugProxy implements java.lang.reflect.InvocationHandler {
             throws Throwable {
         Object result;
         try {
-            System.out.println("before method " + m.getName());
+            System.out.println("before method111 " + m.getName());
             result = m.invoke(obj, args);
         } catch (InvocationTargetException e) {
             throw e.getTargetException();
@@ -29,7 +29,7 @@ public class DebugProxy implements java.lang.reflect.InvocationHandler {
             throw new RuntimeException("unexpected invocation exception: " +
                     e.getMessage());
         } finally {
-            System.out.println("after method " + m.getName());
+            System.out.println("after method111 " + m.getName());
         }
         return result;
     }

@@ -1,7 +1,6 @@
 package org.sc.demo;
 
 import org.junit.Test;
-import org.sc.doSelect.RedisExecute;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -20,22 +19,22 @@ public class RList {
     }
 
     @Test
-    public void demo2() {
-        Jedis jedis = pool.getResource();
-
-        RedisExecute execute = jedis1 -> jedis1.set("dsad", "sad");
-
-        jedis.select(1);
-        execute.doJedis(jedis);
-        jedis.close();
-
+    public void set() {
+        String key = RedisKeyEnum.SET_DEMO.buildKey();
+        String execute1 = execute(jedis -> jedis.set(key, "bar"));
+        System.out.println(execute1);
     }
-
 
     @Test
     public void demo3() {
         Jedis jedis = pool.getResource();
         List<String> dasdsa = jedis.lrange("dasdsa", 0, -1);
         System.out.println(dasdsa);
+    }
+
+    private <T> T execute(RedisExecute<T> redisExecute) {
+        Jedis jedis = pool.getResource();
+        // jedis.select(1);
+        return redisExecute.execute(jedis);
     }
 }
