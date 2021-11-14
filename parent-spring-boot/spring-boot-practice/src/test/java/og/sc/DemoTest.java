@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.sc.Application;
+import org.sc.ScPracticeApplication;
 import org.sc.aop.FooEntity;
 import org.sc.aop.FooMapper;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.mockito.ArgumentMatchers.anyInt;
 
-@SpringBootTest(classes = Application.class)
+@SpringBootTest(classes = ScPracticeApplication.class)
 @RunWith(SpringRunner.class)
 public class DemoTest {
 

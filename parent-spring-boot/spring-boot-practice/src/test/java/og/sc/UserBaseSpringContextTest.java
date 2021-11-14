@@ -1,10 +1,9 @@
 package og.sc;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.hamcrest.MatcherAssert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.sc.Application;
+import org.sc.ScPracticeApplication;
 import org.sc.biz.user.UserMapper;
 import org.sc.biz.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import static org.hamcrest.Matchers.greaterThan;
  * 注重与三方依赖、中间等测试，在Spring Context中做测试
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Application.class)
+@SpringBootTest(classes = ScPracticeApplication.class)
 public class UserBaseSpringContextTest {
 
     /**

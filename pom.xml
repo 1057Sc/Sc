@@ -12,15 +12,12 @@
         <module>hbabse</module>
         <module>scnetty</module>
         <module>rocket-mq-practice</module>
-        <module>dynamic-datasource</module>
         <module>elastic-search-practice</module>
         <module>spring-framework</module>
-        <module>spring-boot-myabtis</module>
         <module>practice</module>
         <module>redis</module>
         <module>nacos</module>
         <module>cas</module>
-        <module>spring-boot-practice</module>
         <module>do-dubbo</module>
         <module>common</module>
         <module>mybatis-gen</module>
