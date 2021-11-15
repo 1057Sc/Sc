@@ -4,6 +4,7 @@ import org.hamcrest.MatcherAssert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.sc.ScPracticeApplication;
+import org.sc.biz.user.User;
 import org.sc.biz.user.UserMapper;
 import org.sc.biz.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +49,16 @@ public class UserBaseSpringContextTest {
         // 根据返回的id操作
         long l = userMapper.fooDelete(id);
         MatcherAssert.assertThat(l, greaterThan(0L));
+    }
+
+
+    /**
+     * 提高自测效率，也可以直接采用这种方式测试，
+     */
+    @Test
+    public void updateTest() {
+        User sc = userMapper.selectFoo("sc");
+        long update = userService.update(sc);
+        MatcherAssert.assertThat(update, greaterThan(0L));
     }
 }

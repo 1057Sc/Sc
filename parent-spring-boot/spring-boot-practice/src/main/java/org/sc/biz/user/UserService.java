@@ -36,12 +36,12 @@ public class UserService {
             System.out.println("Hello odd !");
         }
 
-        priRetrieve();
+        preReetrieve();
 
         return user;
     }
 
-    private void priRetrieve() {
+    private void preReetrieve() {
         System.out.println("priRetrieve");
     }
 
@@ -60,6 +60,33 @@ public class UserService {
         }
 
         return userMapper.fooUpdate(1);
+    }
+
+    /**
+     * 模拟业务逻辑和数据逻辑在一起，但是不好拆分的情况，
+     * 为了提高自测效率避免过多单测代码产生，可以直接进行测试
+     *
+     *
+     * @param updateCondition 更新条件
+     * @return
+     */
+    public long update(User updateCondition) {
+        if (Objects.isNull(updateCondition)) {
+            return 0;
+        }
+        long id = updateCondition.getId();
+        if (id == 1) {
+            System.out.println(id);
+        }
+
+        if (id == 2) {
+            System.out.println(id);
+        }
+
+        if (id == 3) {
+            System.out.println(id);
+        }
+        return userMapper.fooUpdate(id);
     }
 
     public long create(String name) {

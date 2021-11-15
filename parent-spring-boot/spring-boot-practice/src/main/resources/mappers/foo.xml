@@ -26,13 +26,14 @@
        /* update test.foo_table set name = '313' where id = 1;
         update test.foo_table set name =  '123' where id = 2;*/
 
-        UPDATE test.foo_table SET
+        UPDATE test.foo_table
+        SET
         name  = CASE id
         WHEN 1 THEN '777'
         WHEN 2 THEN '5765'
         WHEN 3 THEN '454'
-    END
-WHERE id IN (1,2,3)
+        END
+        WHERE id IN (1,2,3)
     </update>
 
 

@@ -35,7 +35,16 @@
             <artifactId>java-uuid-generator</artifactId>
             <version>3.1.4</version>
         </dependency>
-
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <version>1.10.22</version>
+        </dependency>
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy-agent</artifactId>
+            <version>1.10.22</version>
+        </dependency>
     </dependencies>
 
 </project>
