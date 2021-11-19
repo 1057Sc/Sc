@@ -11,6 +11,12 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
+mapper:
+  mappers:
+    - tk.mybatis.mapper.common.Mapper
+    - tk.mybatis.mapper.common.Mapper2
+  notEmpty: true
+
 #spring:
 #  autoconfigure:
 #    exclude:

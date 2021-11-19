@@ -1,9 +1,10 @@
 package org.sc.biz.user;
 
+
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface UserMapper {
+public interface UserMapper extends tk.mybatis.mapper.common.Mapper<User>{
 
     User selectFoo(String  name);
 

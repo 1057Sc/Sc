@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.text.MessageFormat;
+
 import static org.hamcrest.Matchers.greaterThan;
 
 
@@ -60,5 +62,26 @@ public class UserBaseSpringContextTest {
         User sc = userMapper.selectFoo("sc");
         long update = userService.update(sc);
         MatcherAssert.assertThat(update, greaterThan(0L));
+    }
+
+    public void foo(int a, int b, int x) {
+        if (a > 1 && b == 0) {
+            x = x / a;
+        }
+
+        if (a == 2 || x > 1) {
+            x = x + 1;
+        }
+    }
+
+
+    @Test
+    public void demo() {
+        Integer i = 12321321;
+
+        String s = "{0}hcisjkshdjksa";
+
+        String format = MessageFormat.format(s, i);
+        System.out.println(format);
     }
 }

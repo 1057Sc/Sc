@@ -4,6 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Wrapper;
 import java.util.Objects;
 
 @Service
@@ -108,4 +109,5 @@ public class UserService {
         }
         return userMapper.fooDelete(1);
     }
+
 }

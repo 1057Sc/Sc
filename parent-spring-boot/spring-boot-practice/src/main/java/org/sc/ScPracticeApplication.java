@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Slf4j
 @SpringBootApplication()
 @MapperScan("org.sc")
+@tk.mybatis.spring.annotation.MapperScan(basePackages = "org.sc")
 @EnableTransactionManagement
 public class ScPracticeApplication {
  /*   @Autowired

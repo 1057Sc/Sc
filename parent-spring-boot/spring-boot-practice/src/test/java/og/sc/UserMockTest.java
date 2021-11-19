@@ -5,16 +5,16 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
+import org.mockito.*;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.sc.biz.user.User;
 import org.sc.biz.user.UserMapper;
 import org.sc.biz.user.UserService;
 
+import java.text.MessageFormat;
+
 import static org.hamcrest.Matchers.greaterThan;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.anyString;
 
 /**
@@ -73,5 +73,25 @@ public class UserMockTest {
         // 异常校验方法
         Mockito.when(userMapperMock.selectFoo("bar")).thenReturn(null);
         Assert.assertThrows(RuntimeException.class, () -> userService.retrieve("bar"));
+
+    }
+
+    @Test
+    public void captor() {
+        // Mockito.when(userMapperMock.selectFoo("sc")).thenReturn(new User(1L, "sc"));
+        User sc = userService.retrieve("sc");
+        ArgumentCaptor<String> stringArgumentCaptor = ArgumentCaptor.forClass(String.class);
+        Mockito.verify(userService).retrieve(stringArgumentCaptor.capture());
+        assertEquals("sc", stringArgumentCaptor.getValue());
+    }
+
+    @Test
+    public void demo() {
+        Integer i = 12321321;
+
+        String s = "{0,number,#}hcisjkshdjksa";
+
+        String format = MessageFormat.format(s, i);
+        System.out.println(format);
     }
 }
