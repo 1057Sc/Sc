@@ -3,6 +3,7 @@ package org.sc.biz.user;
 import cn.hutool.core.util.StrUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
 
 import java.sql.Wrapper;
 import java.util.Objects;
@@ -108,6 +109,12 @@ public class UserService {
             System.out.println(id);
         }
         return userMapper.fooDelete(1);
+    }
+
+    public void selectExample() {
+        Example example = new Example(User.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo(,)
     }
 
 }

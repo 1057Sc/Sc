@@ -5,10 +5,12 @@ import org.apache.curator.framework.recipes.locks.InterProcessLock;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.apache.curator.framework.recipes.locks.InterProcessSemaphoreMutex;
 
+
 /**
  * @author Sc
  * @date 2021/3/29
  */
+
 public class ZkDemo {
 
     public void lock() throws Exception {
@@ -25,3 +27,4 @@ public class ZkDemo {
 
     }
 }
+

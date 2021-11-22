@@ -1,5 +1,8 @@
 package enumdemo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +12,7 @@ import java.util.stream.Collectors;
  * @author zhuqingxin
  * @date 2021/7/27
  */
-
+@Getter
 public enum CodeInfoEnum {
 
     LOCK(1L, 1L, "LOCK_TYPE", "LOCK"),
